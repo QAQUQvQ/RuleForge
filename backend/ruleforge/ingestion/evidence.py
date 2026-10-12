@@ -1,6 +1,7 @@
 """Immutable artifact references and fail-closed provenance checks."""
 import hashlib
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -43,6 +44,10 @@ def json_pointer(value, pointer: str):
         raise EvidenceError("invalid JSON pointer")
     try:
         for token in pointer[1:].split("/"):
+            if re.search(r"~(?![01])", token):
+                raise EvidenceError("invalid JSON pointer escape")
+            if isinstance(value, list) and not re.fullmatch(r"0|[1-9][0-9]*", token):
+                raise EvidenceError("invalid JSON array index")
             key = token.replace("~1", "/").replace("~0", "~")
             value = value[int(key)] if isinstance(value, list) else value[key]
         return value
@@ -80,4 +85,48 @@ def verify_span(root: Path, manifest: dict, span: dict):
             raise EvidenceError("page mapping mismatch")
     elif span["physical_page"] is not None:
         raise EvidenceError("page without evidence")
+    return True
+
+
+def verify_reference(root: Path, manifest: dict, reference):
+    """Add identity/grid checks to the unchanged M1 artifact/quote verification."""
+    from ruleforge.rules.sources import SourceReference
+    from ruleforge.ingestion.tables import table_grid
+    span = SourceReference.model_validate(reference).model_dump()
+    if manifest.get("ruleset") != span["ruleset"] or manifest["id"] != span["run_id"]:
+        raise EvidenceError("source ruleset/run mismatch")
+    if manifest["document"]["sha256"] != span["document_id"]:
+        raise EvidenceError("source document mismatch")
+    verify_span(root, manifest, span)
+    raw = json.loads(checked_file(root, manifest["raw"]).read_text(encoding="utf-8-sig"))
+    element = json_pointer(raw, span["element_pointer"])
+    if not isinstance(element, dict) or element.get("element_id") != span["element_id"]:
+        raise EvidenceError("element identity mismatch")
+    if span["json_pointer"] != span["element_pointer"] + "/text":
+        raise EvidenceError("quote must belong to referenced element")
+    if span["fragment_type"] != element.get("type"):
+        raise EvidenceError("fragment type mismatch")
+    from ruleforge.ingestion.provenance import section_hierarchy
+    if span["section_hierarchy"] != section_hierarchy(raw, span["element_id"]):
+        raise EvidenceError("section hierarchy mismatch")
+    if span["coordinates"] is not None and span["coordinates"] != element.get("coordinates"):
+        raise EvidenceError("coordinates mismatch")
+    if span["physical_page"] is not None:
+        if span["page_pointer"] != span["element_pointer"] + "/page_number":
+            raise EvidenceError("page pointer not bound to element")
+        pages = [p for p in raw["data"]["pages"] if p["page_number"] == span["physical_page"]]
+        if len(pages) != 1 or pages[0].get("status") != "Success" or span["element_id"] not in pages[0]["element_ids"]:
+            raise EvidenceError("element/page membership mismatch")
+    if span["printed_page"] is not None:
+        footer = json_pointer(raw, span["printed_page_pointer"].rsplit("/", 1)[0])
+        if (footer.get("type") != "Footer" or footer.get("page_number") != span["physical_page"]
+            or str(json_pointer(raw, span["printed_page_pointer"])).strip() != span["printed_page"]
+            or not span["printed_page"].isdigit()):
+            raise EvidenceError("printed page mismatch")
+    if span["table_location"]:
+        loc = span["table_location"]
+        cells = [c for row in table_grid(span["quote"]) for c in row
+                 if c["row"] == loc["row"] and c["column"] == loc["column"]]
+        if len(cells) != 1 or cells[0]["text"] != loc["text"]:
+            raise EvidenceError("table location mismatch")
     return True

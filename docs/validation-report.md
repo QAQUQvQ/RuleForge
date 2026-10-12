@@ -31,3 +31,18 @@ Vite：生产构建通过；标准 pnpm --dir frontend run build 也已实际通
 其余 SRD 内容保留在真实原始 JSON；不是已支持的可执行规则库。
 角色、战斗、命令和事件已提供 Schema；未实现人物创建流程、战斗状态机、Homebrew 上传/审核。
 没有自动启动常驻服务或进行公网部署。
+
+
+## 2026-10-12 技能注册补充
+已通过 Codex skill-installer 将官方 xparse-parse 安装到 C:/Users/23100/.codex/skills/xparse-parse。
+固定提交：3662e0be9750cb57796a768015fc1e5fff29a793。安装记录：data/setup/skill-installation.json。
+本次仅安装技能，没有新增解析请求或付费调用。原文关于“仅项目快照”的表述描述的是初次 M1 验证时的状态。
+规则标准化与领域模型的具体边界见 docs/model-and-normalization-gaps.md。
+
+## M1+ 最终回归（2026-10-12）
+
+实际基线 47 passed；完成后完整回归 **133 passed，1 warning，0 failed / errors / skipped**，终端耗时 129.04 秒。新增 86 项覆盖五类记录、装备分型、来源完整性、目录生命周期和数据库迁移。
+
+10 条真实 SRD 样本、42 个来源引用；全部 validated / review_required / reference_only。v1→v2 迁移及所有旧表内容保持、事务回滚与重复升级均经测试。完整重复导入无重复记录。皮甲规则和三来源仍可验证，DEX 9→AC 10、DEX 14→AC 13。未调用 xParse；未提交或推送 Git。
+
+JUnit：[m1plus-regression.xml](../data/local-checks/m1plus-regression.xml)；详细结构、样本原文位置/哈希、逐文件变更与 M2 接口：[M1+ 验收报告](m1-enhancement-report.md)。

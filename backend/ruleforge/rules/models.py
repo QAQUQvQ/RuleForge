@@ -22,3 +22,8 @@ class RuleRecord(StrictModel):
     rule: RuleDSL
     sources: list[SourceSpan] = Field(min_length=3,max_length=3)
     review_status: Literal["draft","verified","rejected"] = "draft"
+
+# The fixed three-source execution envelope remains backward compatible.
+LeatherRuleRecord = RuleRecord
+from ruleforge.rules.sources import SourceReference
+from ruleforge.catalog.models import RuleRecord as NormalizedRuleRecord

@@ -1,0 +1,356 @@
+{
+  "$defs": {
+    "DiceExpression": {
+      "additionalProperties": false,
+      "properties": {
+        "expression": {
+          "maxLength": 30,
+          "minLength": 3,
+          "title": "Expression",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expression"
+      ],
+      "title": "DiceExpression",
+      "type": "object"
+    },
+    "SpellComponents": {
+      "additionalProperties": false,
+      "properties": {
+        "verbal": {
+          "title": "Verbal",
+          "type": "boolean"
+        },
+        "somatic": {
+          "title": "Somatic",
+          "type": "boolean"
+        },
+        "material": {
+          "title": "Material",
+          "type": "boolean"
+        },
+        "material_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Material Description"
+        }
+      },
+      "required": [
+        "verbal",
+        "somatic",
+        "material"
+      ],
+      "title": "SpellComponents",
+      "type": "object"
+    },
+    "SpellDamage": {
+      "additionalProperties": false,
+      "properties": {
+        "dice": {
+          "$ref": "#/$defs/DiceExpression"
+        },
+        "damage_type": {
+          "enum": [
+            "acid",
+            "bludgeoning",
+            "cold",
+            "fire",
+            "force",
+            "lightning",
+            "necrotic",
+            "piercing",
+            "poison",
+            "psychic",
+            "radiant",
+            "slashing",
+            "thunder"
+          ],
+          "title": "Damage Type",
+          "type": "string"
+        },
+        "per": {
+          "title": "Per",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "dice",
+        "damage_type",
+        "per",
+        "source_ids"
+      ],
+      "title": "SpellDamage",
+      "type": "object"
+    },
+    "SpellPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "maximum": 9,
+          "minimum": 0,
+          "title": "Level",
+          "type": "integer"
+        },
+        "school": {
+          "enum": [
+            "abjuration",
+            "conjuration",
+            "divination",
+            "enchantment",
+            "evocation",
+            "illusion",
+            "necromancy",
+            "transmutation"
+          ],
+          "title": "School",
+          "type": "string"
+        },
+        "casting_time": {
+          "minLength": 1,
+          "title": "Casting Time",
+          "type": "string"
+        },
+        "range": {
+          "minLength": 1,
+          "title": "Range",
+          "type": "string"
+        },
+        "components": {
+          "$ref": "#/$defs/SpellComponents"
+        },
+        "duration": {
+          "minLength": 1,
+          "title": "Duration",
+          "type": "string"
+        },
+        "concentration": {
+          "title": "Concentration",
+          "type": "boolean"
+        },
+        "ritual": {
+          "title": "Ritual",
+          "type": "boolean"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "higher_levels": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Higher Levels"
+        },
+        "effects": {
+          "items": {
+            "$ref": "#/$defs/TextEffect"
+          },
+          "title": "Effects",
+          "type": "array"
+        },
+        "damage": {
+          "items": {
+            "$ref": "#/$defs/SpellDamage"
+          },
+          "title": "Damage",
+          "type": "array"
+        }
+      },
+      "required": [
+        "level",
+        "school",
+        "casting_time",
+        "range",
+        "components",
+        "duration",
+        "concentration",
+        "ritual",
+        "description"
+      ],
+      "title": "SpellPayload",
+      "type": "object"
+    },
+    "TextEffect": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "reference_text",
+          "default": "reference_text",
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "text",
+        "source_ids"
+      ],
+      "title": "TextEffect",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9_.:-]+$",
+      "title": "Id",
+      "type": "string"
+    },
+    "ruleset": {
+      "const": "srd-5.1",
+      "default": "srd-5.1",
+      "title": "Ruleset",
+      "type": "string"
+    },
+    "record_version": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Record Version",
+      "type": "integer"
+    },
+    "record_type": {
+      "const": "spell",
+      "default": "spell",
+      "title": "Record Type",
+      "type": "string"
+    },
+    "canonical_name": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Canonical Name",
+      "type": "string"
+    },
+    "aliases": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Aliases",
+      "type": "array"
+    },
+    "source_ids": {
+      "items": {
+        "maxLength": 200,
+        "minLength": 1,
+        "pattern": "^[a-zA-Z0-9_.:-]+$",
+        "type": "string"
+      },
+      "maxItems": 128,
+      "title": "Source Ids",
+      "type": "array"
+    },
+    "extraction_run_id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9_.:-]+$",
+      "title": "Extraction Run Id",
+      "type": "string"
+    },
+    "field_sources": {
+      "additionalProperties": {
+        "items": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Field Sources",
+      "type": "object"
+    },
+    "validation_status": {
+      "default": "extracted",
+      "enum": [
+        "extracted",
+        "validated",
+        "review_required",
+        "rejected"
+      ],
+      "title": "Validation Status",
+      "type": "string"
+    },
+    "review_status": {
+      "default": "review_required",
+      "enum": [
+        "review_required",
+        "approved",
+        "rejected"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    },
+    "execution_status": {
+      "default": "reference_only",
+      "enum": [
+        "executable",
+        "partially_executable",
+        "reference_only",
+        "unsupported"
+      ],
+      "title": "Execution Status",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "normalized_payload": {
+      "$ref": "#/$defs/SpellPayload"
+    }
+  },
+  "required": [
+    "id",
+    "canonical_name",
+    "extraction_run_id",
+    "normalized_payload"
+  ],
+  "title": "SpellRecord",
+  "type": "object"
+}

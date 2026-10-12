@@ -1,0 +1,211 @@
+{
+  "record": {
+    "id": "srd51.condition.blinded",
+    "ruleset": "srd-5.1",
+    "record_version": 1,
+    "record_type": "condition",
+    "canonical_name": "Blinded",
+    "aliases": [],
+    "source_ids": [
+      "srd51-full-001:element:12247",
+      "srd51-full-001:element:12248",
+      "srd51-full-001:element:12249",
+      "srd51-full-001:element:12244"
+    ],
+    "extraction_run_id": "srd51-full-001",
+    "field_sources": {
+      "description": [
+        "srd51-full-001:element:12247",
+        "srd51-full-001:element:12248",
+        "srd51-full-001:element:12249",
+        "srd51-full-001:element:12244"
+      ],
+      "effects": [
+        "srd51-full-001:element:12247",
+        "srd51-full-001:element:12248",
+        "srd51-full-001:element:12249",
+        "srd51-full-001:element:12244"
+      ],
+      "removal_conditions": [
+        "srd51-full-001:element:12247",
+        "srd51-full-001:element:12248",
+        "srd51-full-001:element:12249",
+        "srd51-full-001:element:12244"
+      ]
+    },
+    "validation_status": "validated",
+    "review_status": "review_required",
+    "execution_status": "reference_only",
+    "schema_version": "1",
+    "normalized_payload": {
+      "description": "·A blinded creature can't see and automatically fails any ability check that requires sight.\n·Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage.",
+      "applicability": [],
+      "effects": [
+        {
+          "kind": "reference_text",
+          "text": "·A blinded creature can't see and automatically fails any ability check that requires sight.",
+          "source_ids": [
+            "srd51-full-001:element:12248"
+          ]
+        },
+        {
+          "kind": "reference_text",
+          "text": "·Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage.",
+          "source_ids": [
+            "srd51-full-001:element:12249"
+          ]
+        }
+      ],
+      "removal_conditions": [
+        "A condition lasts either until it is countered (the prone condition is countered by standing up, for example) or for a duration specified by the effect that imposed the condition."
+      ],
+      "related_rule_ids": []
+    }
+  },
+  "sources": [
+    {
+      "id": "srd51-full-001:element:12247",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "Title",
+      "json_pointer": "/data/elements/12247/text",
+      "element_pointer": "/data/elements/12247",
+      "element_id": "99d1f62d89df8ee4ac3a6ac0bdd0fd86ebd07d210fb3e7d6ff6cdac01442873a",
+      "section_hierarchy": [
+        "Appendix PH-A:",
+        "Conditions"
+      ],
+      "page_pointer": "/data/elements/12247/page_number",
+      "physical_page": 358,
+      "printed_page": "358",
+      "printed_page_pointer": "/data/elements/12281/text",
+      "table_location": null,
+      "quote": "Blinded",
+      "quote_sha256": "f37106e829dc9e8c3d7443e412833293b9dde7a8b5e0e092209e47f3aff59306",
+      "coordinates": [
+        0.09232,
+        0.407197,
+        0.160131,
+        0.407197,
+        0.160131,
+        0.417929,
+        0.09232,
+        0.417929
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:12248",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/12248/text",
+      "element_pointer": "/data/elements/12248",
+      "element_id": "d1793ab08ab1228cd3a869f6ed8c8a07c7950e1d0d5c3669830aef00f8c74e05",
+      "section_hierarchy": [
+        "Appendix PH-A:",
+        "Conditions",
+        "Blinded"
+      ],
+      "page_pointer": "/data/elements/12248/page_number",
+      "physical_page": 358,
+      "printed_page": "358",
+      "printed_page_pointer": "/data/elements/12281/text",
+      "table_location": null,
+      "quote": "·A blinded creature can't see and automatically fails any ability check that requires sight.",
+      "quote_sha256": "8748c124d2940839b60eca3a1921da09aa7a8133c6adb14ebbdbc90b9639f6af",
+      "coordinates": [
+        0.09232,
+        0.424874,
+        0.433824,
+        0.424874,
+        0.433824,
+        0.451389,
+        0.09232,
+        0.451389
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:12249",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/12249/text",
+      "element_pointer": "/data/elements/12249",
+      "element_id": "791c2d27c756e53e5a26c2f6b1ad73a38a6f44ad904cfe3456908739a5635c90",
+      "section_hierarchy": [
+        "Appendix PH-A:",
+        "Conditions",
+        "Blinded"
+      ],
+      "page_pointer": "/data/elements/12249/page_number",
+      "physical_page": 358,
+      "printed_page": "358",
+      "printed_page_pointer": "/data/elements/12281/text",
+      "table_location": null,
+      "quote": "·Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage.",
+      "quote_sha256": "8a2b2069eca69cc30bf1e0e250692d00af4e9a84335acdcb16396445b2276e0f",
+      "coordinates": [
+        0.09232,
+        0.455177,
+        0.455065,
+        0.455177,
+        0.455065,
+        0.481061,
+        0.09232,
+        0.481061
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:12244",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/12244/text",
+      "element_pointer": "/data/elements/12244",
+      "element_id": "eb89eac17cdb33f3896cca8cbcfd6c2250a6b7b1007754abe2ad57af37145448",
+      "section_hierarchy": [
+        "Appendix PH-A:",
+        "Conditions"
+      ],
+      "page_pointer": "/data/elements/12244/page_number",
+      "physical_page": 358,
+      "printed_page": "358",
+      "printed_page_pointer": "/data/elements/12281/text",
+      "table_location": null,
+      "quote": "A condition lasts either until it is countered (the prone condition is countered by standing up, for example) or for a duration specified by the effect that imposed the condition.",
+      "quote_sha256": "92d1391dc10b419fd9fdcb7245ca5fa04f267f03b9f7021635661490b44afb7b",
+      "coordinates": [
+        0.090686,
+        0.247475,
+        0.445261,
+        0.247475,
+        0.445261,
+        0.301768,
+        0.090686,
+        0.301768
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "evidence_sha256": "f2ace260bf8cfdfa36e74c6ca2cd9fb64a70dc81ef06834f277428531e4cfa66",
+    "validated_at": "2026-10-12T09:33:20.180150+00:00",
+    "scope": "schema + provenance; semantic review still required"
+  }
+}

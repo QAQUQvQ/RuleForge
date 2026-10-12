@@ -78,7 +78,7 @@ pnpm --dir frontend run build
 
 ## 再次解析
 已有完整成功结果，无需重新消费免费配额。重建数据库使用 publish，不使用 parse。
-官方技能本地快照在 docs/vendor/xparse-parse/SKILL.md；API 适配器只使用官方 CLI、不重写认证或 HTTP 请求、不允许 paid 参数。
+官方 Skill 已安装到 C:/Users/23100/.codex/skills/xparse-parse/SKILL.md，安装记录在 data/setup/skill-installation.json；项目内保留 docs/vendor/xparse-parse/SKILL.md 快照。API 适配器只使用官方 CLI、不重写认证或 HTTP 请求、不允许 paid 参数。
 新任务首次 xParse 命令需要技能要求的私有任务上下文文件，调用后删除；Windows 使用当前用户 ACL 代替仅 chmod。
 若确实需要新解析，先检查当前技能及配额，按技能错误门处理。项目 CLI 支持：
 ```text
@@ -94,3 +94,18 @@ ruleforge parse --executable <official-xparse-native-executable>
 - docs/testing.md：分阶段测试计划
 - docs/rule-coverage.md：覆盖范围
 - ATTRIBUTION.md：SRD 署名与派生内容说明
+
+## M1+ 数据基础（2026-10-12）
+在现有 M1 上增加五类强类型目录、装备分型、来源验证、候选审核/发布服务及 SQLite v2 无损迁移。真实样本 10 条，全部待人工审核、仅供检索；既有皮甲 AC 的 API 和执行范围保持不变。
+
+```powershell
+.venv\Scripts\python.exe scripts/normalize_catalog.py
+.venv\Scripts\python.exe scripts/export_schemas.py
+.venv\Scripts\python.exe -m pytest -q --junitxml=data/local-checks/m1plus-regression.xml
+```
+
+`normalize_catalog.py` 只读取已有证据，不调用 xParse，也不自动审核或发布。相同 ID/版本重复导入幂等；内容变化必须使用新版本。每次标准化的成功/失败报告保存在 `data/normalized/m1plus/reports/`，最新结果位于 `extraction-report.json`。
+
+- [M1+ 验收报告](docs/m1-enhancement-report.md)：逐文件变更、真实字段与来源哈希、测试、边界和 M2 接口。
+- [目录服务](backend/ruleforge/catalog/service.py)：`create_candidate / validate_candidate / review_candidate / publish_record / get_record / list_records`。
+- [v2 迁移](backend/ruleforge/persistence/migration_v2.sql)：保留全部 v1 表及已有数据。

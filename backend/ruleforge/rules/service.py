@@ -52,9 +52,13 @@ def publish(root: Path, run_id: str) -> dict:
         doc = manifest["document"]
         conn.execute("INSERT OR IGNORE INTO documents VALUES (?,?,?,?,?,?,?)",
             (doc["sha256"], "srd-5.1", SOURCE_URL, doc["sha256"], doc["path"], "CC-BY-4.0", manifest["started_at"]))
-        conn.execute("INSERT INTO parse_runs VALUES (?,?,?,?,?,?,?,?,?)",
+        conn.execute("INSERT OR IGNORE INTO parse_runs VALUES (?,?,?,?,?,?,?,?,?)",
             (run_id, doc["sha256"], manifest["parser_version"], "free", "succeeded",
              json.dumps(manifest), None, manifest["started_at"], manifest["finished_at"]))
+        saved_run = conn.execute("SELECT document_id, artifact_manifest FROM parse_runs WHERE id=?", (run_id,)).fetchone()
+        saved_manifest = json.loads(saved_run["artifact_manifest"])
+        if saved_run["document_id"] != doc["sha256"] or saved_manifest["raw"] != manifest["raw"]:
+            raise EvidenceError("existing parse run differs from verified evidence")
         for s in normalized["spans"]:
             conn.execute("INSERT INTO source_spans VALUES (?,?,?,?,?,?,?,?)",
                 (s["id"],run_id,s["json_pointer"],s["physical_page"],s["printed_page"],s["section"],s["quote"],s["quote_sha256"]))

@@ -1,0 +1,215 @@
+{
+  "$defs": {
+    "TableLocation": {
+      "additionalProperties": false,
+      "properties": {
+        "row": {
+          "minimum": 0,
+          "title": "Row",
+          "type": "integer"
+        },
+        "column": {
+          "minimum": 0,
+          "title": "Column",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "row",
+        "column",
+        "text"
+      ],
+      "title": "TableLocation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9_.:-]+$",
+      "title": "Id",
+      "type": "string"
+    },
+    "ruleset": {
+      "const": "srd-5.1",
+      "default": "srd-5.1",
+      "title": "Ruleset",
+      "type": "string"
+    },
+    "document_id": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Document Id",
+      "type": "string"
+    },
+    "run_id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9_.:-]+$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "role": {
+      "maxLength": 100,
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9_.-]*$",
+      "title": "Role",
+      "type": "string"
+    },
+    "fragment_type": {
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Fragment Type",
+      "type": "string"
+    },
+    "json_pointer": {
+      "maxLength": 2000,
+      "pattern": "^(?:/(?:[^~]|~[01])*)*$",
+      "title": "Json Pointer",
+      "type": "string"
+    },
+    "element_pointer": {
+      "maxLength": 2000,
+      "pattern": "^(?:/(?:[^~]|~[01])*)*$",
+      "title": "Element Pointer",
+      "type": "string"
+    },
+    "element_id": {
+      "minLength": 1,
+      "title": "Element Id",
+      "type": "string"
+    },
+    "section_hierarchy": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 50,
+      "title": "Section Hierarchy",
+      "type": "array"
+    },
+    "page_pointer": {
+      "anyOf": [
+        {
+          "maxLength": 2000,
+          "pattern": "^(?:/(?:[^~]|~[01])*)*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Page Pointer"
+    },
+    "physical_page": {
+      "anyOf": [
+        {
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Physical Page"
+    },
+    "printed_page": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Printed Page"
+    },
+    "printed_page_pointer": {
+      "anyOf": [
+        {
+          "maxLength": 2000,
+          "pattern": "^(?:/(?:[^~]|~[01])*)*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Printed Page Pointer"
+    },
+    "table_location": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TableLocation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "quote": {
+      "minLength": 1,
+      "title": "Quote",
+      "type": "string"
+    },
+    "quote_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Quote Sha256",
+      "type": "string"
+    },
+    "coordinates": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Coordinates"
+    },
+    "review_status": {
+      "default": "review_required",
+      "enum": [
+        "review_required",
+        "approved",
+        "rejected"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "document_id",
+    "run_id",
+    "role",
+    "fragment_type",
+    "json_pointer",
+    "element_pointer",
+    "element_id",
+    "quote",
+    "quote_sha256"
+  ],
+  "title": "SourceReference",
+  "type": "object"
+}

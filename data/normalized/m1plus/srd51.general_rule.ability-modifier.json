@@ -1,0 +1,94 @@
+{
+  "record": {
+    "id": "srd51.general_rule.ability-modifier",
+    "ruleset": "srd-5.1",
+    "record_version": 1,
+    "record_type": "general_rule",
+    "canonical_name": "Ability Scores and Modifiers",
+    "aliases": [],
+    "source_ids": [
+      "srd51-full-001:element:1873"
+    ],
+    "extraction_run_id": "srd51-full-001",
+    "field_sources": {
+      "category": [
+        "srd51-full-001:element:1873"
+      ],
+      "description": [
+        "srd51-full-001:element:1873"
+      ],
+      "resolution_steps": [
+        "srd51-full-001:element:1873"
+      ],
+      "effect_specification": [
+        "srd51-full-001:element:1873"
+      ]
+    },
+    "validation_status": "validated",
+    "review_status": "review_required",
+    "execution_status": "reference_only",
+    "schema_version": "1",
+    "normalized_payload": {
+      "category": "ability_modifier",
+      "description": "To determine an ability modifier without consulting the table, subtract 10 from the ability score and then divide the total by 2 (round down).",
+      "trigger": null,
+      "prerequisites": [],
+      "conditions": [],
+      "resolution_steps": [
+        "To determine an ability modifier without consulting the table, subtract 10 from the ability score and then divide the total by 2 (round down)."
+      ],
+      "effect_specification": [
+        {
+          "kind": "reference_text",
+          "text": "To determine an ability modifier without consulting the table, subtract 10 from the ability score and then divide the total by 2 (round down).",
+          "source_ids": [
+            "srd51-full-001:element:1873"
+          ]
+        }
+      ],
+      "related_rule_ids": []
+    }
+  },
+  "sources": [
+    {
+      "id": "srd51-full-001:element:1873",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/1873/text",
+      "element_pointer": "/data/elements/1873",
+      "element_id": "90ddc7ac8ef404089238477250e511ca603821874e9e1aa8b8ea4505e7429e42",
+      "section_hierarchy": [
+        "Using Ability",
+        "Ability Scores and Modifiers"
+      ],
+      "page_pointer": "/data/elements/1873/page_number",
+      "physical_page": 76,
+      "printed_page": "76",
+      "printed_page_pointer": "/data/elements/1882/text",
+      "table_location": null,
+      "quote": "To determine an ability modifier without consulting the table, subtract 10 from the ability score and then divide the total by 2 (round down).",
+      "quote_sha256": "b8db48f3024aa3b4ddb9e07a9eefb9c79ff23d4f599bf199a90adfbcd12e5670",
+      "coordinates": [
+        0.534314,
+        0.246212,
+        0.888072,
+        0.246212,
+        0.888072,
+        0.287879,
+        0.534314,
+        0.287879
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "evidence_sha256": "bfd4f1ba1d5f26673fa89decd1617e7a6b65a536e3f0c524a77a411bd8266ef0",
+    "validated_at": "2026-10-12T09:33:21.391614+00:00",
+    "scope": "schema + provenance; semantic review still required"
+  }
+}

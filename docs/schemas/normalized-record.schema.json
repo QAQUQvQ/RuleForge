@@ -1,0 +1,1995 @@
+{
+  "$defs": {
+    "AdventuringGearDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "default": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "canonical_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Canonical Name",
+          "type": "string"
+        },
+        "display_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Display Name",
+          "type": "string"
+        },
+        "equipment_type": {
+          "const": "adventuring_gear",
+          "default": "adventuring_gear",
+          "title": "Equipment Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "cost": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Money"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "weight": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Weight"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "review_status": {
+          "default": "review_required",
+          "enum": [
+            "review_required",
+            "approved",
+            "rejected"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "usage_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Usage Description"
+        }
+      },
+      "required": [
+        "id",
+        "canonical_name",
+        "display_name",
+        "description",
+        "source_ids"
+      ],
+      "title": "AdventuringGearDefinition",
+      "type": "object"
+    },
+    "ArmorDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "default": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "canonical_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Canonical Name",
+          "type": "string"
+        },
+        "display_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Display Name",
+          "type": "string"
+        },
+        "equipment_type": {
+          "const": "armor",
+          "default": "armor",
+          "title": "Equipment Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "cost": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Money"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "weight": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Weight"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "review_status": {
+          "default": "review_required",
+          "enum": [
+            "review_required",
+            "approved",
+            "rejected"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "armor_category": {
+          "enum": [
+            "light",
+            "medium",
+            "heavy"
+          ],
+          "title": "Armor Category",
+          "type": "string"
+        },
+        "base_ac": {
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Base Ac",
+          "type": "integer"
+        },
+        "dexterity_modifier_policy": {
+          "enum": [
+            "full",
+            "capped",
+            "none"
+          ],
+          "title": "Dexterity Modifier Policy",
+          "type": "string"
+        },
+        "dexterity_modifier_cap": {
+          "anyOf": [
+            {
+              "maximum": 10,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dexterity Modifier Cap"
+        },
+        "strength_requirement": {
+          "anyOf": [
+            {
+              "maximum": 30,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Strength Requirement"
+        },
+        "stealth_disadvantage": {
+          "title": "Stealth Disadvantage",
+          "type": "boolean"
+        },
+        "don_time": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Duration"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "doff_time": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Duration"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "canonical_name",
+        "display_name",
+        "description",
+        "source_ids",
+        "armor_category",
+        "base_ac",
+        "dexterity_modifier_policy",
+        "stealth_disadvantage"
+      ],
+      "title": "ArmorDefinition",
+      "type": "object"
+    },
+    "ClassPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "hit_die": {
+          "$ref": "#/$defs/DiceExpression"
+        },
+        "proficiencies": {
+          "$ref": "#/$defs/Proficiencies"
+        },
+        "progression_columns": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 3,
+          "title": "Progression Columns",
+          "type": "array"
+        },
+        "progression": {
+          "items": {
+            "$ref": "#/$defs/ProgressionRow"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Progression",
+          "type": "array"
+        },
+        "feature_references": {
+          "items": {
+            "$ref": "#/$defs/FeatureReference"
+          },
+          "title": "Feature References",
+          "type": "array"
+        }
+      },
+      "required": [
+        "description",
+        "hit_die",
+        "proficiencies",
+        "progression_columns",
+        "progression",
+        "feature_references"
+      ],
+      "title": "ClassPayload",
+      "type": "object"
+    },
+    "ClassRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "default": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "record_version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Record Version",
+          "type": "integer"
+        },
+        "record_type": {
+          "const": "class",
+          "default": "class",
+          "title": "Record Type",
+          "type": "string"
+        },
+        "canonical_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Canonical Name",
+          "type": "string"
+        },
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Aliases",
+          "type": "array"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "extraction_run_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Extraction Run Id",
+          "type": "string"
+        },
+        "field_sources": {
+          "additionalProperties": {
+            "items": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Field Sources",
+          "type": "object"
+        },
+        "validation_status": {
+          "default": "extracted",
+          "enum": [
+            "extracted",
+            "validated",
+            "review_required",
+            "rejected"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "review_status": {
+          "default": "review_required",
+          "enum": [
+            "review_required",
+            "approved",
+            "rejected"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "execution_status": {
+          "default": "reference_only",
+          "enum": [
+            "executable",
+            "partially_executable",
+            "reference_only",
+            "unsupported"
+          ],
+          "title": "Execution Status",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "normalized_payload": {
+          "$ref": "#/$defs/ClassPayload"
+        }
+      },
+      "required": [
+        "id",
+        "canonical_name",
+        "extraction_run_id",
+        "normalized_payload"
+      ],
+      "title": "ClassRecord",
+      "type": "object"
+    },
+    "ConditionPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "applicability": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Applicability",
+          "type": "array"
+        },
+        "effects": {
+          "items": {
+            "$ref": "#/$defs/TextEffect"
+          },
+          "minItems": 1,
+          "title": "Effects",
+          "type": "array"
+        },
+        "removal_conditions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Removal Conditions",
+          "type": "array"
+        },
+        "related_rule_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "title": "Related Rule Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "description",
+        "effects"
+      ],
+      "title": "ConditionPayload",
+      "type": "object"
+    },
+    "ConditionRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "default": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "record_version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Record Version",
+          "type": "integer"
+        },
+        "record_type": {
+          "const": "condition",
+          "default": "condition",
+          "title": "Record Type",
+          "type": "string"
+        },
+        "canonical_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Canonical Name",
+          "type": "string"
+        },
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Aliases",
+          "type": "array"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "extraction_run_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Extraction Run Id",
+          "type": "string"
+        },
+        "field_sources": {
+          "additionalProperties": {
+            "items": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Field Sources",
+          "type": "object"
+        },
+        "validation_status": {
+          "default": "extracted",
+          "enum": [
+            "extracted",
+            "validated",
+            "review_required",
+            "rejected"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "review_status": {
+          "default": "review_required",
+          "enum": [
+            "review_required",
+            "approved",
+            "rejected"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "execution_status": {
+          "default": "reference_only",
+          "enum": [
+            "executable",
+            "partially_executable",
+            "reference_only",
+            "unsupported"
+          ],
+          "title": "Execution Status",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "normalized_payload": {
+          "$ref": "#/$defs/ConditionPayload"
+        }
+      },
+      "required": [
+        "id",
+        "canonical_name",
+        "extraction_run_id",
+        "normalized_payload"
+      ],
+      "title": "ConditionRecord",
+      "type": "object"
+    },
+    "DiceExpression": {
+      "additionalProperties": false,
+      "properties": {
+        "expression": {
+          "maxLength": 30,
+          "minLength": 3,
+          "title": "Expression",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expression"
+      ],
+      "title": "DiceExpression",
+      "type": "object"
+    },
+    "Duration": {
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "maximum": 100000,
+          "minimum": 0,
+          "title": "Amount",
+          "type": "integer"
+        },
+        "unit": {
+          "enum": [
+            "action",
+            "bonus_action",
+            "reaction",
+            "round",
+            "minute",
+            "hour",
+            "day"
+          ],
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "unit"
+      ],
+      "title": "Duration",
+      "type": "object"
+    },
+    "EquipmentRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "default": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "record_version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Record Version",
+          "type": "integer"
+        },
+        "record_type": {
+          "const": "equipment",
+          "default": "equipment",
+          "title": "Record Type",
+          "type": "string"
+        },
+        "canonical_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Canonical Name",
+          "type": "string"
+        },
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Aliases",
+          "type": "array"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "extraction_run_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Extraction Run Id",
+          "type": "string"
+        },
+        "field_sources": {
+          "additionalProperties": {
+            "items": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Field Sources",
+          "type": "object"
+        },
+        "validation_status": {
+          "default": "extracted",
+          "enum": [
+            "extracted",
+            "validated",
+            "review_required",
+            "rejected"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "review_status": {
+          "default": "review_required",
+          "enum": [
+            "review_required",
+            "approved",
+            "rejected"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "execution_status": {
+          "default": "reference_only",
+          "enum": [
+            "executable",
+            "partially_executable",
+            "reference_only",
+            "unsupported"
+          ],
+          "title": "Execution Status",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "normalized_payload": {
+          "discriminator": {
+            "mapping": {
+              "adventuring_gear": "#/$defs/AdventuringGearDefinition",
+              "armor": "#/$defs/ArmorDefinition",
+              "shield": "#/$defs/ShieldDefinition",
+              "weapon": "#/$defs/WeaponDefinition"
+            },
+            "propertyName": "equipment_type"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/WeaponDefinition"
+            },
+            {
+              "$ref": "#/$defs/ArmorDefinition"
+            },
+            {
+              "$ref": "#/$defs/ShieldDefinition"
+            },
+            {
+              "$ref": "#/$defs/AdventuringGearDefinition"
+            }
+          ],
+          "title": "Normalized Payload"
+        }
+      },
+      "required": [
+        "id",
+        "canonical_name",
+        "extraction_run_id",
+        "normalized_payload"
+      ],
+      "title": "EquipmentRecord",
+      "type": "object"
+    },
+    "FeatureReference": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "rule_id": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rule Id"
+        }
+      },
+      "required": [
+        "name",
+        "source_ids"
+      ],
+      "title": "FeatureReference",
+      "type": "object"
+    },
+    "GeneralRulePayload": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "attack",
+            "armor_class",
+            "ability_modifier",
+            "advantage",
+            "saving_throw",
+            "action_economy",
+            "damage",
+            "hit_points",
+            "other"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "trigger": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Trigger"
+        },
+        "prerequisites": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Prerequisites",
+          "type": "array"
+        },
+        "conditions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Conditions",
+          "type": "array"
+        },
+        "resolution_steps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Resolution Steps",
+          "type": "array"
+        },
+        "effect_specification": {
+          "items": {
+            "$ref": "#/$defs/TextEffect"
+          },
+          "title": "Effect Specification",
+          "type": "array"
+        },
+        "related_rule_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "title": "Related Rule Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "category",
+        "description"
+      ],
+      "title": "GeneralRulePayload",
+      "type": "object"
+    },
+    "GeneralRuleRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "default": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "record_version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Record Version",
+          "type": "integer"
+        },
+        "record_type": {
+          "const": "general_rule",
+          "default": "general_rule",
+          "title": "Record Type",
+          "type": "string"
+        },
+        "canonical_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Canonical Name",
+          "type": "string"
+        },
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Aliases",
+          "type": "array"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "extraction_run_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Extraction Run Id",
+          "type": "string"
+        },
+        "field_sources": {
+          "additionalProperties": {
+            "items": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Field Sources",
+          "type": "object"
+        },
+        "validation_status": {
+          "default": "extracted",
+          "enum": [
+            "extracted",
+            "validated",
+            "review_required",
+            "rejected"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "review_status": {
+          "default": "review_required",
+          "enum": [
+            "review_required",
+            "approved",
+            "rejected"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "execution_status": {
+          "default": "reference_only",
+          "enum": [
+            "executable",
+            "partially_executable",
+            "reference_only",
+            "unsupported"
+          ],
+          "title": "Execution Status",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "normalized_payload": {
+          "$ref": "#/$defs/GeneralRulePayload"
+        }
+      },
+      "required": [
+        "id",
+        "canonical_name",
+        "extraction_run_id",
+        "normalized_payload"
+      ],
+      "title": "GeneralRuleRecord",
+      "type": "object"
+    },
+    "Money": {
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "maxLength": 20,
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,2})?$",
+          "title": "Amount",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "cp",
+            "sp",
+            "ep",
+            "gp",
+            "pp"
+          ],
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "unit"
+      ],
+      "title": "Money",
+      "type": "object"
+    },
+    "Proficiencies": {
+      "additionalProperties": false,
+      "properties": {
+        "armor": {
+          "title": "Armor",
+          "type": "string"
+        },
+        "weapons": {
+          "title": "Weapons",
+          "type": "string"
+        },
+        "tools": {
+          "title": "Tools",
+          "type": "string"
+        },
+        "saving_throws": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Saving Throws",
+          "type": "array"
+        },
+        "skills": {
+          "title": "Skills",
+          "type": "string"
+        }
+      },
+      "required": [
+        "armor",
+        "weapons",
+        "tools",
+        "saving_throws",
+        "skills"
+      ],
+      "title": "Proficiencies",
+      "type": "object"
+    },
+    "ProgressionRow": {
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Level",
+          "type": "integer"
+        },
+        "proficiency_bonus": {
+          "maximum": 6,
+          "minimum": 2,
+          "title": "Proficiency Bonus",
+          "type": "integer"
+        },
+        "feature_names": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Feature Names",
+          "type": "array"
+        },
+        "cells": {
+          "items": {
+            "$ref": "#/$defs/TableCell"
+          },
+          "maxItems": 100,
+          "minItems": 3,
+          "title": "Cells",
+          "type": "array"
+        }
+      },
+      "required": [
+        "level",
+        "proficiency_bonus",
+        "feature_names",
+        "cells"
+      ],
+      "title": "ProgressionRow",
+      "type": "object"
+    },
+    "ShieldDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "default": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "canonical_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Canonical Name",
+          "type": "string"
+        },
+        "display_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Display Name",
+          "type": "string"
+        },
+        "equipment_type": {
+          "const": "shield",
+          "default": "shield",
+          "title": "Equipment Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "cost": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Money"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "weight": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Weight"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "review_status": {
+          "default": "review_required",
+          "enum": [
+            "review_required",
+            "approved",
+            "rejected"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "ac_bonus": {
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Ac Bonus",
+          "type": "integer"
+        },
+        "equipment_requirements": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Equipment Requirements",
+          "type": "array"
+        },
+        "don_time": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Duration"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "doff_time": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Duration"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "canonical_name",
+        "display_name",
+        "description",
+        "source_ids",
+        "ac_bonus",
+        "equipment_requirements"
+      ],
+      "title": "ShieldDefinition",
+      "type": "object"
+    },
+    "SpellComponents": {
+      "additionalProperties": false,
+      "properties": {
+        "verbal": {
+          "title": "Verbal",
+          "type": "boolean"
+        },
+        "somatic": {
+          "title": "Somatic",
+          "type": "boolean"
+        },
+        "material": {
+          "title": "Material",
+          "type": "boolean"
+        },
+        "material_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Material Description"
+        }
+      },
+      "required": [
+        "verbal",
+        "somatic",
+        "material"
+      ],
+      "title": "SpellComponents",
+      "type": "object"
+    },
+    "SpellDamage": {
+      "additionalProperties": false,
+      "properties": {
+        "dice": {
+          "$ref": "#/$defs/DiceExpression"
+        },
+        "damage_type": {
+          "enum": [
+            "acid",
+            "bludgeoning",
+            "cold",
+            "fire",
+            "force",
+            "lightning",
+            "necrotic",
+            "piercing",
+            "poison",
+            "psychic",
+            "radiant",
+            "slashing",
+            "thunder"
+          ],
+          "title": "Damage Type",
+          "type": "string"
+        },
+        "per": {
+          "title": "Per",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "dice",
+        "damage_type",
+        "per",
+        "source_ids"
+      ],
+      "title": "SpellDamage",
+      "type": "object"
+    },
+    "SpellPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "maximum": 9,
+          "minimum": 0,
+          "title": "Level",
+          "type": "integer"
+        },
+        "school": {
+          "enum": [
+            "abjuration",
+            "conjuration",
+            "divination",
+            "enchantment",
+            "evocation",
+            "illusion",
+            "necromancy",
+            "transmutation"
+          ],
+          "title": "School",
+          "type": "string"
+        },
+        "casting_time": {
+          "minLength": 1,
+          "title": "Casting Time",
+          "type": "string"
+        },
+        "range": {
+          "minLength": 1,
+          "title": "Range",
+          "type": "string"
+        },
+        "components": {
+          "$ref": "#/$defs/SpellComponents"
+        },
+        "duration": {
+          "minLength": 1,
+          "title": "Duration",
+          "type": "string"
+        },
+        "concentration": {
+          "title": "Concentration",
+          "type": "boolean"
+        },
+        "ritual": {
+          "title": "Ritual",
+          "type": "boolean"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "higher_levels": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Higher Levels"
+        },
+        "effects": {
+          "items": {
+            "$ref": "#/$defs/TextEffect"
+          },
+          "title": "Effects",
+          "type": "array"
+        },
+        "damage": {
+          "items": {
+            "$ref": "#/$defs/SpellDamage"
+          },
+          "title": "Damage",
+          "type": "array"
+        }
+      },
+      "required": [
+        "level",
+        "school",
+        "casting_time",
+        "range",
+        "components",
+        "duration",
+        "concentration",
+        "ritual",
+        "description"
+      ],
+      "title": "SpellPayload",
+      "type": "object"
+    },
+    "SpellRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "default": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "record_version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Record Version",
+          "type": "integer"
+        },
+        "record_type": {
+          "const": "spell",
+          "default": "spell",
+          "title": "Record Type",
+          "type": "string"
+        },
+        "canonical_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Canonical Name",
+          "type": "string"
+        },
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Aliases",
+          "type": "array"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "extraction_run_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Extraction Run Id",
+          "type": "string"
+        },
+        "field_sources": {
+          "additionalProperties": {
+            "items": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Field Sources",
+          "type": "object"
+        },
+        "validation_status": {
+          "default": "extracted",
+          "enum": [
+            "extracted",
+            "validated",
+            "review_required",
+            "rejected"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "review_status": {
+          "default": "review_required",
+          "enum": [
+            "review_required",
+            "approved",
+            "rejected"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "execution_status": {
+          "default": "reference_only",
+          "enum": [
+            "executable",
+            "partially_executable",
+            "reference_only",
+            "unsupported"
+          ],
+          "title": "Execution Status",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "normalized_payload": {
+          "$ref": "#/$defs/SpellPayload"
+        }
+      },
+      "required": [
+        "id",
+        "canonical_name",
+        "extraction_run_id",
+        "normalized_payload"
+      ],
+      "title": "SpellRecord",
+      "type": "object"
+    },
+    "TableCell": {
+      "additionalProperties": false,
+      "properties": {
+        "row": {
+          "minimum": 0,
+          "title": "Row",
+          "type": "integer"
+        },
+        "column": {
+          "minimum": 0,
+          "title": "Column",
+          "type": "integer"
+        },
+        "origin_row": {
+          "minimum": 0,
+          "title": "Origin Row",
+          "type": "integer"
+        },
+        "origin_column": {
+          "minimum": 0,
+          "title": "Origin Column",
+          "type": "integer"
+        },
+        "rowspan": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Rowspan",
+          "type": "integer"
+        },
+        "colspan": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Colspan",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "source_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "row",
+        "column",
+        "origin_row",
+        "origin_column",
+        "rowspan",
+        "colspan",
+        "text",
+        "source_id"
+      ],
+      "title": "TableCell",
+      "type": "object"
+    },
+    "TextEffect": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "reference_text",
+          "default": "reference_text",
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "text",
+        "source_ids"
+      ],
+      "title": "TextEffect",
+      "type": "object"
+    },
+    "WeaponDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "default": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "canonical_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Canonical Name",
+          "type": "string"
+        },
+        "display_name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Display Name",
+          "type": "string"
+        },
+        "equipment_type": {
+          "const": "weapon",
+          "default": "weapon",
+          "title": "Equipment Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "cost": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Money"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "weight": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Weight"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "review_status": {
+          "default": "review_required",
+          "enum": [
+            "review_required",
+            "approved",
+            "rejected"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "proficiency_category": {
+          "enum": [
+            "simple",
+            "martial"
+          ],
+          "title": "Proficiency Category",
+          "type": "string"
+        },
+        "attack_category": {
+          "enum": [
+            "melee",
+            "ranged"
+          ],
+          "title": "Attack Category",
+          "type": "string"
+        },
+        "damage_dice": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DiceExpression"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "damage_type": {
+          "anyOf": [
+            {
+              "enum": [
+                "acid",
+                "bludgeoning",
+                "cold",
+                "fire",
+                "force",
+                "lightning",
+                "necrotic",
+                "piercing",
+                "poison",
+                "psychic",
+                "radiant",
+                "slashing",
+                "thunder"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Damage Type"
+        },
+        "weapon_properties": {
+          "items": {
+            "enum": [
+              "ammunition",
+              "finesse",
+              "heavy",
+              "light",
+              "loading",
+              "reach",
+              "special",
+              "thrown",
+              "two-handed",
+              "versatile"
+            ],
+            "type": "string"
+          },
+          "title": "Weapon Properties",
+          "type": "array"
+        },
+        "normal_range": {
+          "anyOf": [
+            {
+              "maximum": 10000,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Normal Range"
+        },
+        "long_range": {
+          "anyOf": [
+            {
+              "maximum": 10000,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Long Range"
+        },
+        "range_unit": {
+          "const": "ft",
+          "default": "ft",
+          "title": "Range Unit",
+          "type": "string"
+        },
+        "versatile_damage_dice": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DiceExpression"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "special_rules": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Special Rules",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "canonical_name",
+        "display_name",
+        "description",
+        "source_ids",
+        "proficiency_category",
+        "attack_category",
+        "damage_dice",
+        "damage_type"
+      ],
+      "title": "WeaponDefinition",
+      "type": "object"
+    },
+    "Weight": {
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "maxLength": 20,
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,3})?$",
+          "title": "Amount",
+          "type": "string"
+        },
+        "unit": {
+          "const": "lb",
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "unit"
+      ],
+      "title": "Weight",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "class": "#/$defs/ClassRecord",
+      "condition": "#/$defs/ConditionRecord",
+      "equipment": "#/$defs/EquipmentRecord",
+      "general_rule": "#/$defs/GeneralRuleRecord",
+      "spell": "#/$defs/SpellRecord"
+    },
+    "propertyName": "record_type"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/EquipmentRecord"
+    },
+    {
+      "$ref": "#/$defs/SpellRecord"
+    },
+    {
+      "$ref": "#/$defs/ClassRecord"
+    },
+    {
+      "$ref": "#/$defs/ConditionRecord"
+    },
+    {
+      "$ref": "#/$defs/GeneralRuleRecord"
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "record": {
+    "id": "srd51.equipment.dagger",
+    "ruleset": "srd-5.1",
+    "record_version": 1,
+    "record_type": "equipment",
+    "canonical_name": "Dagger",
+    "aliases": [],
+    "source_ids": [
+      "srd51-full-001:element:1692:r1c0",
+      "srd51-full-001:element:1689"
+    ],
+    "extraction_run_id": "srd51-full-001",
+    "field_sources": {
+      "equipment_type": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "description": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "cost": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "weight": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "proficiency_category": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "attack_category": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "damage_dice": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "damage_type": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "weapon_properties": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "normal_range": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "long_range": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "canonical_name": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "display_name": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ]
+    },
+    "validation_status": "validated",
+    "review_status": "review_required",
+    "execution_status": "reference_only",
+    "schema_version": "1",
+    "normalized_payload": {
+      "id": "srd51.equipment.dagger",
+      "ruleset": "srd-5.1",
+      "canonical_name": "Dagger",
+      "display_name": "Dagger",
+      "equipment_type": "weapon",
+      "description": "Dagger | 2gp | 1d4 piercing | 1lb. | Finesse, light, thrown (range 20/60)",
+      "cost": {
+        "amount": "2",
+        "unit": "gp"
+      },
+      "weight": {
+        "amount": "1",
+        "unit": "lb"
+      },
+      "source_ids": [
+        "srd51-full-001:element:1692:r1c0",
+        "srd51-full-001:element:1689"
+      ],
+      "review_status": "review_required",
+      "schema_version": "1",
+      "proficiency_category": "simple",
+      "attack_category": "melee",
+      "damage_dice": {
+        "expression": "1d4"
+      },
+      "damage_type": "piercing",
+      "weapon_properties": [
+        "finesse",
+        "light",
+        "thrown"
+      ],
+      "normal_range": 20,
+      "long_range": 60,
+      "range_unit": "ft",
+      "versatile_damage_dice": null,
+      "special_rules": []
+    }
+  },
+  "sources": [
+    {
+      "id": "srd51-full-001:element:1692:r1c0",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "weapon_table",
+      "fragment_type": "Table",
+      "json_pointer": "/data/elements/1692/text",
+      "element_pointer": "/data/elements/1692",
+      "element_id": "f3d953510581620a83c340f25afda694c7ca023a9048d6d70e23f90ef8dc2595",
+      "section_hierarchy": [
+        "Languages",
+        "Getting Into and Out of Armor",
+        "Special Weapons"
+      ],
+      "page_pointer": "/data/elements/1692/page_number",
+      "physical_page": 66,
+      "printed_page": "66",
+      "printed_page_pointer": "/data/elements/1701/text",
+      "table_location": {
+        "row": 1,
+        "column": 0,
+        "text": "Dagger"
+      },
+      "quote": "<table border=\"1\" ><tr>\n<td>Club</td>\n<td>1 sp</td>\n<td>1d4 bludgeoning</td>\n<td>2 lb.</td>\n<td>Light</td>\n</tr><tr>\n<td>Dagger</td>\n<td>2gp</td>\n<td>1d4 piercing</td>\n<td>1lb.</td>\n<td>Finesse, light, thrown (range 20/60)</td>\n</tr><tr>\n<td>Greatclub</td>\n<td>2 sp</td>\n<td>1d8 bludgeoning</td>\n<td>10 lb.</td>\n<td>Two-handed</td>\n</tr><tr>\n<td>Handaxe</td>\n<td>5gp</td>\n<td>1d6 slashing</td>\n<td>2 lb.</td>\n<td>Light,thrown(range 20/60)</td>\n</tr><tr>\n<td>Javelin</td>\n<td>5sp</td>\n<td>1d6 piercing</td>\n<td>2 lb.</td>\n<td>Thrown (range 30/120)</td>\n</tr><tr>\n<td>Light hammer</td>\n<td>2gp</td>\n<td>1d4 bludgeoning</td>\n<td>2 lb.</td>\n<td>Light,thrown(range 20/60)</td>\n</tr><tr>\n<td>Mace</td>\n<td>5gp</td>\n<td>1d6 bludgeoning</td>\n<td>4 lb.</td>\n<td>-</td>\n</tr><tr>\n<td>Quarterstaff</td>\n<td>2 sp</td>\n<td>1d6 bludgeoning</td>\n<td>4 lb.</td>\n<td>Versatile(1d8)</td>\n</tr><tr>\n<td>Sickle</td>\n<td>1gp</td>\n<td>1d4 slashing</td>\n<td>2 lb.</td>\n<td>Light</td>\n</tr><tr>\n<td>Spear</td>\n<td>1gp</td>\n<td>1d6 piercing</td>\n<td>3 lb.</td>\n<td>Thrown (range 20/60), versatile (1d8)</td>\n</tr><tr>\n<td>Simple Ranged Weapons</td>\n<td colspan=\"4\"></td>\n</tr><tr>\n<td>Crossbow,light</td>\n<td>25 gp</td>\n<td>1d8 piercing</td>\n<td>5 lb.</td>\n<td>Ammunition (range 80/320),loading,two-handed</td>\n</tr><tr>\n<td>Dart</td>\n<td>5cp</td>\n<td>1d4 piercing</td>\n<td>1/4 lb.</td>\n<td>Finesse, thrown (range 20/60)</td>\n</tr><tr>\n<td>Shortbow</td>\n<td>25 gp</td>\n<td>1d6 piercing</td>\n<td>2 lb.</td>\n<td>Ammunition (range 80/320),two-handed</td>\n</tr><tr>\n<td>Sling</td>\n<td>1 sp</td>\n<td>1d4 bludgeoning</td>\n<td>-</td>\n<td>Ammunition (range 30/120)</td>\n</tr><tr>\n<td>Martial Melee Weapons</td>\n<td colspan=\"4\"></td>\n</tr><tr>\n<td>Battleaxe</td>\n<td>10gp</td>\n<td>1d8 slashing</td>\n<td>4 lb.</td>\n<td>Versatile(1d10)</td>\n</tr><tr>\n<td>Flail</td>\n<td>10 gp</td>\n<td>1d8 bludgeoning</td>\n<td>2 lb.</td>\n<td>-</td>\n</tr><tr>\n<td>Glaive</td>\n<td>20gp</td>\n<td>1d10 slashing</td>\n<td>6 lb.</td>\n<td>Heavy,reach,two-handed</td>\n</tr><tr>\n<td>Greataxe</td>\n<td>30 gp</td>\n<td>1d12 slashing</td>\n<td>7 lb.</td>\n<td>Heavy,two-handed</td>\n</tr><tr>\n<td>Greatsword</td>\n<td>50gp</td>\n<td>2d6 slashing</td>\n<td>6lb.</td>\n<td>Heavy,two-handed</td>\n</tr><tr>\n<td>Halberd</td>\n<td>20 gp</td>\n<td>1d10 slashing</td>\n<td>6 lb.</td>\n<td>Heavy,reach,two-handed</td>\n</tr><tr>\n<td>Lance</td>\n<td>10 gp</td>\n<td>1d12 piercing</td>\n<td>6 lb.</td>\n<td>Reach,special</td>\n</tr><tr>\n<td>Longsword</td>\n<td>15 gp</td>\n<td>1d8 slashing</td>\n<td>3 lb.</td>\n<td>Versatile(1d10)</td>\n</tr><tr>\n<td>Maul</td>\n<td>10gp</td>\n<td>2d6 bludgeoning</td>\n<td>10 lb.</td>\n<td>Heavy,two-handed</td>\n</tr><tr>\n<td>Morningstar</td>\n<td>15gp</td>\n<td>1d8 piercing</td>\n<td>4 lb.</td>\n<td>-</td>\n</tr><tr>\n<td>Pike</td>\n<td>5gp</td>\n<td>1d10 piercing</td>\n<td>18lb.</td>\n<td>Heavy,reach, two-handed</td>\n</tr><tr>\n<td>Rapier</td>\n<td>25gp</td>\n<td>1d8 piercing</td>\n<td>2 lb.</td>\n<td>Finesse</td>\n</tr><tr>\n<td>Scimitar</td>\n<td>25 gp</td>\n<td>1d6 slashing</td>\n<td>3 lb.</td>\n<td>Finesse,light</td>\n</tr><tr>\n<td>Shortsword</td>\n<td>10gp</td>\n<td>1d6 piercing</td>\n<td>2 lb.</td>\n<td>Finesse,light</td>\n</tr><tr>\n<td>Trident</td>\n<td>5gp</td>\n<td>1d6 piercing</td>\n<td>4 lb.</td>\n<td>Thrown (range 20/60), versatile (1d8)</td>\n</tr><tr>\n<td>War pick</td>\n<td>5gp</td>\n<td>1d8 piercing</td>\n<td>2 lb.</td>\n<td>-</td>\n</tr><tr>\n<td>Warhammer</td>\n<td>15 gp</td>\n<td>1d8 bludgeoning</td>\n<td>2 lb.</td>\n<td>Versatile (1d10)</td>\n</tr><tr>\n<td>Whip</td>\n<td>2gp</td>\n<td>1d4 slashing</td>\n<td>3 lb.</td>\n<td>Finesse,reach</td>\n</tr><tr>\n<td>Martial Ranged Weapons</td>\n<td colspan=\"2\"></td>\n<td></td>\n<td></td>\n</tr><tr>\n<td>Blowgun</td>\n<td>10 gp</td>\n<td>1 piercing</td>\n<td>1lb.</td>\n<td>Ammunition (range 25/100),loading</td>\n</tr><tr>\n<td>Crossbow,hand</td>\n<td>75gp</td>\n<td>1d6 piercing</td>\n<td>3 lb.</td>\n<td>Ammunition (range 30/120), light, loading</td>\n</tr><tr>\n<td>Crossbow,heavy</td>\n<td>50 gp</td>\n<td>1d10 piercing</td>\n<td>18 lb.</td>\n<td>Ammunition (range 100/400), heavy,loading,two-handed</td>\n</tr><tr>\n<td>Longbow</td>\n<td>50 gp</td>\n<td>1d8 piercing</td>\n<td>2 lb.</td>\n<td>Ammunition (range 150/600),heavy, two-handed</td>\n</tr><tr>\n<td>Net</td>\n<td>1gp</td>\n<td>-</td>\n<td>3 lb.</td>\n<td>Special, thrown (range 5/15)</td>\n</tr></table>",
+      "quote_sha256": "45748e198f091bc8fed6fb05eca669048d07585f3f257dad71285d39db615145",
+      "coordinates": [
+        0.085784,
+        0.088384,
+        0.854575,
+        0.088384,
+        0.855392,
+        0.648359,
+        0.086601,
+        0.648359
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:1689",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "weapon_category",
+      "fragment_type": "Table",
+      "json_pointer": "/data/elements/1689/text",
+      "element_pointer": "/data/elements/1689",
+      "element_id": "d6a775696b65e1c7de2242e7ed77abc8d728720aa1f44b04130164d2cf93f9e5",
+      "section_hierarchy": [
+        "Languages",
+        "Getting Into and Out of Armor",
+        "Special Weapons"
+      ],
+      "page_pointer": "/data/elements/1689/page_number",
+      "physical_page": 65,
+      "printed_page": "65",
+      "printed_page_pointer": "/data/elements/1691/text",
+      "table_location": null,
+      "quote": "<table border=\"1\" ><tr>\n<td colspan=\"5\">Weapons</td>\n</tr><tr>\n<td>Name</td>\n<td>Cost</td>\n<td>Damage</td>\n<td>Weight</td>\n<td> Properties</td>\n</tr><tr>\n<td>Simple Melee Weapons</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr></table>",
+      "quote_sha256": "4520d9e37fd67ccae096dfd8d02c8b1c31b81883e89f38685529025ae452c481",
+      "coordinates": [
+        0.088235,
+        0.826389,
+        0.576797,
+        0.826389,
+        0.576797,
+        0.874369,
+        0.088235,
+        0.875631
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "evidence_sha256": "0f6078f7e4b6e2047e3f457a537798917224a8322e925d19d4d050e90923ecc0",
+    "validated_at": "2026-10-12T09:32:33.533163+00:00",
+    "scope": "schema + provenance; semantic review still required"
+  }
+}

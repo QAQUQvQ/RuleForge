@@ -1,0 +1,371 @@
+{
+  "$defs": {
+    "ClassPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "hit_die": {
+          "$ref": "#/$defs/DiceExpression"
+        },
+        "proficiencies": {
+          "$ref": "#/$defs/Proficiencies"
+        },
+        "progression_columns": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 3,
+          "title": "Progression Columns",
+          "type": "array"
+        },
+        "progression": {
+          "items": {
+            "$ref": "#/$defs/ProgressionRow"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Progression",
+          "type": "array"
+        },
+        "feature_references": {
+          "items": {
+            "$ref": "#/$defs/FeatureReference"
+          },
+          "title": "Feature References",
+          "type": "array"
+        }
+      },
+      "required": [
+        "description",
+        "hit_die",
+        "proficiencies",
+        "progression_columns",
+        "progression",
+        "feature_references"
+      ],
+      "title": "ClassPayload",
+      "type": "object"
+    },
+    "DiceExpression": {
+      "additionalProperties": false,
+      "properties": {
+        "expression": {
+          "maxLength": 30,
+          "minLength": 3,
+          "title": "Expression",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expression"
+      ],
+      "title": "DiceExpression",
+      "type": "object"
+    },
+    "FeatureReference": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "rule_id": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rule Id"
+        }
+      },
+      "required": [
+        "name",
+        "source_ids"
+      ],
+      "title": "FeatureReference",
+      "type": "object"
+    },
+    "Proficiencies": {
+      "additionalProperties": false,
+      "properties": {
+        "armor": {
+          "title": "Armor",
+          "type": "string"
+        },
+        "weapons": {
+          "title": "Weapons",
+          "type": "string"
+        },
+        "tools": {
+          "title": "Tools",
+          "type": "string"
+        },
+        "saving_throws": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Saving Throws",
+          "type": "array"
+        },
+        "skills": {
+          "title": "Skills",
+          "type": "string"
+        }
+      },
+      "required": [
+        "armor",
+        "weapons",
+        "tools",
+        "saving_throws",
+        "skills"
+      ],
+      "title": "Proficiencies",
+      "type": "object"
+    },
+    "ProgressionRow": {
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Level",
+          "type": "integer"
+        },
+        "proficiency_bonus": {
+          "maximum": 6,
+          "minimum": 2,
+          "title": "Proficiency Bonus",
+          "type": "integer"
+        },
+        "feature_names": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Feature Names",
+          "type": "array"
+        },
+        "cells": {
+          "items": {
+            "$ref": "#/$defs/TableCell"
+          },
+          "maxItems": 100,
+          "minItems": 3,
+          "title": "Cells",
+          "type": "array"
+        }
+      },
+      "required": [
+        "level",
+        "proficiency_bonus",
+        "feature_names",
+        "cells"
+      ],
+      "title": "ProgressionRow",
+      "type": "object"
+    },
+    "TableCell": {
+      "additionalProperties": false,
+      "properties": {
+        "row": {
+          "minimum": 0,
+          "title": "Row",
+          "type": "integer"
+        },
+        "column": {
+          "minimum": 0,
+          "title": "Column",
+          "type": "integer"
+        },
+        "origin_row": {
+          "minimum": 0,
+          "title": "Origin Row",
+          "type": "integer"
+        },
+        "origin_column": {
+          "minimum": 0,
+          "title": "Origin Column",
+          "type": "integer"
+        },
+        "rowspan": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Rowspan",
+          "type": "integer"
+        },
+        "colspan": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Colspan",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "source_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "row",
+        "column",
+        "origin_row",
+        "origin_column",
+        "rowspan",
+        "colspan",
+        "text",
+        "source_id"
+      ],
+      "title": "TableCell",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9_.:-]+$",
+      "title": "Id",
+      "type": "string"
+    },
+    "ruleset": {
+      "const": "srd-5.1",
+      "default": "srd-5.1",
+      "title": "Ruleset",
+      "type": "string"
+    },
+    "record_version": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Record Version",
+      "type": "integer"
+    },
+    "record_type": {
+      "const": "class",
+      "default": "class",
+      "title": "Record Type",
+      "type": "string"
+    },
+    "canonical_name": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Canonical Name",
+      "type": "string"
+    },
+    "aliases": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Aliases",
+      "type": "array"
+    },
+    "source_ids": {
+      "items": {
+        "maxLength": 200,
+        "minLength": 1,
+        "pattern": "^[a-zA-Z0-9_.:-]+$",
+        "type": "string"
+      },
+      "maxItems": 128,
+      "title": "Source Ids",
+      "type": "array"
+    },
+    "extraction_run_id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9_.:-]+$",
+      "title": "Extraction Run Id",
+      "type": "string"
+    },
+    "field_sources": {
+      "additionalProperties": {
+        "items": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Field Sources",
+      "type": "object"
+    },
+    "validation_status": {
+      "default": "extracted",
+      "enum": [
+        "extracted",
+        "validated",
+        "review_required",
+        "rejected"
+      ],
+      "title": "Validation Status",
+      "type": "string"
+    },
+    "review_status": {
+      "default": "review_required",
+      "enum": [
+        "review_required",
+        "approved",
+        "rejected"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    },
+    "execution_status": {
+      "default": "reference_only",
+      "enum": [
+        "executable",
+        "partially_executable",
+        "reference_only",
+        "unsupported"
+      ],
+      "title": "Execution Status",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "normalized_payload": {
+      "$ref": "#/$defs/ClassPayload"
+    }
+  },
+  "required": [
+    "id",
+    "canonical_name",
+    "extraction_run_id",
+    "normalized_payload"
+  ],
+  "title": "ClassRecord",
+  "type": "object"
+}

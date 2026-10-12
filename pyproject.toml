@@ -19,7 +19,7 @@ ruleforge = "ruleforge.cli:main"
 where = ["backend"]
 
 [tool.setuptools.package-data]
-"ruleforge.persistence" = ["schema.sql"]
+"ruleforge.persistence" = ["schema.sql", "migration_v2.sql"]
 
 [tool.pytest.ini_options]
 testpaths = ["backend/tests"]

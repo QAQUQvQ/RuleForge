@@ -1,0 +1,300 @@
+{
+  "record": {
+    "id": "srd51.equipment.chain-shirt",
+    "ruleset": "srd-5.1",
+    "record_version": 1,
+    "record_type": "equipment",
+    "canonical_name": "Chain shirt",
+    "aliases": [],
+    "source_ids": [
+      "srd51-full-001:element:1647:r4c0",
+      "srd51-full-001:element:1631",
+      "srd51-full-001:element:1629",
+      "srd51-full-001:element:1653:r2c0"
+    ],
+    "extraction_run_id": "srd51-full-001",
+    "field_sources": {
+      "equipment_type": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "description": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "cost": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "weight": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "armor_category": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "base_ac": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "dexterity_modifier_policy": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "dexterity_modifier_cap": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "strength_requirement": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "stealth_disadvantage": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "don_time": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "doff_time": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "canonical_name": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "display_name": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ]
+    },
+    "validation_status": "validated",
+    "review_status": "review_required",
+    "execution_status": "reference_only",
+    "schema_version": "1",
+    "normalized_payload": {
+      "id": "srd51.equipment.chain-shirt",
+      "ruleset": "srd-5.1",
+      "canonical_name": "Chain shirt",
+      "display_name": "Chain shirt",
+      "equipment_type": "armor",
+      "description": "**Chain** **Shirt.** Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather.This armor offers modest protection to the wearer's upper body and allows the sound of the ",
+      "cost": {
+        "amount": "50",
+        "unit": "gp"
+      },
+      "weight": {
+        "amount": "20",
+        "unit": "lb"
+      },
+      "source_ids": [
+        "srd51-full-001:element:1647:r4c0",
+        "srd51-full-001:element:1631",
+        "srd51-full-001:element:1629",
+        "srd51-full-001:element:1653:r2c0"
+      ],
+      "review_status": "review_required",
+      "schema_version": "1",
+      "armor_category": "medium",
+      "base_ac": 13,
+      "dexterity_modifier_policy": "capped",
+      "dexterity_modifier_cap": 2,
+      "strength_requirement": null,
+      "stealth_disadvantage": false,
+      "don_time": {
+        "amount": 5,
+        "unit": "minute"
+      },
+      "doff_time": {
+        "amount": 1,
+        "unit": "minute"
+      }
+    }
+  },
+  "sources": [
+    {
+      "id": "srd51-full-001:element:1647:r4c0",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "armor_table",
+      "fragment_type": "Table",
+      "json_pointer": "/data/elements/1647/text",
+      "element_pointer": "/data/elements/1647",
+      "element_id": "bee293c2781f9abb4ef16e4956aa1659117127dc9a7ce14bbd95c899d0b66406",
+      "section_hierarchy": [
+        "Languages",
+        "Languages",
+        "Heavy Armor"
+      ],
+      "page_pointer": "/data/elements/1647/page_number",
+      "physical_page": 64,
+      "printed_page": "64",
+      "printed_page_pointer": "/data/elements/1667/text",
+      "table_location": {
+        "row": 4,
+        "column": 0,
+        "text": "Chain shirt"
+      },
+      "quote": "<table border=\"1\" ><tr>\n<td>Leather</td>\n<td>10gp</td>\n<td>$11+Dexmodifier$</td>\n<td>-</td>\n<td>-</td>\n<td>10 lb.</td>\n</tr><tr>\n<td>Studded leather</td>\n<td>45gp</td>\n<td>$12+Dexmodifier$</td>\n<td>-</td>\n<td>-</td>\n<td>13 lb.</td>\n</tr><tr>\n<td>Medium Armor</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr><tr>\n<td>Hide</td>\n<td>10gp</td>\n<td>12+Dex modifier (max 2)</td>\n<td>-</td>\n<td>-</td>\n<td>12 lb.</td>\n</tr><tr>\n<td>Chain shirt</td>\n<td>50gp</td>\n<td>$13+Dexmodifier(max2)$</td>\n<td>-</td>\n<td>-</td>\n<td>20 lb.</td>\n</tr><tr>\n<td>Scale mail</td>\n<td>50 gp</td>\n<td>$14+Dexmodifier(max2)$</td>\n<td></td>\n<td>Disadvantage</td>\n<td>45 lb.</td>\n</tr><tr>\n<td>Breastplate</td>\n<td>400gp</td>\n<td>$14+Dexmodifier(max2)$</td>\n<td>-</td>\n<td>-</td>\n<td>20 lb.</td>\n</tr><tr>\n<td>Half plate</td>\n<td>750gp</td>\n<td>$15+Dex$modifier (max 2)</td>\n<td>-</td>\n<td>Disadvantage</td>\n<td>40 lb.</td>\n</tr><tr>\n<td>Heavy Armor</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr><tr>\n<td>Ring mail</td>\n<td>30gp</td>\n<td>14</td>\n<td>-</td>\n<td>Disadvantage</td>\n<td>40 lb.</td>\n</tr><tr>\n<td>Chain mail</td>\n<td>75gp</td>\n<td>16</td>\n<td>Str 13</td>\n<td>Disadvantage</td>\n<td>55 lb.</td>\n</tr><tr>\n<td>Splint</td>\n<td>200 gp</td>\n<td>17</td>\n<td>Str 15</td>\n<td>Disadvantage</td>\n<td>60 lb.</td>\n</tr><tr>\n<td>Plate</td>\n<td>1,500 gp</td>\n<td>18</td>\n<td>Str 15</td>\n<td>Disadvantage</td>\n<td>65 lb.</td>\n</tr><tr>\n<td>Shield</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr><tr>\n<td>Shield</td>\n<td>10gp</td>\n<td>+2</td>\n<td>-</td>\n<td>-</td>\n<td>6 lb.</td>\n</tr></table>",
+      "quote_sha256": "d0bd372b33a89b44f6ff6060da320013afe00c2e845c7925840729174e800b8d",
+      "coordinates": [
+        0.08415,
+        0.089015,
+        0.704248,
+        0.089646,
+        0.705065,
+        0.301768,
+        0.083333,
+        0.301136
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:1631",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/1631/text",
+      "element_pointer": "/data/elements/1631",
+      "element_id": "a8517fcc526be6ee9a5150e99f0fc0106791c9ea2e4adfcebb7797daef759ae0",
+      "section_hierarchy": [
+        "Languages",
+        "Languages",
+        "Medium Armor"
+      ],
+      "page_pointer": "/data/elements/1631/page_number",
+      "physical_page": 63,
+      "printed_page": "63",
+      "printed_page_pointer": "/data/elements/1646/text",
+      "table_location": null,
+      "quote": "**Chain** **Shirt.** Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather.This armor offers modest protection to the wearer's upper body and allows the sound of the ",
+      "quote_sha256": "fa1b124e648d80e38499a815240153dbea90f66688e31d87b6ea5e544b20220a",
+      "coordinates": [
+        0.090686,
+        0.741793,
+        0.45098,
+        0.741793,
+        0.45098,
+        0.797348,
+        0.090686,
+        0.797348
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:1629",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/1629/text",
+      "element_pointer": "/data/elements/1629",
+      "element_id": "de993ddcb607e0bd7ce5bbecf557006ff8255544fc3f3ee31102c97f08c3dead",
+      "section_hierarchy": [
+        "Languages",
+        "Languages",
+        "Medium Armor"
+      ],
+      "page_pointer": "/data/elements/1629/page_number",
+      "physical_page": 63,
+      "printed_page": "63",
+      "printed_page_pointer": "/data/elements/1646/text",
+      "table_location": null,
+      "quote": "Medium armor offers more protection than light armor, but it also impairs movement more. If you wear medium armor, you add your Dexterity modifier, to a maximum $f+2$ ,to the base number from your armor type to determine your Armor Class.",
+      "quote_sha256": "6a21d73f9c4a9913148e148194947a7690c154c5ceeb898595a820489ac0ab8c",
+      "coordinates": [
+        0.090686,
+        0.594066,
+        0.44281,
+        0.594066,
+        0.44281,
+        0.677399,
+        0.090686,
+        0.677399
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:1653:r2c0",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "armor_timing",
+      "fragment_type": "Table",
+      "json_pointer": "/data/elements/1653/text",
+      "element_pointer": "/data/elements/1653",
+      "element_id": "74fe9bc6f55487b0601e51173b0fcd4c58fff36b8dd72d7f02ec91f5f3ab8550",
+      "section_hierarchy": [
+        "Languages",
+        "Getting Into and Out of Armor"
+      ],
+      "page_pointer": "/data/elements/1653/page_number",
+      "physical_page": 64,
+      "printed_page": "64",
+      "printed_page_pointer": "/data/elements/1667/text",
+      "table_location": {
+        "row": 2,
+        "column": 0,
+        "text": "Medium Armor"
+      },
+      "quote": "<table border=\"1\" ><tr>\n<td>Category</td>\n<td>Don</td>\n<td>Doff</td>\n</tr><tr>\n<td>Light Armor</td>\n<td>1 minute</td>\n<td>1 minute</td>\n</tr><tr>\n<td>Medium Armor</td>\n<td>5 minutes</td>\n<td>1 minute</td>\n</tr><tr>\n<td>Heavy Armor</td>\n<td>10 minutes</td>\n<td>5 minutes</td>\n</tr><tr>\n<td>Shield</td>\n<td>1 action</td>\n<td>1 action</td>\n</tr></table>",
+      "quote_sha256": "28bc940f8fc061fad17c4d84e1a68560f8af66ad7459a5cc56d1a729ad7cca77",
+      "coordinates": [
+        0.089052,
+        0.476641,
+        0.359477,
+        0.476641,
+        0.359477,
+        0.546086,
+        0.089052,
+        0.545455
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "evidence_sha256": "1b2298bb7bad2037218eafdb2d815464e0902d1c6f7da04d36628b5c0358cf8e",
+    "validated_at": "2026-10-12T09:32:43.355965+00:00",
+    "scope": "schema + provenance; semantic review still required"
+  }
+}

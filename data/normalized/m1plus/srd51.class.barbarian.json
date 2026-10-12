@@ -1,0 +1,1829 @@
+{
+  "record": {
+    "id": "srd51.class.barbarian",
+    "ruleset": "srd-5.1",
+    "record_version": 1,
+    "record_type": "class",
+    "canonical_name": "Barbarian",
+    "aliases": [],
+    "source_ids": [
+      "srd51-full-001:element:175",
+      "srd51-full-001:element:177",
+      "srd51-full-001:element:179",
+      "srd51-full-001:element:183",
+      "srd51-full-001:element:184",
+      "srd51-full-001:element:185",
+      "srd51-full-001:element:186",
+      "srd51-full-001:element:187",
+      "srd51-full-001:element:194",
+      "srd51-full-001:element:195"
+    ],
+    "extraction_run_id": "srd51-full-001",
+    "field_sources": {
+      "description": [
+        "srd51-full-001:element:175",
+        "srd51-full-001:element:177",
+        "srd51-full-001:element:179",
+        "srd51-full-001:element:183",
+        "srd51-full-001:element:184",
+        "srd51-full-001:element:185",
+        "srd51-full-001:element:186",
+        "srd51-full-001:element:187",
+        "srd51-full-001:element:194",
+        "srd51-full-001:element:195"
+      ],
+      "hit_die": [
+        "srd51-full-001:element:175",
+        "srd51-full-001:element:177",
+        "srd51-full-001:element:179",
+        "srd51-full-001:element:183",
+        "srd51-full-001:element:184",
+        "srd51-full-001:element:185",
+        "srd51-full-001:element:186",
+        "srd51-full-001:element:187",
+        "srd51-full-001:element:194",
+        "srd51-full-001:element:195"
+      ],
+      "proficiencies": [
+        "srd51-full-001:element:175",
+        "srd51-full-001:element:177",
+        "srd51-full-001:element:179",
+        "srd51-full-001:element:183",
+        "srd51-full-001:element:184",
+        "srd51-full-001:element:185",
+        "srd51-full-001:element:186",
+        "srd51-full-001:element:187",
+        "srd51-full-001:element:194",
+        "srd51-full-001:element:195"
+      ],
+      "progression_columns": [
+        "srd51-full-001:element:175",
+        "srd51-full-001:element:177",
+        "srd51-full-001:element:179",
+        "srd51-full-001:element:183",
+        "srd51-full-001:element:184",
+        "srd51-full-001:element:185",
+        "srd51-full-001:element:186",
+        "srd51-full-001:element:187",
+        "srd51-full-001:element:194",
+        "srd51-full-001:element:195"
+      ],
+      "progression": [
+        "srd51-full-001:element:175",
+        "srd51-full-001:element:177",
+        "srd51-full-001:element:179",
+        "srd51-full-001:element:183",
+        "srd51-full-001:element:184",
+        "srd51-full-001:element:185",
+        "srd51-full-001:element:186",
+        "srd51-full-001:element:187",
+        "srd51-full-001:element:194",
+        "srd51-full-001:element:195"
+      ],
+      "feature_references": [
+        "srd51-full-001:element:175",
+        "srd51-full-001:element:177",
+        "srd51-full-001:element:179",
+        "srd51-full-001:element:183",
+        "srd51-full-001:element:184",
+        "srd51-full-001:element:185",
+        "srd51-full-001:element:186",
+        "srd51-full-001:element:187",
+        "srd51-full-001:element:194",
+        "srd51-full-001:element:195"
+      ]
+    },
+    "validation_status": "validated",
+    "review_status": "review_required",
+    "execution_status": "reference_only",
+    "schema_version": "1",
+    "normalized_payload": {
+      "description": "As a barbarian, you gain the following class features.",
+      "hit_die": {
+        "expression": "1d12"
+      },
+      "proficiencies": {
+        "armor": "Light armor, medium armor, shields",
+        "weapons": "Simple weapons, martial weapons",
+        "tools": "None",
+        "saving_throws": [
+          "Strength",
+          "Constitution"
+        ],
+        "skills": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+      },
+      "progression_columns": [
+        "Level",
+        "Proficiency Bonus",
+        "Features",
+        "Rages",
+        "Rage Damage"
+      ],
+      "progression": [
+        {
+          "level": 1,
+          "proficiency_bonus": 2,
+          "feature_names": [
+            "Rage",
+            "Unarmored Defense"
+          ],
+          "cells": [
+            {
+              "row": 1,
+              "column": 0,
+              "origin_row": 1,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "1st",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 1,
+              "column": 1,
+              "origin_row": 1,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 1,
+              "column": 2,
+              "origin_row": 1,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Rage, Unarmored Defense",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 1,
+              "column": 3,
+              "origin_row": 1,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "2",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 1,
+              "column": 4,
+              "origin_row": 1,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "proficiency_bonus": 2,
+          "feature_names": [
+            "Reckless Attack",
+            "Danger Sense"
+          ],
+          "cells": [
+            {
+              "row": 2,
+              "column": 0,
+              "origin_row": 2,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "2nd",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 2,
+              "column": 1,
+              "origin_row": 2,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 2,
+              "column": 2,
+              "origin_row": 2,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Reckless Attack, Danger Sense",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 2,
+              "column": 3,
+              "origin_row": 2,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "2",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 2,
+              "column": 4,
+              "origin_row": 2,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "proficiency_bonus": 2,
+          "feature_names": [
+            "Primal Path"
+          ],
+          "cells": [
+            {
+              "row": 3,
+              "column": 0,
+              "origin_row": 3,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "3rd",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 3,
+              "column": 1,
+              "origin_row": 3,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 3,
+              "column": 2,
+              "origin_row": 3,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Primal Path",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 3,
+              "column": 3,
+              "origin_row": 3,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "3",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 3,
+              "column": 4,
+              "origin_row": 3,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "proficiency_bonus": 2,
+          "feature_names": [
+            "Ability Score Improvement"
+          ],
+          "cells": [
+            {
+              "row": 4,
+              "column": 0,
+              "origin_row": 4,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "4th",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 4,
+              "column": 1,
+              "origin_row": 4,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 4,
+              "column": 2,
+              "origin_row": 4,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Ability Score Improvement",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 4,
+              "column": 3,
+              "origin_row": 4,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "3",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 4,
+              "column": 4,
+              "origin_row": 4,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "proficiency_bonus": 3,
+          "feature_names": [
+            "Extra Attack",
+            "Fast Movement"
+          ],
+          "cells": [
+            {
+              "row": 5,
+              "column": 0,
+              "origin_row": 5,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "5th",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 5,
+              "column": 1,
+              "origin_row": 5,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 5,
+              "column": 2,
+              "origin_row": 5,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Extra Attack, Fast Movement",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 5,
+              "column": 3,
+              "origin_row": 5,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "3",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 5,
+              "column": 4,
+              "origin_row": 5,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "proficiency_bonus": 3,
+          "feature_names": [
+            "Path feature"
+          ],
+          "cells": [
+            {
+              "row": 6,
+              "column": 0,
+              "origin_row": 6,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "6th",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 6,
+              "column": 1,
+              "origin_row": 6,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 6,
+              "column": 2,
+              "origin_row": 6,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Path feature",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 6,
+              "column": 3,
+              "origin_row": 6,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "4",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 6,
+              "column": 4,
+              "origin_row": 6,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "proficiency_bonus": 3,
+          "feature_names": [
+            "Feral Instinct"
+          ],
+          "cells": [
+            {
+              "row": 7,
+              "column": 0,
+              "origin_row": 7,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "7th",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 7,
+              "column": 1,
+              "origin_row": 7,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 7,
+              "column": 2,
+              "origin_row": 7,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Feral Instinct",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 7,
+              "column": 3,
+              "origin_row": 7,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "4",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 7,
+              "column": 4,
+              "origin_row": 7,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "proficiency_bonus": 3,
+          "feature_names": [
+            "Ability Score Improvement"
+          ],
+          "cells": [
+            {
+              "row": 8,
+              "column": 0,
+              "origin_row": 8,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "8th",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 8,
+              "column": 1,
+              "origin_row": 8,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 8,
+              "column": 2,
+              "origin_row": 8,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Ability Score Improvement",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 8,
+              "column": 3,
+              "origin_row": 8,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "4",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 8,
+              "column": 4,
+              "origin_row": 8,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+2",
+              "source_id": "srd51-full-001:element:194"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "proficiency_bonus": 4,
+          "feature_names": [
+            "Brutal Critical (1 die)"
+          ],
+          "cells": [
+            {
+              "row": 9,
+              "column": 0,
+              "origin_row": 9,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "9th",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 9,
+              "column": 1,
+              "origin_row": 9,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+4",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 9,
+              "column": 2,
+              "origin_row": 9,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Brutal Critical (1 die)",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 9,
+              "column": 3,
+              "origin_row": 9,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "4",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 9,
+              "column": 4,
+              "origin_row": 9,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:194"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "proficiency_bonus": 4,
+          "feature_names": [
+            "Path feature"
+          ],
+          "cells": [
+            {
+              "row": 10,
+              "column": 0,
+              "origin_row": 10,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "10th",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 10,
+              "column": 1,
+              "origin_row": 10,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+4",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 10,
+              "column": 2,
+              "origin_row": 10,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Path feature",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 10,
+              "column": 3,
+              "origin_row": 10,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "4",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 10,
+              "column": 4,
+              "origin_row": 10,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:194"
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "proficiency_bonus": 4,
+          "feature_names": [
+            "Relentless Rage"
+          ],
+          "cells": [
+            {
+              "row": 11,
+              "column": 0,
+              "origin_row": 11,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "11th",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 11,
+              "column": 1,
+              "origin_row": 11,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+4",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 11,
+              "column": 2,
+              "origin_row": 11,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Relentless",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 11,
+              "column": 3,
+              "origin_row": 11,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "4",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 11,
+              "column": 4,
+              "origin_row": 11,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:194"
+            },
+            {
+              "row": 0,
+              "column": 0,
+              "origin_row": 0,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 5,
+              "text": "Rage",
+              "source_id": "srd51-full-001:element:195"
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "proficiency_bonus": 4,
+          "feature_names": [
+            "Ability Score Improvement"
+          ],
+          "cells": [
+            {
+              "row": 1,
+              "column": 0,
+              "origin_row": 1,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "12th",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 1,
+              "column": 1,
+              "origin_row": 1,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+4",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 1,
+              "column": 2,
+              "origin_row": 1,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Ability Score Improvement",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 1,
+              "column": 3,
+              "origin_row": 1,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "5",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 1,
+              "column": 4,
+              "origin_row": 1,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:195"
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "proficiency_bonus": 5,
+          "feature_names": [
+            "Brutal Critical (2 dice)"
+          ],
+          "cells": [
+            {
+              "row": 2,
+              "column": 0,
+              "origin_row": 2,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "13th",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 2,
+              "column": 1,
+              "origin_row": 2,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+5",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 2,
+              "column": 2,
+              "origin_row": 2,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Brutal Critical (2 dice)",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 2,
+              "column": 3,
+              "origin_row": 2,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "5",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 2,
+              "column": 4,
+              "origin_row": 2,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:195"
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "proficiency_bonus": 5,
+          "feature_names": [
+            "Path feature"
+          ],
+          "cells": [
+            {
+              "row": 3,
+              "column": 0,
+              "origin_row": 3,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "14th",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 3,
+              "column": 1,
+              "origin_row": 3,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+5",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 3,
+              "column": 2,
+              "origin_row": 3,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Path feature",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 3,
+              "column": 3,
+              "origin_row": 3,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "5",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 3,
+              "column": 4,
+              "origin_row": 3,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:195"
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "proficiency_bonus": 5,
+          "feature_names": [
+            "Persistent Rage"
+          ],
+          "cells": [
+            {
+              "row": 4,
+              "column": 0,
+              "origin_row": 4,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "15th",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 4,
+              "column": 1,
+              "origin_row": 4,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+5",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 4,
+              "column": 2,
+              "origin_row": 4,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Persistent Rage",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 4,
+              "column": 3,
+              "origin_row": 4,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "5",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 4,
+              "column": 4,
+              "origin_row": 4,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+3",
+              "source_id": "srd51-full-001:element:195"
+            }
+          ]
+        },
+        {
+          "level": 16,
+          "proficiency_bonus": 5,
+          "feature_names": [
+            "Ability Score Improvement"
+          ],
+          "cells": [
+            {
+              "row": 5,
+              "column": 0,
+              "origin_row": 5,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "16th",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 5,
+              "column": 1,
+              "origin_row": 5,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+5",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 5,
+              "column": 2,
+              "origin_row": 5,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Ability Score Improvement",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 5,
+              "column": 3,
+              "origin_row": 5,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "5",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 5,
+              "column": 4,
+              "origin_row": 5,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+4",
+              "source_id": "srd51-full-001:element:195"
+            }
+          ]
+        },
+        {
+          "level": 17,
+          "proficiency_bonus": 6,
+          "feature_names": [
+            "Brutal Critical (3 dice)"
+          ],
+          "cells": [
+            {
+              "row": 6,
+              "column": 0,
+              "origin_row": 6,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "17th",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 6,
+              "column": 1,
+              "origin_row": 6,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+6",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 6,
+              "column": 2,
+              "origin_row": 6,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Brutal Critical (3 dice)",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 6,
+              "column": 3,
+              "origin_row": 6,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "6",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 6,
+              "column": 4,
+              "origin_row": 6,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+4",
+              "source_id": "srd51-full-001:element:195"
+            }
+          ]
+        },
+        {
+          "level": 18,
+          "proficiency_bonus": 6,
+          "feature_names": [
+            "Indomitable Might"
+          ],
+          "cells": [
+            {
+              "row": 7,
+              "column": 0,
+              "origin_row": 7,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "18th",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 7,
+              "column": 1,
+              "origin_row": 7,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+6",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 7,
+              "column": 2,
+              "origin_row": 7,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Indomitable Might",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 7,
+              "column": 3,
+              "origin_row": 7,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "6",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 7,
+              "column": 4,
+              "origin_row": 7,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+4",
+              "source_id": "srd51-full-001:element:195"
+            }
+          ]
+        },
+        {
+          "level": 19,
+          "proficiency_bonus": 6,
+          "feature_names": [
+            "Ability Score Improvement"
+          ],
+          "cells": [
+            {
+              "row": 8,
+              "column": 0,
+              "origin_row": 8,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "19th",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 8,
+              "column": 1,
+              "origin_row": 8,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+6",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 8,
+              "column": 2,
+              "origin_row": 8,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Ability Score Improvement",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 8,
+              "column": 3,
+              "origin_row": 8,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "6",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 8,
+              "column": 4,
+              "origin_row": 8,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+4",
+              "source_id": "srd51-full-001:element:195"
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "proficiency_bonus": 6,
+          "feature_names": [
+            "Primal Champion"
+          ],
+          "cells": [
+            {
+              "row": 9,
+              "column": 0,
+              "origin_row": 9,
+              "origin_column": 0,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "20th",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 9,
+              "column": 1,
+              "origin_row": 9,
+              "origin_column": 1,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+6",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 9,
+              "column": 2,
+              "origin_row": 9,
+              "origin_column": 2,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Primal Champion",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 9,
+              "column": 3,
+              "origin_row": 9,
+              "origin_column": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "Unlimited",
+              "source_id": "srd51-full-001:element:195"
+            },
+            {
+              "row": 9,
+              "column": 4,
+              "origin_row": 9,
+              "origin_column": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "text": "+4",
+              "source_id": "srd51-full-001:element:195"
+            }
+          ]
+        }
+      ],
+      "feature_references": [
+        {
+          "name": "Rage",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Unarmored Defense",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Reckless Attack",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Danger Sense",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Primal Path",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Ability Score Improvement",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Extra Attack",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Fast Movement",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Path feature",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Feral Instinct",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Ability Score Improvement",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Brutal Critical (1 die)",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Path feature",
+          "source_ids": [
+            "srd51-full-001:element:194"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Relentless Rage",
+          "source_ids": [
+            "srd51-full-001:element:194",
+            "srd51-full-001:element:195"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Ability Score Improvement",
+          "source_ids": [
+            "srd51-full-001:element:195"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Brutal Critical (2 dice)",
+          "source_ids": [
+            "srd51-full-001:element:195"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Path feature",
+          "source_ids": [
+            "srd51-full-001:element:195"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Persistent Rage",
+          "source_ids": [
+            "srd51-full-001:element:195"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Ability Score Improvement",
+          "source_ids": [
+            "srd51-full-001:element:195"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Brutal Critical (3 dice)",
+          "source_ids": [
+            "srd51-full-001:element:195"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Indomitable Might",
+          "source_ids": [
+            "srd51-full-001:element:195"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Ability Score Improvement",
+          "source_ids": [
+            "srd51-full-001:element:195"
+          ],
+          "rule_id": null
+        },
+        {
+          "name": "Primal Champion",
+          "source_ids": [
+            "srd51-full-001:element:195"
+          ],
+          "rule_id": null
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "srd51-full-001:element:175",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "Title",
+      "json_pointer": "/data/elements/175/text",
+      "element_pointer": "/data/elements/175",
+      "element_id": "02b0ac8ded0b72422977688e3636aa46aa8392576b2c3722e1cf4ca8f253baa0",
+      "section_hierarchy": [
+        "Tiefling Traits"
+      ],
+      "page_pointer": "/data/elements/175/page_number",
+      "physical_page": 8,
+      "printed_page": "8",
+      "printed_page_pointer": "/data/elements/208/text",
+      "table_location": null,
+      "quote": "Barbarian",
+      "quote_sha256": "3a303970a53b0626e522012d24d33d00ab7c6bdc035b31b41d87f1db7e524356",
+      "coordinates": [
+        0.093137,
+        0.098485,
+        0.275327,
+        0.098485,
+        0.275327,
+        0.121843,
+        0.093137,
+        0.121843
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:177",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/177/text",
+      "element_pointer": "/data/elements/177",
+      "element_id": "ffa4ca3b069bfde9e2f4ee04d210c4924593e74272bbe847c1fe390736e6e5c8",
+      "section_hierarchy": [
+        "Class Features"
+      ],
+      "page_pointer": "/data/elements/177/page_number",
+      "physical_page": 8,
+      "printed_page": "8",
+      "printed_page_pointer": "/data/elements/208/text",
+      "table_location": null,
+      "quote": "As a barbarian, you gain the following class features.",
+      "quote_sha256": "bf8b218ba5455e245f5c5ca2a259fde3c771be8c1f3b4618fd0669ddadf2d10d",
+      "coordinates": [
+        0.090686,
+        0.174242,
+        0.459967,
+        0.174242,
+        0.459967,
+        0.185606,
+        0.090686,
+        0.185606
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:179",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/179/text",
+      "element_pointer": "/data/elements/179",
+      "element_id": "2915d7c84f4c90d7d21b4324663562bbce3923c742c0e74e02b0fb8f5649118a",
+      "section_hierarchy": [
+        "Class Features",
+        "Hit Points"
+      ],
+      "page_pointer": "/data/elements/179/page_number",
+      "physical_page": 8,
+      "printed_page": "8",
+      "printed_page_pointer": "/data/elements/208/text",
+      "table_location": null,
+      "quote": "**Hit Dice**: 1d12 per barbarian level",
+      "quote_sha256": "31575fff83679cc3443d821a21f24900fd58a51db9322fb161433fd6c660ba86",
+      "coordinates": [
+        0.090686,
+        0.218434,
+        0.335784,
+        0.218434,
+        0.335784,
+        0.228535,
+        0.090686,
+        0.228535
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:183",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/183/text",
+      "element_pointer": "/data/elements/183",
+      "element_id": "0892fec11f6058036fbde62c6140e2724306ae0538074e6ac3ffecd3d5209792",
+      "section_hierarchy": [
+        "Class Features",
+        "Proficiencies"
+      ],
+      "page_pointer": "/data/elements/183/page_number",
+      "physical_page": 8,
+      "printed_page": "8",
+      "printed_page_pointer": "/data/elements/208/text",
+      "table_location": null,
+      "quote": "**Armor**: Light armor, medium armor, shields",
+      "quote_sha256": "548c02b451aa8552bf3d840a100014a3737e464c0ae2c4fd0df846e5f897f5e5",
+      "coordinates": [
+        0.090686,
+        0.322601,
+        0.406046,
+        0.322601,
+        0.406046,
+        0.334596,
+        0.090686,
+        0.334596
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:184",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/184/text",
+      "element_pointer": "/data/elements/184",
+      "element_id": "31e30e16ea18e7f68291a547efcd6c4eacd2e527f55c59ab878c34fbe560c0f6",
+      "section_hierarchy": [
+        "Class Features",
+        "Proficiencies"
+      ],
+      "page_pointer": "/data/elements/184/page_number",
+      "physical_page": 8,
+      "printed_page": "8",
+      "printed_page_pointer": "/data/elements/208/text",
+      "table_location": null,
+      "quote": "**Weapons**: Simple weapons, martial weapons",
+      "quote_sha256": "1e1e202a452d6c199064d28029ca87c25036c1bda411703621050be145d0feaf",
+      "coordinates": [
+        0.09232,
+        0.337121,
+        0.410948,
+        0.337121,
+        0.410948,
+        0.348485,
+        0.09232,
+        0.348485
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:185",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/185/text",
+      "element_pointer": "/data/elements/185",
+      "element_id": "ebf4919e14fcf037a0b902cca026e87d3f4f929b6550111a2a4b05ac0fd676d7",
+      "section_hierarchy": [
+        "Class Features",
+        "Proficiencies"
+      ],
+      "page_pointer": "/data/elements/185/page_number",
+      "physical_page": 8,
+      "printed_page": "8",
+      "printed_page_pointer": "/data/elements/208/text",
+      "table_location": null,
+      "quote": "**Tools:**None",
+      "quote_sha256": "e4e3ef85353b779281a6c5506a6adf2b5208653e3d5f7172bc6a2c375823b149",
+      "coordinates": [
+        0.09232,
+        0.350379,
+        0.183007,
+        0.350379,
+        0.183007,
+        0.36553,
+        0.09232,
+        0.36553
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:186",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/186/text",
+      "element_pointer": "/data/elements/186",
+      "element_id": "bc47954db9a95448d96fcd89546150feaa01a0811ff6b78853b47dfa6bcf0ac8",
+      "section_hierarchy": [
+        "Class Features",
+        "Proficiencies"
+      ],
+      "page_pointer": "/data/elements/186/page_number",
+      "physical_page": 8,
+      "printed_page": "8",
+      "printed_page_pointer": "/data/elements/208/text",
+      "table_location": null,
+      "quote": "**Saving Throws**: Strength, Constitution",
+      "quote_sha256": "19068e142589bbd897b5c2cdc2a1ec8699faa18181caaf3a57bd75d3c42c78a0",
+      "coordinates": [
+        0.090686,
+        0.366793,
+        0.367647,
+        0.366793,
+        0.367647,
+        0.377525,
+        0.090686,
+        0.377525
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:187",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/187/text",
+      "element_pointer": "/data/elements/187",
+      "element_id": "f84acc0b4f442224080298d13e12626f268e1aff153e66ac4ddaae548784db36",
+      "section_hierarchy": [
+        "Class Features",
+        "Proficiencies"
+      ],
+      "page_pointer": "/data/elements/187/page_number",
+      "physical_page": 8,
+      "printed_page": "8",
+      "printed_page_pointer": "/data/elements/208/text",
+      "table_location": null,
+      "quote": "**Skills**: Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival",
+      "quote_sha256": "d857e7a3f4bc7c53392d369fa9f7fcb5d4f04d5375dd5272235ba8426cb13fe3",
+      "coordinates": [
+        0.090686,
+        0.381313,
+        0.455882,
+        0.381313,
+        0.455882,
+        0.407828,
+        0.090686,
+        0.407828
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:194",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "class_progression",
+      "fragment_type": "Table",
+      "json_pointer": "/data/elements/194/text",
+      "element_pointer": "/data/elements/194",
+      "element_id": "5395dfc53c196ec2cdfd92608b4e038f80574f4c3174e4630b5e23d8b3c0d35d",
+      "section_hierarchy": [
+        "Class Features",
+        "Equipment"
+      ],
+      "page_pointer": "/data/elements/194/page_number",
+      "physical_page": 8,
+      "printed_page": "8",
+      "printed_page_pointer": "/data/elements/208/text",
+      "table_location": null,
+      "quote": "<table border=\"1\" ><tr>\n<td>Level</td>\n<td>Proficiency Bonus</td>\n<td>Features</td>\n<td>Rages</td>\n<td>Rage<br>Damage</td>\n</tr><tr>\n<td>1st</td>\n<td>+2</td>\n<td>Rage,<br>Unarmored<br>Defense</td>\n<td>2</td>\n<td>+2</td>\n</tr><tr>\n<td>2nd</td>\n<td>+2</td>\n<td>Reckless<br>Attack,<br>Danger Sense</td>\n<td>2</td>\n<td>+2</td>\n</tr><tr>\n<td>3rd</td>\n<td>+2</td>\n<td>Primal Path</td>\n<td>3</td>\n<td>+2</td>\n</tr><tr>\n<td>4th</td>\n<td>+2</td>\n<td>Ability Score<br>Improvement</td>\n<td>3</td>\n<td>+2</td>\n</tr><tr>\n<td>5th</td>\n<td>+3</td>\n<td>Extra Attack,<br>Fast<br>Movement</td>\n<td>3</td>\n<td>+2</td>\n</tr><tr>\n<td>6th</td>\n<td>+3</td>\n<td>Path feature</td>\n<td>4</td>\n<td>+2</td>\n</tr><tr>\n<td>7th</td>\n<td>+3</td>\n<td>Feral Instinct</td>\n<td>4</td>\n<td>+2</td>\n</tr><tr>\n<td>8th</td>\n<td>+3</td>\n<td>Ability Score<br>Improvement</td>\n<td>4</td>\n<td>+2</td>\n</tr><tr>\n<td>9th</td>\n<td>+4</td>\n<td>Brutal Critical<br>(1 die)</td>\n<td>4</td>\n<td>+3</td>\n</tr><tr>\n<td>10th</td>\n<td>+4</td>\n<td>Path feature</td>\n<td>4</td>\n<td>+3</td>\n</tr><tr>\n<td>11th</td>\n<td>+4</td>\n<td>Relentless</td>\n<td>4</td>\n<td>+3</td>\n</tr></table>",
+      "quote_sha256": "f21ad83427794bdaaa5b15daf3dbfbce44ba2c13b69fee216563e9d590c060d6",
+      "coordinates": [
+        0.089052,
+        0.569444,
+        0.470588,
+        0.568813,
+        0.471405,
+        0.875631,
+        0.089052,
+        0.876263
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:195",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "class_progression",
+      "fragment_type": "Table",
+      "json_pointer": "/data/elements/195/text",
+      "element_pointer": "/data/elements/195",
+      "element_id": "dfba2d79fa01984aaf9f5ca0a3be241178188e0f84939a612a2e923dcb24060c",
+      "section_hierarchy": [
+        "Class Features",
+        "Equipment"
+      ],
+      "page_pointer": "/data/elements/195/page_number",
+      "physical_page": 8,
+      "printed_page": "8",
+      "printed_page_pointer": "/data/elements/208/text",
+      "table_location": null,
+      "quote": "<table border=\"1\" ><tr>\n<td colspan=\"5\">Rage</td>\n</tr><tr>\n<td>12th</td>\n<td>+4</td>\n<td>Ability Score<br>Improvement</td>\n<td>5</td>\n<td>+3</td>\n</tr><tr>\n<td>13th</td>\n<td>+5</td>\n<td>Brutal Critical<br>(2 dice)</td>\n<td>5</td>\n<td>+3</td>\n</tr><tr>\n<td>14th</td>\n<td>+5</td>\n<td>Path feature</td>\n<td>5</td>\n<td>+3</td>\n</tr><tr>\n<td>15th</td>\n<td>+5</td>\n<td>Persistent<br>Rage</td>\n<td>5</td>\n<td>+3</td>\n</tr><tr>\n<td>16th</td>\n<td>+5</td>\n<td>Ability Score<br>Improvement</td>\n<td>5</td>\n<td>+4</td>\n</tr><tr>\n<td>17th</td>\n<td>+6</td>\n<td>Brutal Critical<br>(3 dice)</td>\n<td>6</td>\n<td>+4</td>\n</tr><tr>\n<td>18th</td>\n<td>+6</td>\n<td>Indomitable<br>Might</td>\n<td>6</td>\n<td>+4</td>\n</tr><tr>\n<td>19th</td>\n<td>+6</td>\n<td>Ability Score<br>Improvement</td>\n<td>6</td>\n<td>+4</td>\n</tr><tr>\n<td>20th</td>\n<td>+6</td>\n<td>Primal<br>Champion</td>\n<td>Unlimited</td>\n<td>+4</td>\n</tr></table>",
+      "quote_sha256": "a7ab7bfeb62088ef2210a01be78c32acd5d8bd0c3fb376adb1e4ecc85f7304d9",
+      "coordinates": [
+        0.527778,
+        0.092803,
+        0.916667,
+        0.092803,
+        0.918301,
+        0.339646,
+        0.529412,
+        0.339646
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "evidence_sha256": "5f2ecda1204d4e067737e58f6f3ee00c1708ddc7aa7bb9d0ddaa0512e7e40049",
+    "validated_at": "2026-10-12T09:33:15.267565+00:00",
+    "scope": "schema + provenance; semantic review still required"
+  }
+}

@@ -15,3 +15,9 @@
 Homebrew 不可信输入、审核/发布、规则集隔离、版本冲突与受限模板安全。
 ## 发布
 规则覆盖清单逐项验收；实际来源链接完整；回归报告、部署说明与演示材料。
+
+## M1+ 真实目录测试
+
+`backend/tests/test_catalog.py` 验证分型 Schema、骰子和规则集边界、跨来源引用、HTML 网格、真实 JSON Pointer/哈希、候选审核发布、篡改拒绝、重复导入、SQLite v1 无损升级及失败回滚。
+
+完整命令：`.venv\Scripts\python.exe -m pytest -q --junitxml=data/local-checks/m1plus-regression.xml`。测试使用已有真实产物，不触发解析服务。最终数量与结果见 [M1+ 验收报告](m1-enhancement-report.md) 和 JUnit XML。

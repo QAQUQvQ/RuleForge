@@ -1,0 +1,300 @@
+{
+  "record": {
+    "id": "srd51.equipment.leather",
+    "ruleset": "srd-5.1",
+    "record_version": 1,
+    "record_type": "equipment",
+    "canonical_name": "Leather",
+    "aliases": [],
+    "source_ids": [
+      "srd51-full-001:element:1647:r0c0",
+      "srd51-full-001:element:1626",
+      "srd51-full-001:element:1624",
+      "srd51-full-001:element:1653:r1c0"
+    ],
+    "extraction_run_id": "srd51-full-001",
+    "field_sources": {
+      "equipment_type": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "description": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "cost": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "weight": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "armor_category": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "base_ac": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "dexterity_modifier_policy": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "dexterity_modifier_cap": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "strength_requirement": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "stealth_disadvantage": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "don_time": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "doff_time": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "canonical_name": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "display_name": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ]
+    },
+    "validation_status": "validated",
+    "review_status": "review_required",
+    "execution_status": "reference_only",
+    "schema_version": "1",
+    "normalized_payload": {
+      "id": "srd51.equipment.leather",
+      "ruleset": "srd-5.1",
+      "canonical_name": "Leather",
+      "display_name": "Leather",
+      "equipment_type": "armor",
+      "description": "**Leather.** The breastplate and shoulder protectors of this armor are made of leather that has been stiffened by being boiled in oil. The rest of the armor is made of softer and more flexible materials.",
+      "cost": {
+        "amount": "10",
+        "unit": "gp"
+      },
+      "weight": {
+        "amount": "10",
+        "unit": "lb"
+      },
+      "source_ids": [
+        "srd51-full-001:element:1647:r0c0",
+        "srd51-full-001:element:1626",
+        "srd51-full-001:element:1624",
+        "srd51-full-001:element:1653:r1c0"
+      ],
+      "review_status": "review_required",
+      "schema_version": "1",
+      "armor_category": "light",
+      "base_ac": 11,
+      "dexterity_modifier_policy": "full",
+      "dexterity_modifier_cap": null,
+      "strength_requirement": null,
+      "stealth_disadvantage": false,
+      "don_time": {
+        "amount": 1,
+        "unit": "minute"
+      },
+      "doff_time": {
+        "amount": 1,
+        "unit": "minute"
+      }
+    }
+  },
+  "sources": [
+    {
+      "id": "srd51-full-001:element:1647:r0c0",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "armor_table",
+      "fragment_type": "Table",
+      "json_pointer": "/data/elements/1647/text",
+      "element_pointer": "/data/elements/1647",
+      "element_id": "bee293c2781f9abb4ef16e4956aa1659117127dc9a7ce14bbd95c899d0b66406",
+      "section_hierarchy": [
+        "Languages",
+        "Languages",
+        "Heavy Armor"
+      ],
+      "page_pointer": "/data/elements/1647/page_number",
+      "physical_page": 64,
+      "printed_page": "64",
+      "printed_page_pointer": "/data/elements/1667/text",
+      "table_location": {
+        "row": 0,
+        "column": 0,
+        "text": "Leather"
+      },
+      "quote": "<table border=\"1\" ><tr>\n<td>Leather</td>\n<td>10gp</td>\n<td>$11+Dexmodifier$</td>\n<td>-</td>\n<td>-</td>\n<td>10 lb.</td>\n</tr><tr>\n<td>Studded leather</td>\n<td>45gp</td>\n<td>$12+Dexmodifier$</td>\n<td>-</td>\n<td>-</td>\n<td>13 lb.</td>\n</tr><tr>\n<td>Medium Armor</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr><tr>\n<td>Hide</td>\n<td>10gp</td>\n<td>12+Dex modifier (max 2)</td>\n<td>-</td>\n<td>-</td>\n<td>12 lb.</td>\n</tr><tr>\n<td>Chain shirt</td>\n<td>50gp</td>\n<td>$13+Dexmodifier(max2)$</td>\n<td>-</td>\n<td>-</td>\n<td>20 lb.</td>\n</tr><tr>\n<td>Scale mail</td>\n<td>50 gp</td>\n<td>$14+Dexmodifier(max2)$</td>\n<td></td>\n<td>Disadvantage</td>\n<td>45 lb.</td>\n</tr><tr>\n<td>Breastplate</td>\n<td>400gp</td>\n<td>$14+Dexmodifier(max2)$</td>\n<td>-</td>\n<td>-</td>\n<td>20 lb.</td>\n</tr><tr>\n<td>Half plate</td>\n<td>750gp</td>\n<td>$15+Dex$modifier (max 2)</td>\n<td>-</td>\n<td>Disadvantage</td>\n<td>40 lb.</td>\n</tr><tr>\n<td>Heavy Armor</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr><tr>\n<td>Ring mail</td>\n<td>30gp</td>\n<td>14</td>\n<td>-</td>\n<td>Disadvantage</td>\n<td>40 lb.</td>\n</tr><tr>\n<td>Chain mail</td>\n<td>75gp</td>\n<td>16</td>\n<td>Str 13</td>\n<td>Disadvantage</td>\n<td>55 lb.</td>\n</tr><tr>\n<td>Splint</td>\n<td>200 gp</td>\n<td>17</td>\n<td>Str 15</td>\n<td>Disadvantage</td>\n<td>60 lb.</td>\n</tr><tr>\n<td>Plate</td>\n<td>1,500 gp</td>\n<td>18</td>\n<td>Str 15</td>\n<td>Disadvantage</td>\n<td>65 lb.</td>\n</tr><tr>\n<td>Shield</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr><tr>\n<td>Shield</td>\n<td>10gp</td>\n<td>+2</td>\n<td>-</td>\n<td>-</td>\n<td>6 lb.</td>\n</tr></table>",
+      "quote_sha256": "d0bd372b33a89b44f6ff6060da320013afe00c2e845c7925840729174e800b8d",
+      "coordinates": [
+        0.08415,
+        0.089015,
+        0.704248,
+        0.089646,
+        0.705065,
+        0.301768,
+        0.083333,
+        0.301136
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:1626",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/1626/text",
+      "element_pointer": "/data/elements/1626",
+      "element_id": "6dae5eb6c939796836a01a9535aebb9456008fdec522c9eb5d8195478a58766c",
+      "section_hierarchy": [
+        "Languages",
+        "Languages",
+        "Light Armor"
+      ],
+      "page_pointer": "/data/elements/1626/page_number",
+      "physical_page": 63,
+      "printed_page": "63",
+      "printed_page_pointer": "/data/elements/1646/text",
+      "table_location": null,
+      "quote": "**Leather.** The breastplate and shoulder protectors of this armor are made of leather that has been stiffened by being boiled in oil. The rest of the armor is made of softer and more flexible materials.",
+      "quote_sha256": "e1733e08dc0006aa8b2e93b1f7faf1c83e801a404d75642a447eca55887e1822",
+      "coordinates": [
+        0.090686,
+        0.453914,
+        0.461601,
+        0.453914,
+        0.461601,
+        0.508207,
+        0.090686,
+        0.508207
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:1624",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/1624/text",
+      "element_pointer": "/data/elements/1624",
+      "element_id": "73133be3671dc7746150ce2f9df43ed6870aff0a7319b9114687f96fe78d0a08",
+      "section_hierarchy": [
+        "Languages",
+        "Languages",
+        "Light Armor"
+      ],
+      "page_pointer": "/data/elements/1624/page_number",
+      "physical_page": 63,
+      "printed_page": "63",
+      "printed_page_pointer": "/data/elements/1646/text",
+      "table_location": null,
+      "quote": "Made from supple and thin materials, light armor favors agile adventurers since it offers some protection without sacrificing mobility. If you wear light armor, you add your Dexterity modifier to the base number from your armor type to determine your Armor Class.",
+      "quote_sha256": "bf031b9380e2200c6744af5a2d7284034e65032c147cb411bca216868d13383a",
+      "coordinates": [
+        0.090686,
+        0.335227,
+        0.45098,
+        0.335227,
+        0.45098,
+        0.421717,
+        0.090686,
+        0.421717
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:1653:r1c0",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "armor_timing",
+      "fragment_type": "Table",
+      "json_pointer": "/data/elements/1653/text",
+      "element_pointer": "/data/elements/1653",
+      "element_id": "74fe9bc6f55487b0601e51173b0fcd4c58fff36b8dd72d7f02ec91f5f3ab8550",
+      "section_hierarchy": [
+        "Languages",
+        "Getting Into and Out of Armor"
+      ],
+      "page_pointer": "/data/elements/1653/page_number",
+      "physical_page": 64,
+      "printed_page": "64",
+      "printed_page_pointer": "/data/elements/1667/text",
+      "table_location": {
+        "row": 1,
+        "column": 0,
+        "text": "Light Armor"
+      },
+      "quote": "<table border=\"1\" ><tr>\n<td>Category</td>\n<td>Don</td>\n<td>Doff</td>\n</tr><tr>\n<td>Light Armor</td>\n<td>1 minute</td>\n<td>1 minute</td>\n</tr><tr>\n<td>Medium Armor</td>\n<td>5 minutes</td>\n<td>1 minute</td>\n</tr><tr>\n<td>Heavy Armor</td>\n<td>10 minutes</td>\n<td>5 minutes</td>\n</tr><tr>\n<td>Shield</td>\n<td>1 action</td>\n<td>1 action</td>\n</tr></table>",
+      "quote_sha256": "28bc940f8fc061fad17c4d84e1a68560f8af66ad7459a5cc56d1a729ad7cca77",
+      "coordinates": [
+        0.089052,
+        0.476641,
+        0.359477,
+        0.476641,
+        0.359477,
+        0.546086,
+        0.089052,
+        0.545455
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "evidence_sha256": "bd02511f5d6385595d8df4fa522c152b2adbd5f104f6804cd0f049c7ea6d431c",
+    "validated_at": "2026-10-12T09:32:38.541856+00:00",
+    "scope": "schema + provenance; semantic review still required"
+  }
+}

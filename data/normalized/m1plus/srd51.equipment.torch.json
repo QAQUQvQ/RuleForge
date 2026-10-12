@@ -1,0 +1,154 @@
+{
+  "record": {
+    "id": "srd51.equipment.torch",
+    "ruleset": "srd-5.1",
+    "record_version": 1,
+    "record_type": "equipment",
+    "canonical_name": "Torch",
+    "aliases": [],
+    "source_ids": [
+      "srd51-full-001:element:1748:r43c0",
+      "srd51-full-001:element:1743"
+    ],
+    "extraction_run_id": "srd51-full-001",
+    "field_sources": {
+      "equipment_type": [
+        "srd51-full-001:element:1748:r43c0",
+        "srd51-full-001:element:1743"
+      ],
+      "description": [
+        "srd51-full-001:element:1748:r43c0",
+        "srd51-full-001:element:1743"
+      ],
+      "cost": [
+        "srd51-full-001:element:1748:r43c0",
+        "srd51-full-001:element:1743"
+      ],
+      "weight": [
+        "srd51-full-001:element:1748:r43c0",
+        "srd51-full-001:element:1743"
+      ],
+      "usage_description": [
+        "srd51-full-001:element:1748:r43c0",
+        "srd51-full-001:element:1743"
+      ],
+      "canonical_name": [
+        "srd51-full-001:element:1748:r43c0",
+        "srd51-full-001:element:1743"
+      ],
+      "display_name": [
+        "srd51-full-001:element:1748:r43c0",
+        "srd51-full-001:element:1743"
+      ]
+    },
+    "validation_status": "validated",
+    "review_status": "review_required",
+    "execution_status": "reference_only",
+    "schema_version": "1",
+    "normalized_payload": {
+      "id": "srd51.equipment.torch",
+      "ruleset": "srd-5.1",
+      "canonical_name": "Torch",
+      "display_name": "Torch",
+      "equipment_type": "adventuring_gear",
+      "description": "**Torch.** A torch burns for 1 hour, providing bright light in a 20-foot radius and dim light for an additional 20 feet. If you make a melee attack with a burning torch and hit, it deals 1 fire damage.",
+      "cost": {
+        "amount": "1",
+        "unit": "cp"
+      },
+      "weight": {
+        "amount": "1",
+        "unit": "lb"
+      },
+      "source_ids": [
+        "srd51-full-001:element:1748:r43c0",
+        "srd51-full-001:element:1743"
+      ],
+      "review_status": "review_required",
+      "schema_version": "1",
+      "usage_description": "**Torch.** A torch burns for 1 hour, providing bright light in a 20-foot radius and dim light for an additional 20 feet. If you make a melee attack with a burning torch and hit, it deals 1 fire damage."
+    }
+  },
+  "sources": [
+    {
+      "id": "srd51-full-001:element:1748:r43c0",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "gear_table",
+      "fragment_type": "Table",
+      "json_pointer": "/data/elements/1748/text",
+      "element_pointer": "/data/elements/1748",
+      "element_id": "232f53b3673eda1980ecd0e3fd3959366f7207887e30f1c4f91f5cec1c6365bc",
+      "section_hierarchy": [
+        "Languages",
+        "Getting Into and Out of Armor",
+        "Adventuring Gear"
+      ],
+      "page_pointer": "/data/elements/1748/page_number",
+      "physical_page": 69,
+      "printed_page": "69",
+      "printed_page_pointer": "/data/elements/1752/text",
+      "table_location": {
+        "row": 43,
+        "column": 0,
+        "text": "Torch"
+      },
+      "quote": "<table border=\"1\" ><tr>\n<td>Hourglass</td>\n<td>25 gp</td>\n<td>1lb.</td>\n</tr><tr>\n<td>Hunting trap</td>\n<td>5 gp</td>\n<td>25 lb.</td>\n</tr><tr>\n<td>Ink(1 ounce bottle)</td>\n<td>10gp</td>\n<td></td>\n</tr><tr>\n<td>Ink pen</td>\n<td>2cp</td>\n<td>-</td>\n</tr><tr>\n<td>Jug or pitcher</td>\n<td>2cp</td>\n<td>4lb.</td>\n</tr><tr>\n<td>Ladder (10-foot)</td>\n<td>1sp</td>\n<td>25 lb.</td>\n</tr><tr>\n<td>Lamp</td>\n<td>5 sp</td>\n<td>1lb.</td>\n</tr><tr>\n<td>Lantern,bullseye</td>\n<td>10gp</td>\n<td>2 lb.</td>\n</tr><tr>\n<td>Lantern,hooded</td>\n<td>5gp</td>\n<td>2 lb.</td>\n</tr><tr>\n<td>Lock</td>\n<td>10gp</td>\n<td>1lb.</td>\n</tr><tr>\n<td>Magnifying glass</td>\n<td>100gp</td>\n<td>-</td>\n</tr><tr>\n<td>Manacles</td>\n<td>2gp</td>\n<td>6lb.</td>\n</tr><tr>\n<td>Mess kit</td>\n<td>2 sp</td>\n<td>1lb.</td>\n</tr><tr>\n<td>Mirror, steel</td>\n<td>5gp</td>\n<td>1/2 lb.</td>\n</tr><tr>\n<td>Oil(flask)</td>\n<td>1 sp</td>\n<td>1lb.</td>\n</tr><tr>\n<td>Paper (one sheet)</td>\n<td>2 sp</td>\n<td>-</td>\n</tr><tr>\n<td>Parchment(one sheet)</td>\n<td>1sp</td>\n<td>-</td>\n</tr><tr>\n<td>Perfume (vial)</td>\n<td>5gp</td>\n<td></td>\n</tr><tr>\n<td>Pick, miner's</td>\n<td>2gp</td>\n<td>10 lb.</td>\n</tr><tr>\n<td>Piton</td>\n<td>5cp</td>\n<td>1/4 lb.</td>\n</tr><tr>\n<td>Poison,basic (vial)</td>\n<td>100 gp</td>\n<td></td>\n</tr><tr>\n<td>Pole (10-foot)</td>\n<td>5cp</td>\n<td>7lb.</td>\n</tr><tr>\n<td>Pot,iron</td>\n<td>2gp</td>\n<td>10 lb.</td>\n</tr><tr>\n<td>Potion of healing</td>\n<td>50 gp</td>\n<td>1/2 lb.</td>\n</tr><tr>\n<td>Pouch</td>\n<td>5 sp</td>\n<td>1lb.</td>\n</tr><tr>\n<td>Quiver</td>\n<td>1 gp</td>\n<td>1lb.</td>\n</tr><tr>\n<td>Ram,portable</td>\n<td>4 gp</td>\n<td>35 lb.</td>\n</tr><tr>\n<td>Rations (1 day)</td>\n<td>5 sp</td>\n<td>2 lb.</td>\n</tr><tr>\n<td>Robes</td>\n<td>1 gp</td>\n<td>4 lb.</td>\n</tr><tr>\n<td>Rope,hempen(50 feet)</td>\n<td>1gp</td>\n<td>10 lb.</td>\n</tr><tr>\n<td>Rope, silk (50 feet)</td>\n<td>10gp</td>\n<td>5 lb.</td>\n</tr><tr>\n<td>Sack</td>\n<td>1cp</td>\n<td>1/2 lb.</td>\n</tr><tr>\n<td>Scale,merchant's</td>\n<td>5gp</td>\n<td>3 lb.</td>\n</tr><tr>\n<td>Sealing wax</td>\n<td>5 sp</td>\n<td></td>\n</tr><tr>\n<td>Shovel</td>\n<td>2gp</td>\n<td>5lb.</td>\n</tr><tr>\n<td>Signal whistle</td>\n<td>5cp</td>\n<td>-</td>\n</tr><tr>\n<td>Signet ring</td>\n<td>5gp</td>\n<td>-</td>\n</tr><tr>\n<td>Soap</td>\n<td>2cp</td>\n<td></td>\n</tr><tr>\n<td>Spellbook</td>\n<td>50 gp</td>\n<td>3 lb.</td>\n</tr><tr>\n<td>Spikes,iron (10)</td>\n<td>1gp</td>\n<td>5 lb.</td>\n</tr><tr>\n<td>Spyglass</td>\n<td>1,000gp</td>\n<td>1lb.</td>\n</tr><tr>\n<td>Tent,two-person</td>\n<td>2gp</td>\n<td>20 lb.</td>\n</tr><tr>\n<td>Tinderbox</td>\n<td>5sp</td>\n<td>1lb.</td>\n</tr><tr>\n<td>Torch</td>\n<td>1cp</td>\n<td>1lb.</td>\n</tr><tr>\n<td>Vial</td>\n<td>1gp</td>\n<td>-</td>\n</tr><tr>\n<td>Waterskin</td>\n<td>2 sp</td>\n<td>5 lb.(full)</td>\n</tr><tr>\n<td>Whetstone</td>\n<td>1cp</td>\n<td>1lb.</td>\n</tr></table>",
+      "quote_sha256": "c27974abdf9abb63078ea42c4e57d6a9dcc9f6c028fd431d20fbc6c9aeb59c70",
+      "coordinates": [
+        0.525327,
+        0.089646,
+        0.857843,
+        0.09154,
+        0.856209,
+        0.743687,
+        0.522876,
+        0.742424
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:1743",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/1743/text",
+      "element_pointer": "/data/elements/1743",
+      "element_id": "15e343c86588be78462008958d6acdae40ed14fbf7acf9b36a2151da8b64c09a",
+      "section_hierarchy": [
+        "Languages",
+        "Getting Into and Out of Armor",
+        "Adventuring Gear"
+      ],
+      "page_pointer": "/data/elements/1743/page_number",
+      "physical_page": 68,
+      "printed_page": "68",
+      "printed_page_pointer": "/data/elements/1746/text",
+      "table_location": null,
+      "quote": "**Torch.** A torch burns for 1 hour, providing bright light in a 20-foot radius and dim light for an additional 20 feet. If you make a melee attack with a burning torch and hit, it deals 1 fire damage.",
+      "quote_sha256": "7bd7ba0b3d4606966449763ea316f2742f9dc7cb05ba4875092b7390247f889a",
+      "coordinates": [
+        0.533497,
+        0.772727,
+        0.89951,
+        0.772727,
+        0.89951,
+        0.830177,
+        0.533497,
+        0.830177
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "evidence_sha256": "2cabf05d5d5f38aff33e180705432c7abc1593aa8e69d8eb4fab78442c48b935",
+    "validated_at": "2026-10-12T09:32:54.306698+00:00",
+    "scope": "schema + provenance; semantic review still required"
+  }
+}

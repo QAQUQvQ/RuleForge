@@ -1,0 +1,117 @@
+{
+  "normalization_id": "157c34a9fede4e3ab87a92cbef56ffbb",
+  "run_id": "srd51-full-001",
+  "started_at": "2026-10-12T09:32:30.729090+00:00",
+  "records": [
+    {
+      "id": "srd51.equipment.dagger",
+      "record_type": "equipment",
+      "sources": 2,
+      "physical_pages": [
+        65,
+        66
+      ],
+      "review_status": "review_required",
+      "execution_status": "reference_only"
+    },
+    {
+      "id": "srd51.equipment.leather",
+      "record_type": "equipment",
+      "sources": 4,
+      "physical_pages": [
+        63,
+        64
+      ],
+      "review_status": "review_required",
+      "execution_status": "reference_only"
+    },
+    {
+      "id": "srd51.equipment.chain-shirt",
+      "record_type": "equipment",
+      "sources": 4,
+      "physical_pages": [
+        63,
+        64
+      ],
+      "review_status": "review_required",
+      "execution_status": "reference_only"
+    },
+    {
+      "id": "srd51.equipment.chain-mail",
+      "record_type": "equipment",
+      "sources": 4,
+      "physical_pages": [
+        63,
+        64
+      ],
+      "review_status": "review_required",
+      "execution_status": "reference_only"
+    },
+    {
+      "id": "srd51.equipment.shield",
+      "record_type": "equipment",
+      "sources": 3,
+      "physical_pages": [
+        63,
+        64
+      ],
+      "review_status": "review_required",
+      "execution_status": "reference_only"
+    },
+    {
+      "id": "srd51.equipment.torch",
+      "record_type": "equipment",
+      "sources": 2,
+      "physical_pages": [
+        68,
+        69
+      ],
+      "review_status": "review_required",
+      "execution_status": "reference_only"
+    },
+    {
+      "id": "srd51.spell.magic-missile",
+      "record_type": "spell",
+      "sources": 8,
+      "physical_pages": [
+        161
+      ],
+      "review_status": "review_required",
+      "execution_status": "reference_only"
+    },
+    {
+      "id": "srd51.class.barbarian",
+      "record_type": "class",
+      "sources": 10,
+      "physical_pages": [
+        8
+      ],
+      "review_status": "review_required",
+      "execution_status": "reference_only"
+    },
+    {
+      "id": "srd51.condition.blinded",
+      "record_type": "condition",
+      "sources": 4,
+      "physical_pages": [
+        358
+      ],
+      "review_status": "review_required",
+      "execution_status": "reference_only"
+    },
+    {
+      "id": "srd51.general_rule.ability-modifier",
+      "record_type": "general_rule",
+      "sources": 1,
+      "physical_pages": [
+        76
+      ],
+      "review_status": "review_required",
+      "execution_status": "reference_only"
+    }
+  ],
+  "failures": [],
+  "review_policy": "All new records require explicit review; none are executable.",
+  "status": "passed",
+  "finished_at": "2026-10-12T09:33:21.396984+00:00"
+}

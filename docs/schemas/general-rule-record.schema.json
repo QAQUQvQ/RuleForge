@@ -1,0 +1,239 @@
+{
+  "$defs": {
+    "GeneralRulePayload": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "attack",
+            "armor_class",
+            "ability_modifier",
+            "advantage",
+            "saving_throw",
+            "action_economy",
+            "damage",
+            "hit_points",
+            "other"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "trigger": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Trigger"
+        },
+        "prerequisites": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Prerequisites",
+          "type": "array"
+        },
+        "conditions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Conditions",
+          "type": "array"
+        },
+        "resolution_steps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Resolution Steps",
+          "type": "array"
+        },
+        "effect_specification": {
+          "items": {
+            "$ref": "#/$defs/TextEffect"
+          },
+          "title": "Effect Specification",
+          "type": "array"
+        },
+        "related_rule_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "title": "Related Rule Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "category",
+        "description"
+      ],
+      "title": "GeneralRulePayload",
+      "type": "object"
+    },
+    "TextEffect": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "reference_text",
+          "default": "reference_text",
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "text",
+        "source_ids"
+      ],
+      "title": "TextEffect",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9_.:-]+$",
+      "title": "Id",
+      "type": "string"
+    },
+    "ruleset": {
+      "const": "srd-5.1",
+      "default": "srd-5.1",
+      "title": "Ruleset",
+      "type": "string"
+    },
+    "record_version": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Record Version",
+      "type": "integer"
+    },
+    "record_type": {
+      "const": "general_rule",
+      "default": "general_rule",
+      "title": "Record Type",
+      "type": "string"
+    },
+    "canonical_name": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Canonical Name",
+      "type": "string"
+    },
+    "aliases": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Aliases",
+      "type": "array"
+    },
+    "source_ids": {
+      "items": {
+        "maxLength": 200,
+        "minLength": 1,
+        "pattern": "^[a-zA-Z0-9_.:-]+$",
+        "type": "string"
+      },
+      "maxItems": 128,
+      "title": "Source Ids",
+      "type": "array"
+    },
+    "extraction_run_id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9_.:-]+$",
+      "title": "Extraction Run Id",
+      "type": "string"
+    },
+    "field_sources": {
+      "additionalProperties": {
+        "items": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Field Sources",
+      "type": "object"
+    },
+    "validation_status": {
+      "default": "extracted",
+      "enum": [
+        "extracted",
+        "validated",
+        "review_required",
+        "rejected"
+      ],
+      "title": "Validation Status",
+      "type": "string"
+    },
+    "review_status": {
+      "default": "review_required",
+      "enum": [
+        "review_required",
+        "approved",
+        "rejected"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    },
+    "execution_status": {
+      "default": "reference_only",
+      "enum": [
+        "executable",
+        "partially_executable",
+        "reference_only",
+        "unsupported"
+      ],
+      "title": "Execution Status",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "normalized_payload": {
+      "$ref": "#/$defs/GeneralRulePayload"
+    }
+  },
+  "required": [
+    "id",
+    "canonical_name",
+    "extraction_run_id",
+    "normalized_payload"
+  ],
+  "title": "GeneralRuleRecord",
+  "type": "object"
+}

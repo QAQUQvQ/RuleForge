@@ -1,0 +1,455 @@
+{
+  "record": {
+    "id": "srd51.spell.magic-missile",
+    "ruleset": "srd-5.1",
+    "record_version": 1,
+    "record_type": "spell",
+    "canonical_name": "Magic Missile",
+    "aliases": [],
+    "source_ids": [
+      "srd51-full-001:element:5076",
+      "srd51-full-001:element:5077",
+      "srd51-full-001:element:5078",
+      "srd51-full-001:element:5079",
+      "srd51-full-001:element:5080",
+      "srd51-full-001:element:5081",
+      "srd51-full-001:element:5082",
+      "srd51-full-001:element:5083"
+    ],
+    "extraction_run_id": "srd51-full-001",
+    "field_sources": {
+      "level": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "school": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "casting_time": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "range": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "components": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "duration": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "concentration": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "ritual": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "description": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "higher_levels": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "effects": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ],
+      "damage": [
+        "srd51-full-001:element:5076",
+        "srd51-full-001:element:5077",
+        "srd51-full-001:element:5078",
+        "srd51-full-001:element:5079",
+        "srd51-full-001:element:5080",
+        "srd51-full-001:element:5081",
+        "srd51-full-001:element:5082",
+        "srd51-full-001:element:5083"
+      ]
+    },
+    "validation_status": "validated",
+    "review_status": "review_required",
+    "execution_status": "reference_only",
+    "schema_version": "1",
+    "normalized_payload": {
+      "level": 1,
+      "school": "evocation",
+      "casting_time": "1 action",
+      "range": "120 feet",
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "material_description": null
+      },
+      "duration": "Instantaneous",
+      "concentration": false,
+      "ritual": false,
+      "description": "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously,and you can direct them to hit one creature or several.",
+      "higher_levels": "**At Higher** **Levels.** When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.",
+      "effects": [
+        {
+          "kind": "reference_text",
+          "text": "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously,and you can direct them to hit one creature or several.",
+          "source_ids": [
+            "srd51-full-001:element:5082"
+          ]
+        }
+      ],
+      "damage": [
+        {
+          "dice": {
+            "expression": "1d4+1"
+          },
+          "damage_type": "force",
+          "per": "dart",
+          "source_ids": [
+            "srd51-full-001:element:5082"
+          ]
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "srd51-full-001:element:5076",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "Title",
+      "json_pointer": "/data/elements/5076/text",
+      "element_pointer": "/data/elements/5076",
+      "element_id": "68a17bf77dc22252c31536b6c2b9ece6bb98c2c3ed260c9f96fa4ba3df8c1771",
+      "section_hierarchy": [],
+      "page_pointer": "/data/elements/5076/page_number",
+      "physical_page": 161,
+      "printed_page": "161",
+      "printed_page_pointer": "/data/elements/5100/text",
+      "table_location": null,
+      "quote": "Magic Missile",
+      "quote_sha256": "111a74afc067f116ddf6a2e8339eada16814eceb7cfcded7a8e6e44c9fd87e6c",
+      "coordinates": [
+        0.09232,
+        0.770833,
+        0.208333,
+        0.770833,
+        0.208333,
+        0.784091,
+        0.09232,
+        0.784091
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:5077",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/5077/text",
+      "element_pointer": "/data/elements/5077",
+      "element_id": "fe9523af4d0efb220c5f7b74453ec2403b2ec0d9f4c48614b9b2a864937d80de",
+      "section_hierarchy": [
+        "Magic Missile"
+      ],
+      "page_pointer": "/data/elements/5077/page_number",
+      "physical_page": 161,
+      "printed_page": "161",
+      "printed_page_pointer": "/data/elements/5100/text",
+      "table_location": null,
+      "quote": "1st-level evocation",
+      "quote_sha256": "7cc881870b0f2d5cca7a0c5fb920362e026a3eee29f37f2a0648a17d9fb5da32",
+      "coordinates": [
+        0.09232,
+        0.78851,
+        0.222222,
+        0.78851,
+        0.222222,
+        0.79798,
+        0.09232,
+        0.79798
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:5078",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/5078/text",
+      "element_pointer": "/data/elements/5078",
+      "element_id": "bd2af0eb2d40b33b67671899ec7a58d1c08b90c8b0579305312b710befa9c91a",
+      "section_hierarchy": [
+        "Magic Missile"
+      ],
+      "page_pointer": "/data/elements/5078/page_number",
+      "physical_page": 161,
+      "printed_page": "161",
+      "printed_page_pointer": "/data/elements/5100/text",
+      "table_location": null,
+      "quote": "**Casting Time**: **1** action",
+      "quote_sha256": "f5b187c3d8270217bf93a66439fef7a2063779beab85baa728f954a048d7b386",
+      "coordinates": [
+        0.09232,
+        0.810606,
+        0.25817,
+        0.810606,
+        0.25817,
+        0.82197,
+        0.09232,
+        0.82197
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:5079",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/5079/text",
+      "element_pointer": "/data/elements/5079",
+      "element_id": "ae5c0d6a2c7bcf36868c30c25afee4e17d9946fd647e82ff59f940b743267c3d",
+      "section_hierarchy": [
+        "Magic Missile"
+      ],
+      "page_pointer": "/data/elements/5079/page_number",
+      "physical_page": 161,
+      "printed_page": "161",
+      "printed_page_pointer": "/data/elements/5100/text",
+      "table_location": null,
+      "quote": "**Range**:120 feet",
+      "quote_sha256": "9b14ddefc68228e232419ae1aece9a8f4a51a1fbf89d6923955f74abc59f1a85",
+      "coordinates": [
+        0.09232,
+        0.825758,
+        0.208333,
+        0.825758,
+        0.208333,
+        0.83649,
+        0.09232,
+        0.83649
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:5080",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/5080/text",
+      "element_pointer": "/data/elements/5080",
+      "element_id": "13616f093caceef167f99dcfb2ec6d19bc45240091233450d2c2d2f993874dcb",
+      "section_hierarchy": [
+        "Magic Missile"
+      ],
+      "page_pointer": "/data/elements/5080/page_number",
+      "physical_page": 161,
+      "printed_page": "161",
+      "printed_page_pointer": "/data/elements/5100/text",
+      "table_location": null,
+      "quote": "**Components**:V,S",
+      "quote_sha256": "fbbc0c062c475665fb2ee321e3a597706b4573eaef8738c8ba20b91d69f51568",
+      "coordinates": [
+        0.09232,
+        0.840909,
+        0.223856,
+        0.840909,
+        0.223856,
+        0.85101,
+        0.09232,
+        0.85101
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:5081",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/5081/text",
+      "element_pointer": "/data/elements/5081",
+      "element_id": "85da88f988bcbf68df740f0e12b21ec9e71362f8888661d9a4b0ac4526300477",
+      "section_hierarchy": [
+        "Magic Missile"
+      ],
+      "page_pointer": "/data/elements/5081/page_number",
+      "physical_page": 161,
+      "printed_page": "161",
+      "printed_page_pointer": "/data/elements/5100/text",
+      "table_location": null,
+      "quote": "**Duration:** Instantaneous",
+      "quote_sha256": "542f58d6b4116143c58936daf45f9ef5413375bac99d3d277061c03c8e96f1dd",
+      "coordinates": [
+        0.09232,
+        0.856061,
+        0.272059,
+        0.856061,
+        0.272059,
+        0.864899,
+        0.09232,
+        0.864899
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:5082",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/5082/text",
+      "element_pointer": "/data/elements/5082",
+      "element_id": "887c3f1976394ea033900d43216733c21b23b46d23df03d3f4716377da6c9f4c",
+      "section_hierarchy": [
+        "Magic Missile"
+      ],
+      "page_pointer": "/data/elements/5082/page_number",
+      "physical_page": 161,
+      "printed_page": "161",
+      "printed_page_pointer": "/data/elements/5100/text",
+      "table_location": null,
+      "quote": "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously,and you can direct them to hit one creature or several.",
+      "quote_sha256": "d30783e63da56b17a7c4d788f7492fdc9dcb048b7a6d9ff2b47ba9258a57db26",
+      "coordinates": [
+        0.533497,
+        0.092803,
+        0.906046,
+        0.092803,
+        0.906046,
+        0.16351,
+        0.533497,
+        0.16351
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    },
+    {
+      "id": "srd51-full-001:element:5083",
+      "ruleset": "srd-5.1",
+      "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+      "run_id": "srd51-full-001",
+      "role": "rule_text",
+      "fragment_type": "NarrativeText",
+      "json_pointer": "/data/elements/5083/text",
+      "element_pointer": "/data/elements/5083",
+      "element_id": "9dafdaf3845c0559085892144c7b0ec99fe330f55ee618f276d8914a948b2b94",
+      "section_hierarchy": [
+        "Magic Missile"
+      ],
+      "page_pointer": "/data/elements/5083/page_number",
+      "physical_page": 161,
+      "printed_page": "161",
+      "printed_page_pointer": "/data/elements/5100/text",
+      "table_location": null,
+      "quote": "**At Higher** **Levels.** When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.",
+      "quote_sha256": "79ec4d6d471338ce752dedfa27eb13fb95eabee14d97bc7177c9a9bfff82916b",
+      "coordinates": [
+        0.533497,
+        0.166035,
+        0.901961,
+        0.166035,
+        0.901961,
+        0.206439,
+        0.533497,
+        0.206439
+      ],
+      "review_status": "review_required",
+      "schema_version": "1"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "evidence_sha256": "731aaa71c6b4226d5cb2eebe070285868af2e5724e5f7c7641cbf353e9b4b72c",
+    "validated_at": "2026-10-12T09:33:03.483120+00:00",
+    "scope": "schema + provenance; semantic review still required"
+  }
+}
