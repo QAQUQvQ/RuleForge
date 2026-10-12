@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "method": "reviewed exact source patterns + deterministic golden cases",
+  "human_review": false,
+  "cases": [
+    {
+      "dexterity": 1,
+      "expected_ac": 6,
+      "actual_ac": 6
+    },
+    {
+      "dexterity": 9,
+      "expected_ac": 10,
+      "actual_ac": 10
+    },
+    {
+      "dexterity": 10,
+      "expected_ac": 11,
+      "actual_ac": 11
+    },
+    {
+      "dexterity": 15,
+      "expected_ac": 13,
+      "actual_ac": 13
+    },
+    {
+      "dexterity": 20,
+      "expected_ac": 16,
+      "actual_ac": 16
+    },
+    {
+      "dexterity": 30,
+      "expected_ac": 21,
+      "actual_ac": 21
+    }
+  ],
+  "source_ids": [
+    "srd51-full-001:armor_table",
+    "srd51-full-001:light_armor",
+    "srd51-full-001:ability_modifier"
+  ],
+  "dsl_sha256": "ba98f33431b8fd1a5def38f9ed987c0bdf2257be18bea995f71ff6ceb54d6255",
+  "verified_at": "2026-10-12T02:52:36.692417+00:00",
+  "manifest": {
+    "path": "data/runs/srd51-full-001/manifest.json",
+    "sha256": "c9c2a3ecee32d034b2ac0148cc42593a23a39a01df2f27018e9f85832df026e6",
+    "bytes": 1837
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "authenticated": false,
+  "daily_page_limit": 1000,
+  "daily_pages_used": 0,
+  "daily_pages_remaining": 1000,
+  "max_pages_per_request": 50,
+  "max_file_size_mb": 10,
+  "standard_max_file_size_mb": 500,
+  "supported_content_types": [
+    "application/pdf",
+    "image/jpeg",
+    "image/png",
+    "image/bmp",
+    "image/tiff",
+    "image/webp"
+  ],
+  "reset_at": "2026-10-13T00:00:00+08:00"
+}

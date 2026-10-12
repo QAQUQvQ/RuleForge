@@ -1,0 +1,54 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "ruleset": {
+      "title": "Ruleset",
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "armor",
+        "shield",
+        "weapon",
+        "other"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "source_ids": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Source Ids",
+      "type": "array"
+    },
+    "review_status": {
+      "default": "draft",
+      "enum": [
+        "draft",
+        "verified",
+        "rejected"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "ruleset",
+    "category",
+    "source_ids"
+  ],
+  "title": "Item",
+  "type": "object"
+}

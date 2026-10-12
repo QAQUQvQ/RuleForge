@@ -1,0 +1,7 @@
+{
+  "name": "ruleforge-workspace",
+  "private": true,
+  "devDependencies": {
+    "xparse-cli": "2.5.0"
+  }
+}

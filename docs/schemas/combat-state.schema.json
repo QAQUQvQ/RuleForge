@@ -1,0 +1,444 @@
+{
+  "$defs": {
+    "Abilities": {
+      "additionalProperties": false,
+      "properties": {
+        "strength": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Strength",
+          "type": "integer"
+        },
+        "dexterity": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Dexterity",
+          "type": "integer"
+        },
+        "constitution": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Constitution",
+          "type": "integer"
+        },
+        "intelligence": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Intelligence",
+          "type": "integer"
+        },
+        "wisdom": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Wisdom",
+          "type": "integer"
+        },
+        "charisma": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Charisma",
+          "type": "integer"
+        }
+      },
+      "title": "Abilities",
+      "type": "object"
+    },
+    "ActionBudget": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "default": true,
+          "title": "Action",
+          "type": "boolean"
+        },
+        "bonus_action": {
+          "default": true,
+          "title": "Bonus Action",
+          "type": "boolean"
+        },
+        "reaction": {
+          "default": true,
+          "title": "Reaction",
+          "type": "boolean"
+        },
+        "movement_ft": {
+          "default": 30,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Movement Ft",
+          "type": "integer"
+        }
+      },
+      "title": "ActionBudget",
+      "type": "object"
+    },
+    "Combatant": {
+      "additionalProperties": false,
+      "properties": {
+        "creature": {
+          "$ref": "#/$defs/Creature"
+        },
+        "initiative": {
+          "default": 0,
+          "maximum": 100,
+          "minimum": -100,
+          "title": "Initiative",
+          "type": "integer"
+        },
+        "position": {
+          "$ref": "#/$defs/Position"
+        },
+        "budget": {
+          "$ref": "#/$defs/ActionBudget"
+        }
+      },
+      "required": [
+        "creature"
+      ],
+      "title": "Combatant",
+      "type": "object"
+    },
+    "Creature": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "default": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "version": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Version",
+          "type": "integer"
+        },
+        "level": {
+          "default": 1,
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Level",
+          "type": "integer"
+        },
+        "abilities": {
+          "$ref": "#/$defs/Abilities"
+        },
+        "equipment": {
+          "$ref": "#/$defs/Equipment"
+        },
+        "hp": {
+          "$ref": "#/$defs/HitPoints"
+        },
+        "speed_ft": {
+          "default": 30,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Speed Ft",
+          "type": "integer"
+        },
+        "conditions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 50,
+          "title": "Conditions",
+          "type": "array"
+        },
+        "resources": {
+          "additionalProperties": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "maxProperties": 100,
+          "title": "Resources",
+          "type": "object"
+        },
+        "kind": {
+          "default": "pc",
+          "enum": [
+            "pc",
+            "npc",
+            "monster"
+          ],
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Creature",
+      "type": "object"
+    },
+    "Effect": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "target_id": {
+          "title": "Target Id",
+          "type": "string"
+        },
+        "expires": {
+          "enum": [
+            "turn_start",
+            "turn_end",
+            "encounter_end",
+            "dm"
+          ],
+          "title": "Expires",
+          "type": "string"
+        },
+        "remaining_rounds": {
+          "anyOf": [
+            {
+              "maximum": 10000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Remaining Rounds"
+        }
+      },
+      "required": [
+        "id",
+        "rule_id",
+        "target_id",
+        "expires"
+      ],
+      "title": "Effect",
+      "type": "object"
+    },
+    "Equipment": {
+      "additionalProperties": false,
+      "properties": {
+        "armor": {
+          "default": "none",
+          "enum": [
+            "none",
+            "leather",
+            "light",
+            "medium",
+            "heavy"
+          ],
+          "title": "Armor",
+          "type": "string"
+        },
+        "shield": {
+          "default": false,
+          "title": "Shield",
+          "type": "boolean"
+        },
+        "alternative_ac": {
+          "default": false,
+          "title": "Alternative Ac",
+          "type": "boolean"
+        }
+      },
+      "title": "Equipment",
+      "type": "object"
+    },
+    "HitPoints": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum": {
+          "default": 1,
+          "maximum": 10000,
+          "minimum": 1,
+          "title": "Maximum",
+          "type": "integer"
+        },
+        "current": {
+          "default": 1,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Current",
+          "type": "integer"
+        },
+        "temporary": {
+          "default": 0,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Temporary",
+          "type": "integer"
+        }
+      },
+      "title": "HitPoints",
+      "type": "object"
+    },
+    "Position": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "default": 0,
+          "maximum": 10000,
+          "minimum": -10000,
+          "title": "X",
+          "type": "integer"
+        },
+        "y": {
+          "default": 0,
+          "maximum": 10000,
+          "minimum": -10000,
+          "title": "Y",
+          "type": "integer"
+        }
+      },
+      "title": "Position",
+      "type": "object"
+    },
+    "ReactionWindow": {
+      "additionalProperties": false,
+      "properties": {
+        "trigger_event_id": {
+          "title": "Trigger Event Id",
+          "type": "string"
+        },
+        "eligible_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Eligible Ids",
+          "type": "array"
+        },
+        "resume_phase": {
+          "enum": [
+            "turn_start",
+            "action",
+            "turn_end"
+          ],
+          "title": "Resume Phase",
+          "type": "string"
+        }
+      },
+      "required": [
+        "trigger_event_id",
+        "eligible_ids",
+        "resume_phase"
+      ],
+      "title": "ReactionWindow",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "ruleset": {
+      "const": "srd-5.1",
+      "default": "srd-5.1",
+      "title": "Ruleset",
+      "type": "string"
+    },
+    "version": {
+      "default": 0,
+      "maximum": 10000,
+      "minimum": 0,
+      "title": "Version",
+      "type": "integer"
+    },
+    "round": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Round",
+      "type": "integer"
+    },
+    "phase": {
+      "default": "setup",
+      "enum": [
+        "setup",
+        "turn_start",
+        "action",
+        "reaction",
+        "turn_end",
+        "ended"
+      ],
+      "title": "Phase",
+      "type": "string"
+    },
+    "combatants": {
+      "items": {
+        "$ref": "#/$defs/Combatant"
+      },
+      "maxItems": 100,
+      "title": "Combatants",
+      "type": "array"
+    },
+    "initiative_order": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Initiative Order",
+      "type": "array"
+    },
+    "active_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Active Id"
+    },
+    "reaction_window": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReactionWindow"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "effects": {
+      "items": {
+        "$ref": "#/$defs/Effect"
+      },
+      "maxItems": 200,
+      "title": "Effects",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "title": "CombatState",
+  "type": "object"
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "ruleforge.parse_run.v1",
+  "id": "srd51-full-001",
+  "parser": "intsig-textin/xparse-skills / xparse-cli",
+  "parser_version": "2.5.0",
+  "api_mode": "free",
+  "status": "succeeded",
+  "exit_code": 0,
+  "error": null,
+  "source_url": "https://media.dndbeyond.com/compendium-images/srd/5.1/SRD_CC_v5.1.pdf",
+  "ruleset": "srd-5.1",
+  "license": "CC-BY-4.0",
+  "document": {
+    "path": "data/sources/SRD_CC_v5.1.pdf",
+    "sha256": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+    "bytes": 3158713
+  },
+  "coverage": "full",
+  "started_at": "2026-10-12T02:40:08.7999692+00:00",
+  "finished_at": "2026-10-12T02:49:19.739062+00:00",
+  "command": [
+    "xparse-cli",
+    "parse",
+    "data/sources/SRD_CC_v5.1.pdf",
+    "--api",
+    "free",
+    "--view",
+    "json",
+    "--output",
+    "data/runs/srd51-full-001/raw"
+  ],
+  "artifacts": [
+    {
+      "path": "data/runs/srd51-full-001/raw/SRD_CC_v5.1.json",
+      "sha256": "9473d981252593c3a554255b02b41e9435d2ec884399dcff4def580ca3ad841e",
+      "bytes": 24161238
+    },
+    {
+      "path": "data/runs/srd51-full-001/started_at.txt",
+      "sha256": "d490b9fa01ca5b2cb4d08e9611609be606319ea76059d698742fd3baa8511ebb",
+      "bytes": 33
+    },
+    {
+      "path": "data/runs/srd51-full-001/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "data/runs/srd51-full-001/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "raw": {
+    "path": "data/runs/srd51-full-001/raw/SRD_CC_v5.1.json",
+    "sha256": "9473d981252593c3a554255b02b41e9435d2ec884399dcff4def580ca3ad841e",
+    "bytes": 24161238
+  },
+  "page_count": 403
+}

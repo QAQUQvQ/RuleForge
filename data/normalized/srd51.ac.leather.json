@@ -1,0 +1,162 @@
+{
+  "rule": {
+    "dsl_version": "1",
+    "id": "srd51.ac.leather",
+    "version": 1,
+    "ruleset": "srd-5.1",
+    "category": "armor_class",
+    "requires": [
+      {
+        "field": "armor",
+        "op": "eq",
+        "value": "leather"
+      },
+      {
+        "field": "shield",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "alternative_ac",
+        "op": "eq",
+        "value": false
+      }
+    ],
+    "expression": {
+      "op": "add",
+      "args": [
+        {
+          "op": "const",
+          "value": 11
+        },
+        {
+          "op": "ability_modifier",
+          "ability": "dexterity"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "srd51-full-001:armor_table",
+      "run_id": "srd51-full-001",
+      "role": "armor_table",
+      "json_pointer": "/data/elements/1647/text",
+      "page_pointer": "/data/elements/1647/page_number",
+      "physical_page": 64,
+      "printed_page": "64",
+      "printed_page_pointer": "/data/elements/1667/text",
+      "section": "Armor / Leather",
+      "quote": "<table border=\"1\" ><tr>\n<td>Leather</td>\n<td>10gp</td>\n<td>$11+Dexmodifier$</td>\n<td>-</td>\n<td>-</td>\n<td>10 lb.</td>\n</tr><tr>\n<td>Studded leather</td>\n<td>45gp</td>\n<td>$12+Dexmodifier$</td>\n<td>-</td>\n<td>-</td>\n<td>13 lb.</td>\n</tr><tr>\n<td>Medium Armor</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr><tr>\n<td>Hide</td>\n<td>10gp</td>\n<td>12+Dex modifier (max 2)</td>\n<td>-</td>\n<td>-</td>\n<td>12 lb.</td>\n</tr><tr>\n<td>Chain shirt</td>\n<td>50gp</td>\n<td>$13+Dexmodifier(max2)$</td>\n<td>-</td>\n<td>-</td>\n<td>20 lb.</td>\n</tr><tr>\n<td>Scale mail</td>\n<td>50 gp</td>\n<td>$14+Dexmodifier(max2)$</td>\n<td></td>\n<td>Disadvantage</td>\n<td>45 lb.</td>\n</tr><tr>\n<td>Breastplate</td>\n<td>400gp</td>\n<td>$14+Dexmodifier(max2)$</td>\n<td>-</td>\n<td>-</td>\n<td>20 lb.</td>\n</tr><tr>\n<td>Half plate</td>\n<td>750gp</td>\n<td>$15+Dex$modifier (max 2)</td>\n<td>-</td>\n<td>Disadvantage</td>\n<td>40 lb.</td>\n</tr><tr>\n<td>Heavy Armor</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr><tr>\n<td>Ring mail</td>\n<td>30gp</td>\n<td>14</td>\n<td>-</td>\n<td>Disadvantage</td>\n<td>40 lb.</td>\n</tr><tr>\n<td>Chain mail</td>\n<td>75gp</td>\n<td>16</td>\n<td>Str 13</td>\n<td>Disadvantage</td>\n<td>55 lb.</td>\n</tr><tr>\n<td>Splint</td>\n<td>200 gp</td>\n<td>17</td>\n<td>Str 15</td>\n<td>Disadvantage</td>\n<td>60 lb.</td>\n</tr><tr>\n<td>Plate</td>\n<td>1,500 gp</td>\n<td>18</td>\n<td>Str 15</td>\n<td>Disadvantage</td>\n<td>65 lb.</td>\n</tr><tr>\n<td>Shield</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr><tr>\n<td>Shield</td>\n<td>10gp</td>\n<td>+2</td>\n<td>-</td>\n<td>-</td>\n<td>6 lb.</td>\n</tr></table>",
+      "quote_sha256": "d0bd372b33a89b44f6ff6060da320013afe00c2e845c7925840729174e800b8d",
+      "element_id": "bee293c2781f9abb4ef16e4956aa1659117127dc9a7ce14bbd95c899d0b66406",
+      "coordinates": [
+        0.08415,
+        0.089015,
+        0.704248,
+        0.089646,
+        0.705065,
+        0.301768,
+        0.083333,
+        0.301136
+      ]
+    },
+    {
+      "id": "srd51-full-001:light_armor",
+      "run_id": "srd51-full-001",
+      "role": "light_armor",
+      "json_pointer": "/data/elements/1624/text",
+      "page_pointer": "/data/elements/1624/page_number",
+      "physical_page": 63,
+      "printed_page": "63",
+      "printed_page_pointer": "/data/elements/1646/text",
+      "section": "Light Armor",
+      "quote": "Made from supple and thin materials, light armor favors agile adventurers since it offers some protection without sacrificing mobility. If you wear light armor, you add your Dexterity modifier to the base number from your armor type to determine your Armor Class.",
+      "quote_sha256": "bf031b9380e2200c6744af5a2d7284034e65032c147cb411bca216868d13383a",
+      "element_id": "73133be3671dc7746150ce2f9df43ed6870aff0a7319b9114687f96fe78d0a08",
+      "coordinates": [
+        0.090686,
+        0.335227,
+        0.45098,
+        0.335227,
+        0.45098,
+        0.421717,
+        0.090686,
+        0.421717
+      ]
+    },
+    {
+      "id": "srd51-full-001:ability_modifier",
+      "run_id": "srd51-full-001",
+      "role": "ability_modifier",
+      "json_pointer": "/data/elements/1873/text",
+      "page_pointer": "/data/elements/1873/page_number",
+      "physical_page": 76,
+      "printed_page": "76",
+      "printed_page_pointer": "/data/elements/1882/text",
+      "section": "Ability Scores and Modifiers",
+      "quote": "To determine an ability modifier without consulting the table, subtract 10 from the ability score and then divide the total by 2 (round down).",
+      "quote_sha256": "b8db48f3024aa3b4ddb9e07a9eefb9c79ff23d4f599bf199a90adfbcd12e5670",
+      "element_id": "90ddc7ac8ef404089238477250e511ca603821874e9e1aa8b8ea4505e7429e42",
+      "coordinates": [
+        0.534314,
+        0.246212,
+        0.888072,
+        0.246212,
+        0.888072,
+        0.287879,
+        0.534314,
+        0.287879
+      ]
+    }
+  ],
+  "verification": {
+    "status": "passed",
+    "method": "reviewed exact source patterns + deterministic golden cases",
+    "human_review": false,
+    "cases": [
+      {
+        "dexterity": 1,
+        "expected_ac": 6,
+        "actual_ac": 6
+      },
+      {
+        "dexterity": 9,
+        "expected_ac": 10,
+        "actual_ac": 10
+      },
+      {
+        "dexterity": 10,
+        "expected_ac": 11,
+        "actual_ac": 11
+      },
+      {
+        "dexterity": 15,
+        "expected_ac": 13,
+        "actual_ac": 13
+      },
+      {
+        "dexterity": 20,
+        "expected_ac": 16,
+        "actual_ac": 16
+      },
+      {
+        "dexterity": 30,
+        "expected_ac": 21,
+        "actual_ac": 21
+      }
+    ],
+    "source_ids": [
+      "srd51-full-001:armor_table",
+      "srd51-full-001:light_armor",
+      "srd51-full-001:ability_modifier"
+    ],
+    "dsl_sha256": "ba98f33431b8fd1a5def38f9ed987c0bdf2257be18bea995f71ff6ceb54d6255",
+    "verified_at": "2026-10-12T02:52:36.692417+00:00",
+    "manifest": {
+      "path": "data/runs/srd51-full-001/manifest.json",
+      "sha256": "c9c2a3ecee32d034b2ac0148cc42593a23a39a01df2f27018e9f85832df026e6",
+      "bytes": 1837
+    }
+  }
+}

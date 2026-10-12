@@ -1,0 +1,184 @@
+{
+  "$defs": {
+    "Abilities": {
+      "additionalProperties": false,
+      "properties": {
+        "strength": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Strength",
+          "type": "integer"
+        },
+        "dexterity": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Dexterity",
+          "type": "integer"
+        },
+        "constitution": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Constitution",
+          "type": "integer"
+        },
+        "intelligence": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Intelligence",
+          "type": "integer"
+        },
+        "wisdom": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Wisdom",
+          "type": "integer"
+        },
+        "charisma": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Charisma",
+          "type": "integer"
+        }
+      },
+      "title": "Abilities",
+      "type": "object"
+    },
+    "Equipment": {
+      "additionalProperties": false,
+      "properties": {
+        "armor": {
+          "default": "none",
+          "enum": [
+            "none",
+            "leather",
+            "light",
+            "medium",
+            "heavy"
+          ],
+          "title": "Armor",
+          "type": "string"
+        },
+        "shield": {
+          "default": false,
+          "title": "Shield",
+          "type": "boolean"
+        },
+        "alternative_ac": {
+          "default": false,
+          "title": "Alternative Ac",
+          "type": "boolean"
+        }
+      },
+      "title": "Equipment",
+      "type": "object"
+    },
+    "HitPoints": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum": {
+          "default": 1,
+          "maximum": 10000,
+          "minimum": 1,
+          "title": "Maximum",
+          "type": "integer"
+        },
+        "current": {
+          "default": 1,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Current",
+          "type": "integer"
+        },
+        "temporary": {
+          "default": 0,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Temporary",
+          "type": "integer"
+        }
+      },
+      "title": "HitPoints",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "name": {
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "ruleset": {
+      "const": "srd-5.1",
+      "default": "srd-5.1",
+      "title": "Ruleset",
+      "type": "string"
+    },
+    "version": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Version",
+      "type": "integer"
+    },
+    "level": {
+      "default": 1,
+      "maximum": 20,
+      "minimum": 1,
+      "title": "Level",
+      "type": "integer"
+    },
+    "abilities": {
+      "$ref": "#/$defs/Abilities"
+    },
+    "equipment": {
+      "$ref": "#/$defs/Equipment"
+    },
+    "hp": {
+      "$ref": "#/$defs/HitPoints"
+    },
+    "speed_ft": {
+      "default": 30,
+      "maximum": 10000,
+      "minimum": 0,
+      "title": "Speed Ft",
+      "type": "integer"
+    },
+    "conditions": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 50,
+      "title": "Conditions",
+      "type": "array"
+    },
+    "resources": {
+      "additionalProperties": {
+        "maximum": 10000,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "maxProperties": 100,
+      "title": "Resources",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ],
+  "title": "Character",
+  "type": "object"
+}

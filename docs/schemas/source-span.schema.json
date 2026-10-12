@@ -1,0 +1,108 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "role": {
+      "enum": [
+        "armor_table",
+        "light_armor",
+        "ability_modifier"
+      ],
+      "title": "Role",
+      "type": "string"
+    },
+    "json_pointer": {
+      "pattern": "^/data/elements/[0-9]+/text$",
+      "title": "Json Pointer",
+      "type": "string"
+    },
+    "page_pointer": {
+      "pattern": "^/data/elements/[0-9]+/page_number$",
+      "title": "Page Pointer",
+      "type": "string"
+    },
+    "physical_page": {
+      "minimum": 1,
+      "title": "Physical Page",
+      "type": "integer"
+    },
+    "printed_page": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Printed Page"
+    },
+    "printed_page_pointer": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Printed Page Pointer"
+    },
+    "section": {
+      "title": "Section",
+      "type": "string"
+    },
+    "quote": {
+      "minLength": 1,
+      "title": "Quote",
+      "type": "string"
+    },
+    "quote_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Quote Sha256",
+      "type": "string"
+    },
+    "element_id": {
+      "title": "Element Id",
+      "type": "string"
+    },
+    "coordinates": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Coordinates"
+    }
+  },
+  "required": [
+    "id",
+    "run_id",
+    "role",
+    "json_pointer",
+    "page_pointer",
+    "physical_page",
+    "printed_page",
+    "printed_page_pointer",
+    "section",
+    "quote",
+    "quote_sha256",
+    "element_id"
+  ],
+  "title": "SourceSpan",
+  "type": "object"
+}

@@ -1,0 +1,2 @@
+# Preserve exact bytes of source documents, parser responses and evidence logs.
+data/** -text

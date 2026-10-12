@@ -1,0 +1,79 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      xparse-cli:
+        specifier: 2.5.0
+        version: 2.5.0
+
+packages:
+
+  xparse-cli-darwin-amd64@2.5.0:
+    resolution: {integrity: sha512-Q5OdBRif49UXAWgFsP6foWwlrZgTMN/PWtTIQV2GvYQLnvwCY03RyR48C7Tz4I1IFg4eE8gDzQbmkE6WaXjPSQ==}
+    cpu: [x64]
+    os: [darwin]
+
+  xparse-cli-darwin-arm64@2.5.0:
+    resolution: {integrity: sha512-xb/FUBWpIux2Hen2iIAKtCM4KUGxyKggQCblovokgq6FEFMkz3cMP184SOVJTHxXF9VuFsDOYO8de280ZOCISg==}
+    cpu: [arm64]
+    os: [darwin]
+
+  xparse-cli-linux-amd64@2.5.0:
+    resolution: {integrity: sha512-37Lp+u6yq1m1jj/2IQ8WFaBvWBRirYdjLHp06b4blsYk1ZpnodI2yhPavlEhMvIu60+iOa2KDjEOdavomvjmAQ==}
+    cpu: [x64]
+    os: [linux]
+
+  xparse-cli-linux-arm64@2.5.0:
+    resolution: {integrity: sha512-HV+HO1zKtWMwnd5QG89nfIf/hAtAmkinzv6LTqy38OawRWYb7B5zfq0hoDxs+IvXCcYRmx5pAhY1pxbLDaLsIQ==}
+    cpu: [arm64]
+    os: [linux]
+
+  xparse-cli-windows-amd64@2.5.0:
+    resolution: {integrity: sha512-Z5p9FV6lJyEi4KFgAJGpuYRHptBdBCGiSpCRyhlgnPSQ/S3t7lA4KctYSnasuoAOzW0Ua8mEntvR3g0+re5UGQ==}
+    cpu: [x64]
+    os: [win32]
+
+  xparse-cli-windows-arm64@2.5.0:
+    resolution: {integrity: sha512-b4bXOnayKh+C1poNexZZ2Bq8GtIz5JAL5TUjD/1gvagAg0e8bUYbLe05rfumo8iGryuAu59ukoCdi+45dLNy1A==}
+    cpu: [arm64]
+    os: [win32]
+
+  xparse-cli@2.5.0:
+    resolution: {integrity: sha512-EcTpDMvJFunlL2RFr4oWKqdEvD0Y5Ky3wCEVfEyOJclkJzJkjuJHXJg5oSH+nWLtaUbmTGUbMj8tHXnW0oUdPw==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+snapshots:
+
+  xparse-cli-darwin-amd64@2.5.0:
+    optional: true
+
+  xparse-cli-darwin-arm64@2.5.0:
+    optional: true
+
+  xparse-cli-linux-amd64@2.5.0:
+    optional: true
+
+  xparse-cli-linux-arm64@2.5.0:
+    optional: true
+
+  xparse-cli-windows-amd64@2.5.0:
+    optional: true
+
+  xparse-cli-windows-arm64@2.5.0:
+    optional: true
+
+  xparse-cli@2.5.0:
+    optionalDependencies:
+      xparse-cli-darwin-amd64: 2.5.0
+      xparse-cli-darwin-arm64: 2.5.0
+      xparse-cli-linux-amd64: 2.5.0
+      xparse-cli-linux-arm64: 2.5.0
+      xparse-cli-windows-amd64: 2.5.0
+      xparse-cli-windows-arm64: 2.5.0

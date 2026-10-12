@@ -1,0 +1,237 @@
+{
+  "$defs": {
+    "AttackCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Command Id",
+          "type": "string"
+        },
+        "encounter_id": {
+          "title": "Encounter Id",
+          "type": "string"
+        },
+        "actor_id": {
+          "title": "Actor Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "type": {
+          "const": "attack",
+          "default": "attack",
+          "title": "Type",
+          "type": "string"
+        },
+        "target_id": {
+          "title": "Target Id",
+          "type": "string"
+        },
+        "weapon_id": {
+          "title": "Weapon Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "command_id",
+        "encounter_id",
+        "actor_id",
+        "expected_version",
+        "target_id",
+        "weapon_id"
+      ],
+      "title": "AttackCommand",
+      "type": "object"
+    },
+    "DMAdjustmentCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Command Id",
+          "type": "string"
+        },
+        "encounter_id": {
+          "title": "Encounter Id",
+          "type": "string"
+        },
+        "actor_id": {
+          "title": "Actor Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "type": {
+          "const": "dm_adjustment",
+          "default": "dm_adjustment",
+          "title": "Type",
+          "type": "string"
+        },
+        "target_id": {
+          "title": "Target Id",
+          "type": "string"
+        },
+        "hp_delta": {
+          "maximum": 10000,
+          "minimum": -10000,
+          "title": "Hp Delta",
+          "type": "integer"
+        },
+        "reason": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "command_id",
+        "encounter_id",
+        "actor_id",
+        "expected_version",
+        "target_id",
+        "hp_delta",
+        "reason"
+      ],
+      "title": "DMAdjustmentCommand",
+      "type": "object"
+    },
+    "EndTurnCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Command Id",
+          "type": "string"
+        },
+        "encounter_id": {
+          "title": "Encounter Id",
+          "type": "string"
+        },
+        "actor_id": {
+          "title": "Actor Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "type": {
+          "const": "end_turn",
+          "default": "end_turn",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "command_id",
+        "encounter_id",
+        "actor_id",
+        "expected_version"
+      ],
+      "title": "EndTurnCommand",
+      "type": "object"
+    },
+    "MoveCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Command Id",
+          "type": "string"
+        },
+        "encounter_id": {
+          "title": "Encounter Id",
+          "type": "string"
+        },
+        "actor_id": {
+          "title": "Actor Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "type": {
+          "const": "move",
+          "default": "move",
+          "title": "Type",
+          "type": "string"
+        },
+        "destination": {
+          "$ref": "#/$defs/Position"
+        }
+      },
+      "required": [
+        "command_id",
+        "encounter_id",
+        "actor_id",
+        "expected_version",
+        "destination"
+      ],
+      "title": "MoveCommand",
+      "type": "object"
+    },
+    "Position": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "default": 0,
+          "maximum": 10000,
+          "minimum": -10000,
+          "title": "X",
+          "type": "integer"
+        },
+        "y": {
+          "default": 0,
+          "maximum": 10000,
+          "minimum": -10000,
+          "title": "Y",
+          "type": "integer"
+        }
+      },
+      "title": "Position",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "attack": "#/$defs/AttackCommand",
+      "dm_adjustment": "#/$defs/DMAdjustmentCommand",
+      "end_turn": "#/$defs/EndTurnCommand",
+      "move": "#/$defs/MoveCommand"
+    },
+    "propertyName": "type"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/AttackCommand"
+    },
+    {
+      "$ref": "#/$defs/MoveCommand"
+    },
+    {
+      "$ref": "#/$defs/EndTurnCommand"
+    },
+    {
+      "$ref": "#/$defs/DMAdjustmentCommand"
+    }
+  ]
+}

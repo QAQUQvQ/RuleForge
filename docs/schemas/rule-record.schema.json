@@ -1,0 +1,400 @@
+{
+  "$defs": {
+    "AbilityModifier": {
+      "additionalProperties": false,
+      "properties": {
+        "op": {
+          "const": "ability_modifier",
+          "title": "Op",
+          "type": "string"
+        },
+        "ability": {
+          "const": "dexterity",
+          "title": "Ability",
+          "type": "string"
+        }
+      },
+      "required": [
+        "op",
+        "ability"
+      ],
+      "title": "AbilityModifier",
+      "type": "object"
+    },
+    "Add": {
+      "additionalProperties": false,
+      "properties": {
+        "op": {
+          "const": "add",
+          "title": "Op",
+          "type": "string"
+        },
+        "args": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "ability_modifier": "#/$defs/AbilityModifier",
+                "add": "#/$defs/Add",
+                "const": "#/$defs/Constant"
+              },
+              "propertyName": "op"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/Constant"
+              },
+              {
+                "$ref": "#/$defs/AbilityModifier"
+              },
+              {
+                "$ref": "#/$defs/Add"
+              }
+            ]
+          },
+          "maxItems": 8,
+          "minItems": 2,
+          "title": "Args",
+          "type": "array"
+        }
+      },
+      "required": [
+        "op",
+        "args"
+      ],
+      "title": "Add",
+      "type": "object"
+    },
+    "AlternativeCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "const": "alternative_ac",
+          "title": "Field",
+          "type": "string"
+        },
+        "op": {
+          "const": "eq",
+          "title": "Op",
+          "type": "string"
+        },
+        "value": {
+          "const": false,
+          "title": "Value",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "field",
+        "op",
+        "value"
+      ],
+      "title": "AlternativeCondition",
+      "type": "object"
+    },
+    "ArmorCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "const": "armor",
+          "title": "Field",
+          "type": "string"
+        },
+        "op": {
+          "const": "eq",
+          "title": "Op",
+          "type": "string"
+        },
+        "value": {
+          "const": "leather",
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "field",
+        "op",
+        "value"
+      ],
+      "title": "ArmorCondition",
+      "type": "object"
+    },
+    "Constant": {
+      "additionalProperties": false,
+      "properties": {
+        "op": {
+          "const": "const",
+          "title": "Op",
+          "type": "string"
+        },
+        "value": {
+          "maximum": 100,
+          "minimum": -100,
+          "title": "Value",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "op",
+        "value"
+      ],
+      "title": "Constant",
+      "type": "object"
+    },
+    "RuleDSL": {
+      "additionalProperties": false,
+      "properties": {
+        "dsl_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Dsl Version",
+          "type": "string"
+        },
+        "id": {
+          "const": "srd51.ac.leather",
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "const": 1,
+          "default": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "ruleset": {
+          "const": "srd-5.1",
+          "title": "Ruleset",
+          "type": "string"
+        },
+        "category": {
+          "const": "armor_class",
+          "title": "Category",
+          "type": "string"
+        },
+        "requires": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "alternative_ac": "#/$defs/AlternativeCondition",
+                "armor": "#/$defs/ArmorCondition",
+                "shield": "#/$defs/ShieldCondition"
+              },
+              "propertyName": "field"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ArmorCondition"
+              },
+              {
+                "$ref": "#/$defs/ShieldCondition"
+              },
+              {
+                "$ref": "#/$defs/AlternativeCondition"
+              }
+            ]
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "title": "Requires",
+          "type": "array"
+        },
+        "expression": {
+          "discriminator": {
+            "mapping": {
+              "ability_modifier": "#/$defs/AbilityModifier",
+              "add": "#/$defs/Add",
+              "const": "#/$defs/Constant"
+            },
+            "propertyName": "op"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/Constant"
+            },
+            {
+              "$ref": "#/$defs/AbilityModifier"
+            },
+            {
+              "$ref": "#/$defs/Add"
+            }
+          ],
+          "title": "Expression"
+        }
+      },
+      "required": [
+        "id",
+        "ruleset",
+        "category",
+        "requires",
+        "expression"
+      ],
+      "title": "RuleDSL",
+      "type": "object"
+    },
+    "ShieldCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "const": "shield",
+          "title": "Field",
+          "type": "string"
+        },
+        "op": {
+          "const": "eq",
+          "title": "Op",
+          "type": "string"
+        },
+        "value": {
+          "const": false,
+          "title": "Value",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "field",
+        "op",
+        "value"
+      ],
+      "title": "ShieldCondition",
+      "type": "object"
+    },
+    "SourceSpan": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "run_id": {
+          "title": "Run Id",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "armor_table",
+            "light_armor",
+            "ability_modifier"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "json_pointer": {
+          "pattern": "^/data/elements/[0-9]+/text$",
+          "title": "Json Pointer",
+          "type": "string"
+        },
+        "page_pointer": {
+          "pattern": "^/data/elements/[0-9]+/page_number$",
+          "title": "Page Pointer",
+          "type": "string"
+        },
+        "physical_page": {
+          "minimum": 1,
+          "title": "Physical Page",
+          "type": "integer"
+        },
+        "printed_page": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Printed Page"
+        },
+        "printed_page_pointer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Printed Page Pointer"
+        },
+        "section": {
+          "title": "Section",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "quote_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Quote Sha256",
+          "type": "string"
+        },
+        "element_id": {
+          "title": "Element Id",
+          "type": "string"
+        },
+        "coordinates": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Coordinates"
+        }
+      },
+      "required": [
+        "id",
+        "run_id",
+        "role",
+        "json_pointer",
+        "page_pointer",
+        "physical_page",
+        "printed_page",
+        "printed_page_pointer",
+        "section",
+        "quote",
+        "quote_sha256",
+        "element_id"
+      ],
+      "title": "SourceSpan",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "rule": {
+      "$ref": "#/$defs/RuleDSL"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/SourceSpan"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Sources",
+      "type": "array"
+    },
+    "review_status": {
+      "default": "draft",
+      "enum": [
+        "draft",
+        "verified",
+        "rejected"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "rule",
+    "sources"
+  ],
+  "title": "RuleRecord",
+  "type": "object"
+}

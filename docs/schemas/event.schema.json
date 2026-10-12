@@ -1,0 +1,136 @@
+{
+  "$defs": {
+    "DieRoll": {
+      "additionalProperties": false,
+      "properties": {
+        "sides": {
+          "enum": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            20,
+            100
+          ],
+          "title": "Sides",
+          "type": "integer"
+        },
+        "value": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Value",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sides",
+        "value"
+      ],
+      "title": "DieRoll",
+      "type": "object"
+    },
+    "RuleReference": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "title": "RuleReference",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "command_id": {
+      "title": "Command Id",
+      "type": "string"
+    },
+    "encounter_id": {
+      "title": "Encounter Id",
+      "type": "string"
+    },
+    "sequence": {
+      "minimum": 1,
+      "title": "Sequence",
+      "type": "integer"
+    },
+    "type": {
+      "enum": [
+        "attack_resolved",
+        "moved",
+        "turn_ended",
+        "dm_adjusted"
+      ],
+      "title": "Type",
+      "type": "string"
+    },
+    "before_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Before Hash",
+      "type": "string"
+    },
+    "after_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "After Hash",
+      "type": "string"
+    },
+    "rule_refs": {
+      "items": {
+        "$ref": "#/$defs/RuleReference"
+      },
+      "title": "Rule Refs",
+      "type": "array"
+    },
+    "source_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Ids",
+      "type": "array"
+    },
+    "dice": {
+      "items": {
+        "$ref": "#/$defs/DieRoll"
+      },
+      "title": "Dice",
+      "type": "array"
+    },
+    "trace": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Trace",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "command_id",
+    "encounter_id",
+    "sequence",
+    "type",
+    "before_hash",
+    "after_hash",
+    "rule_refs",
+    "source_ids"
+  ],
+  "title": "DomainEvent",
+  "type": "object"
+}

@@ -1,0 +1,136 @@
+(base) PS E:\Codex\TextIn> python -m venv .venv
+>> .venv\Scripts\python.exe -m pip install -e ".[test]"
+>> .venv\Scripts\python.exe -m ruleforge.cli publish srd51-full-001
+>> .venv\Scripts\python.exe -m uvicorn ruleforge.api:create_app --factory --host 127.0.0.1 --port 8000
+Obtaining file:///E:/Codex/TextIn
+  Installing build dependencies ... done
+  Checking if build backend supports build_editable ... done
+  Getting requirements to build editable ... done
+  Preparing editable metadata (pyproject.toml) ... done
+Requirement already satisfied: fastapi<1,>=0.115 in e:\codex\textin\.venv\lib\site-packages (from ruleforge==0.1.0) (0.143.0)
+Requirement already satisfied: pydantic<3,>=2.10 in e:\codex\textin\.venv\lib\site-packages (from ruleforge==0.1.0) (2.14.1)
+Requirement already satisfied: uvicorn<1,>=0.34 in e:\codex\textin\.venv\lib\site-packages (from ruleforge==0.1.0) (0.54.0)
+Requirement already satisfied: httpx<1,>=0.28 in e:\codex\textin\.venv\lib\site-packages (from ruleforge==0.1.0) (0.28.1)
+Requirement already satisfied: pytest<10,>=8 in e:\codex\textin\.venv\lib\site-packages (from ruleforge==0.1.0) (9.1.1)
+Requirement already satisfied: starlette>=0.46.0 in e:\codex\textin\.venv\lib\site-packages (from fastapi<1,>=0.115->ruleforge==0.1.0) (1.7.0)
+Requirement already satisfied: typing-extensions>=4.8.0 in e:\codex\textin\.venv\lib\site-packages (from fastapi<1,>=0.115->ruleforge==0.1.0) (4.16.0)
+Requirement already satisfied: typing-inspection>=0.4.2 in e:\codex\textin\.venv\lib\site-packages (from fastapi<1,>=0.115->ruleforge==0.1.0) (0.4.4)
+Requirement already satisfied: annotated-doc>=0.0.2 in e:\codex\textin\.venv\lib\site-packages (from fastapi<1,>=0.115->ruleforge==0.1.0) (0.0.5)
+Requirement already satisfied: opentelemetry-api>=1.44.0 in e:\codex\textin\.venv\lib\site-packages (from fastapi<1,>=0.115->ruleforge==0.1.0) (1.45.1)
+Requirement already satisfied: anyio in e:\codex\textin\.venv\lib\site-packages (from httpx<1,>=0.28->ruleforge==0.1.0) (4.15.1)
+Requirement already satisfied: certifi in e:\codex\textin\.venv\lib\site-packages (from httpx<1,>=0.28->ruleforge==0.1.0) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in e:\codex\textin\.venv\lib\site-packages (from httpx<1,>=0.28->ruleforge==0.1.0) (1.0.9)
+Requirement already satisfied: idna in e:\codex\textin\.venv\lib\site-packages (from httpx<1,>=0.28->ruleforge==0.1.0) (3.20)
+Requirement already satisfied: h11>=0.16 in e:\codex\textin\.venv\lib\site-packages (from httpcore==1.*->httpx<1,>=0.28->ruleforge==0.1.0) (0.16.0)
+Requirement already satisfied: annotated-types>=0.6.0 in e:\codex\textin\.venv\lib\site-packages (from pydantic<3,>=2.10->ruleforge==0.1.0) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.1 in e:\codex\textin\.venv\lib\site-packages (from pydantic<3,>=2.10->ruleforge==0.1.0) (2.50.1)
+Requirement already satisfied: colorama>=0.4 in e:\codex\textin\.venv\lib\site-packages (from pytest<10,>=8->ruleforge==0.1.0) (0.4.6)
+Requirement already satisfied: iniconfig>=1.0.1 in e:\codex\textin\.venv\lib\site-packages (from pytest<10,>=8->ruleforge==0.1.0) (2.3.1)
+Requirement already satisfied: packaging>=22 in e:\codex\textin\.venv\lib\site-packages (from pytest<10,>=8->ruleforge==0.1.0) (26.3)
+Requirement already satisfied: pluggy<2,>=1.5 in e:\codex\textin\.venv\lib\site-packages (from pytest<10,>=8->ruleforge==0.1.0) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in e:\codex\textin\.venv\lib\site-packages (from pytest<10,>=8->ruleforge==0.1.0) (2.21.0)
+Requirement already satisfied: click>=7.0 in e:\codex\textin\.venv\lib\site-packages (from uvicorn<1,>=0.34->ruleforge==0.1.0) (8.5.0)
+Building wheels for collected packages: ruleforge
+  Building editable for ruleforge (pyproject.toml) ... done
+  Created wheel for ruleforge: filename=ruleforge-0.1.0-0.editable-py3-none-any.whl size=1585 sha256=201d26436445ac35e355027de37fda0a1d3fe11bcf4109f4f0c726c87063b313
+  Stored in directory: C:\Users\23100\AppData\Local\Temp\pip-ephem-wheel-cache-mx522apl\wheels\37\be\5e\54809058ac6c572b165b75f9d81684bb3de4abf3294c8533e8
+Successfully built ruleforge
+Installing collected packages: ruleforge
+  Attempting uninstall: ruleforge
+    Found existing installation: ruleforge 0.1.0
+    Uninstalling ruleforge-0.1.0:
+      Successfully uninstalled ruleforge-0.1.0
+Successfully installed ruleforge-0.1.0
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: E:\Codex\TextIn\.venv\Scripts\python.exe -m pip install --upgrade pip
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "E:\Codex\TextIn\backend\ruleforge\cli.py", line 5, in <module>
+    from ruleforge.rules.service import publish
+  File "E:\Codex\TextIn\backend\ruleforge\rules\service.py", line 3, in <module>
+    from ruleforge.domain.models import Abilities, Equipment
+  File "E:\Codex\TextIn\backend\ruleforge\domain\models.py", line 2, in <module>
+    from pydantic import BaseModel, ConfigDict, Field, model_validator
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\pydantic\__init__.py", line 5, in <module>
+    from ._migration import getattr_migration
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\pydantic\_migration.py", line 5, in <module>
+    from pydantic.warnings import PydanticDeprecatedSince20
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\pydantic\warnings.py", line 5, in <module>
+    from .version import version_short
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\pydantic\version.py", line 7, in <module>
+    from pydantic_core import __version__ as __pydantic_core_version__
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\pydantic_core\__init__.py", line 8, in <module>
+    from ._pydantic_core import (
+    ...<21 lines>...
+    )
+ImportError: cannot import name 'ArgsKwargs' from 'pydantic_core._pydantic_core' (unknown location)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+    ~~~~~~~~~~~~^^
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\click\core.py", line 1631, in __call__
+    return self.main(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\click\core.py", line 1552, in main
+    rv = self.invoke(ctx)
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\click\core.py", line 1415, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\click\core.py", line 910, in invoke
+    return callback(*args, **kwargs)
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\uvicorn\main.py", line 448, in main
+    run(
+    ~~~^
+        app,
+        ^^^^
+    ...<49 lines>...
+        reset_contextvars=reset_contextvars,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\uvicorn\main.py", line 620, in run
+    config.load_app()
+    ~~~~~~~~~~~~~~~^^
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\uvicorn\config.py", line 434, in load_app
+    return import_from_string(self.app)
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\uvicorn\importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "H:\Anaconda\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "E:\Codex\TextIn\backend\ruleforge\api.py", line 3, in <module>
+    from fastapi import FastAPI, HTTPException
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\fastapi\__init__.py", line 7, in <module>
+    from .applications import FastAPI as FastAPI
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\fastapi\applications.py", line 7, in <module>
+    from fastapi import routing
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\fastapi\routing.py", line 45, in <module>
+    from fastapi import params
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\fastapi\params.py", line 7, in <module>
+    from fastapi.exceptions import FastAPIDeprecationWarning
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\fastapi\exceptions.py", line 5, in <module>
+    from pydantic import BaseModel, create_model
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\pydantic\__init__.py", line 5, in <module>
+    from ._migration import getattr_migration
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\pydantic\_migration.py", line 5, in <module>
+    from pydantic.warnings import PydanticDeprecatedSince20
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\pydantic\warnings.py", line 5, in <module>
+    from .version import version_short
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\pydantic\version.py", line 7, in <module>
+    from pydantic_core import __version__ as __pydantic_core_version__
+  File "E:\Codex\TextIn\.venv\Lib\site-packages\pydantic_core\__init__.py", line 8, in <module>
+    from ._pydantic_core import (
+    ...<21 lines>...
+    )
+ImportError: cannot import name 'ArgsKwargs' from 'pydantic_core._pydantic_core' (unknown location)
+(base) PS E:\Codex\TextIn>
