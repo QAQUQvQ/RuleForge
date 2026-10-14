@@ -1,0 +1,128 @@
+{
+  "$defs": {
+    "Abilities": {
+      "additionalProperties": false,
+      "properties": {
+        "strength": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Strength",
+          "type": "integer"
+        },
+        "dexterity": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Dexterity",
+          "type": "integer"
+        },
+        "constitution": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Constitution",
+          "type": "integer"
+        },
+        "intelligence": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Intelligence",
+          "type": "integer"
+        },
+        "wisdom": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Wisdom",
+          "type": "integer"
+        },
+        "charisma": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Charisma",
+          "type": "integer"
+        }
+      },
+      "title": "Abilities",
+      "type": "object"
+    },
+    "VersionedRecordRef": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "VersionedRecordRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "abilities": {
+      "$ref": "#/$defs/Abilities"
+    },
+    "armor": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/VersionedRecordRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "shield": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/VersionedRecordRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "alternative_ac": {
+      "const": false,
+      "default": false,
+      "title": "Alternative Ac",
+      "type": "boolean"
+    },
+    "armor_proficiencies": {
+      "items": {
+        "enum": [
+          "light",
+          "medium",
+          "heavy",
+          "shield"
+        ],
+        "type": "string"
+      },
+      "maxItems": 4,
+      "title": "Armor Proficiencies",
+      "type": "array"
+    }
+  },
+  "required": [
+    "abilities"
+  ],
+  "title": "EquipmentACRequest",
+  "type": "object"
+}

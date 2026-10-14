@@ -21,3 +21,17 @@ models = {"source-reference": SourceReference, "equipment-definition": Equipment
           "condition-record": ConditionRecord, "general-rule-record": GeneralRuleRecord}
 for name, model in models.items():
     (target / (name+".schema.json")).write_text(json.dumps(TypeAdapter(model).json_schema(),ensure_ascii=False,indent=2),encoding="utf-8")
+
+# M2 public contracts; CombatState/Command/Event retain their separate M3 meaning.
+from ruleforge.domain.models import EquipmentInstance
+from ruleforge.combat.characters import CreateCharacter, PatchCharacter
+from ruleforge.combat.attacks import AttackContext, AttackResult
+from ruleforge.combat.service import PreviewRequest, ResolutionPreview
+from ruleforge.combat.ac import EquipmentACRequest
+from ruleforge.combat.damage import DamageComponent, Defenses
+models = {"equipment-instance":EquipmentInstance,"create-character":CreateCharacter,"patch-character":PatchCharacter,
+          "attack-context":AttackContext,"attack-result":AttackResult,"preview-request":PreviewRequest,
+          "resolution-preview":ResolutionPreview,"equipment-ac-request":EquipmentACRequest,
+          "damage-component":DamageComponent,"damage-defenses":Defenses}
+for name, model in models.items():
+    (target / (name+".schema.json")).write_text(json.dumps(TypeAdapter(model).json_schema(),ensure_ascii=False,indent=2),encoding="utf-8")

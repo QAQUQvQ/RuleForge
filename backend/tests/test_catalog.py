@@ -272,14 +272,14 @@ def test_v1_migration_preserves_every_legacy_table(tmp_path):
         assert dest.execute('PRAGMA user_version').fetchone()[0]==1
     initialize(db);initialize(db)
     with connect(db) as conn:
-        assert conn.execute('PRAGMA user_version').fetchone()[0]==2
+        assert conn.execute('PRAGMA user_version').fetchone()[0]==3
         assert conn.execute('PRAGMA foreign_key_check').fetchall()==[]
         assert before=={t:[tuple(r) for r in conn.execute('SELECT * FROM '+t)] for t in tables}
 
 def test_newer_db_rejected(tmp_path):
     db=tmp_path/'future.sqlite3'
     with connect(db) as conn:
-        conn.execute('PRAGMA user_version=3')
+        conn.execute('PRAGMA user_version=4')
     with pytest.raises(ValueError,match='newer'):
         initialize(db)
 

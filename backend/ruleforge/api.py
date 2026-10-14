@@ -10,25 +10,27 @@ class ACRequest(StrictModel):
     abilities: Abilities
     equipment: Equipment
 
-def create_app(root: Path | None = None):
+def create_app(root: Path | None = None, database: Path | None = None):
     root = (root or Path(os.environ.get("RULEFORGE_ROOT", "."))).resolve()
-    database = root / "data/ruleforge.sqlite3"
+    database = database or Path(os.environ.get('RULEFORGE_DATABASE', str(root / "data/ruleforge.sqlite3")))
     initialize(database)
     app = FastAPI(title="RuleForge", version="0.1.0")
 
     @app.get("/api/health")
     def health():
         from ruleforge.rules.service import load_verified
-        with connect(database) as conn:
+        with connect(root / 'data/ruleforge.sqlite3') as conn:
             count = conn.execute("SELECT count(*) FROM rules WHERE review_status='verified'").fetchone()[0]
         try:
             load_verified(root)
             ready, reason = True, None
         except (EvidenceError, ValueError, OSError) as exc:
             ready, reason = False, str(exc)
-        return {"status": "ok", "phase": "M1", "ruleset": "srd-5.1",
+        return {"status": "ok", "phase": "M2", "ruleset": "srd-5.1",
                 "verified_rules": count, "ac_ready": ready, "reason": reason,
-                "combat_supported": False, "homebrew_supported": False}
+                "combat_supported": False, "homebrew_supported": False,
+                "calculation_previews_supported": True,
+                "catalog_database": 'primary' if database.resolve() == (root/'data/ruleforge.sqlite3').resolve() else 'separate'}
 
     @app.get("/api/rules")
     def rules():
@@ -59,4 +61,6 @@ def create_app(root: Path | None = None):
         except OSError as exc:
             raise HTTPException(503, "Evidence file unavailable") from exc
 
+    from ruleforge.m2_api import install
+    install(app, root, database)
     return app

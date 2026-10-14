@@ -1,0 +1,27 @@
+{
+  "database_version": 3,
+  "catalog_records": 17,
+  "published_records": 0,
+  "m2_runtime_grants": 0,
+  "foreign_key_errors": [],
+  "m1plus_rows_unchanged": true,
+  "original_source_links_preserved": true,
+  "original_artifacts_unchanged": true,
+  "production_creation_gate": {
+    "http_status": 409,
+    "error": {
+      "code": "rule_unpublished",
+      "message": "Record requires explicit review and publication: srd51.class.fighter"
+    }
+  },
+  "regression": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "222",
+    "time": "443.412",
+    "timestamp": "2026-10-13T19:53:56.053842+08:00",
+    "hostname": "LAPTOP-QAQUQvQ"
+  }
+}

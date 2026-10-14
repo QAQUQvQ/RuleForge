@@ -1,0 +1,82 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "enum": [
+        "melee",
+        "ranged"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "distance_ft": {
+      "maximum": 10000,
+      "minimum": 0,
+      "title": "Distance Ft",
+      "type": "integer"
+    },
+    "scene_confirmed": {
+      "const": true,
+      "title": "Scene Confirmed",
+      "type": "boolean"
+    },
+    "target_visible": {
+      "const": true,
+      "title": "Target Visible",
+      "type": "boolean"
+    },
+    "cover": {
+      "const": "none",
+      "title": "Cover",
+      "type": "string"
+    },
+    "hostile_within_5ft": {
+      "title": "Hostile Within 5Ft",
+      "type": "boolean"
+    },
+    "advantage": {
+      "default": false,
+      "title": "Advantage",
+      "type": "boolean"
+    },
+    "disadvantage": {
+      "default": false,
+      "title": "Disadvantage",
+      "type": "boolean"
+    },
+    "ability": {
+      "anyOf": [
+        {
+          "enum": [
+            "strength",
+            "dexterity"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ability"
+    },
+    "special_mechanics": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 20,
+      "title": "Special Mechanics",
+      "type": "array"
+    }
+  },
+  "required": [
+    "mode",
+    "distance_ft",
+    "scene_confirmed",
+    "target_visible",
+    "cover",
+    "hostile_within_5ft"
+  ],
+  "title": "AttackContext",
+  "type": "object"
+}

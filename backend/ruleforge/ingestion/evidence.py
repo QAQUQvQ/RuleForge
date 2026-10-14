@@ -2,11 +2,39 @@
 import hashlib
 import json
 import re
+from contextlib import contextmanager
+from contextvars import ContextVar
 from datetime import datetime, timezone
 from pathlib import Path
 
 SOURCE_URL = "https://media.dndbeyond.com/compendium-images/srd/5.1/SRD_CC_v5.1.pdf"
 PDF_PATH = "data/sources/SRD_CC_v5.1.pdf"
+_json_cache = ContextVar('evidence_json_cache', default=None)
+
+
+@contextmanager
+def evidence_snapshot():
+    """Cache decoding only within one operation. File hashes are still checked on every read."""
+    if _json_cache.get() is not None:
+        yield
+        return
+    token = _json_cache.set({})
+    try:
+        yield
+    finally:
+        _json_cache.reset(token)
+
+
+def verified_json(root, ref):
+    path = checked_file(root, ref)
+    cache = _json_cache.get()
+    key = (str(path.resolve()), ref['sha256'])
+    if cache is not None and key in cache:
+        return cache[key]
+    value = json.loads(path.read_text(encoding='utf-8-sig'))
+    if cache is not None:
+        cache[key] = value
+    return value
 
 class EvidenceError(ValueError):
     pass
@@ -74,8 +102,7 @@ def verify_span(root: Path, manifest: dict, span: dict):
     checked_file(root, manifest["document"])
     for ref in manifest["artifacts"]:
         checked_file(root, ref)
-    raw_path = checked_file(root, manifest["raw"])
-    raw = json.loads(raw_path.read_text(encoding="utf-8-sig"))
+    raw = verified_json(root, manifest["raw"])
     quote = json_pointer(raw, span["json_pointer"])
     if not isinstance(quote, str) or quote != span["quote"] or digest_text(quote) != span["quote_sha256"]:
         raise EvidenceError("quote integrity failure")
@@ -98,7 +125,7 @@ def verify_reference(root: Path, manifest: dict, reference):
     if manifest["document"]["sha256"] != span["document_id"]:
         raise EvidenceError("source document mismatch")
     verify_span(root, manifest, span)
-    raw = json.loads(checked_file(root, manifest["raw"]).read_text(encoding="utf-8-sig"))
+    raw = verified_json(root, manifest["raw"])
     element = json_pointer(raw, span["element_pointer"])
     if not isinstance(element, dict) or element.get("element_id") != span["element_id"]:
         raise EvidenceError("element identity mismatch")

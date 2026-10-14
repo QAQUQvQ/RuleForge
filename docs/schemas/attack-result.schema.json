@@ -1,0 +1,109 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "attacker_id": {
+      "title": "Attacker Id",
+      "type": "string"
+    },
+    "target_id": {
+      "title": "Target Id",
+      "type": "string"
+    },
+    "weapon_id": {
+      "title": "Weapon Id",
+      "type": "string"
+    },
+    "attack_rolls": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "Attack Rolls",
+      "type": "array"
+    },
+    "selected_d20": {
+      "title": "Selected D20",
+      "type": "integer"
+    },
+    "ability": {
+      "title": "Ability",
+      "type": "string"
+    },
+    "ability_modifier": {
+      "title": "Ability Modifier",
+      "type": "integer"
+    },
+    "proficiency_bonus": {
+      "title": "Proficiency Bonus",
+      "type": "integer"
+    },
+    "attack_modifier": {
+      "title": "Attack Modifier",
+      "type": "integer"
+    },
+    "attack_total": {
+      "title": "Attack Total",
+      "type": "integer"
+    },
+    "target_ac": {
+      "title": "Target Ac",
+      "type": "integer"
+    },
+    "hit": {
+      "title": "Hit",
+      "type": "boolean"
+    },
+    "critical": {
+      "title": "Critical",
+      "type": "boolean"
+    },
+    "applied_conditions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Applied Conditions",
+      "type": "array"
+    },
+    "rule_refs": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Rule Refs",
+      "type": "array"
+    },
+    "source_refs": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Source Refs",
+      "type": "array"
+    },
+    "trace": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Trace",
+      "type": "array"
+    }
+  },
+  "required": [
+    "attacker_id",
+    "target_id",
+    "weapon_id",
+    "attack_rolls",
+    "selected_d20",
+    "ability",
+    "ability_modifier",
+    "proficiency_bonus",
+    "attack_modifier",
+    "attack_total",
+    "target_ac",
+    "hit",
+    "critical",
+    "applied_conditions",
+    "trace"
+  ],
+  "title": "AttackResult",
+  "type": "object"
+}

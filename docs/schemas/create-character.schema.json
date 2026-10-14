@@ -1,0 +1,147 @@
+{
+  "$defs": {
+    "Abilities": {
+      "additionalProperties": false,
+      "properties": {
+        "strength": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Strength",
+          "type": "integer"
+        },
+        "dexterity": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Dexterity",
+          "type": "integer"
+        },
+        "constitution": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Constitution",
+          "type": "integer"
+        },
+        "intelligence": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Intelligence",
+          "type": "integer"
+        },
+        "wisdom": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Wisdom",
+          "type": "integer"
+        },
+        "charisma": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Charisma",
+          "type": "integer"
+        }
+      },
+      "title": "Abilities",
+      "type": "object"
+    },
+    "VersionedRecordRef": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "VersionedRecordRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "ruleset": {
+      "const": "srd-5.1",
+      "default": "srd-5.1",
+      "title": "Ruleset",
+      "type": "string"
+    },
+    "level": {
+      "const": 1,
+      "default": 1,
+      "title": "Level",
+      "type": "integer"
+    },
+    "abilities": {
+      "$ref": "#/$defs/Abilities"
+    },
+    "skills": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 2,
+      "minItems": 2,
+      "title": "Skills",
+      "type": "array"
+    },
+    "speed_ft": {
+      "maximum": 1000,
+      "minimum": 0,
+      "title": "Speed Ft",
+      "type": "integer"
+    },
+    "origin_confirmed": {
+      "const": true,
+      "title": "Origin Confirmed",
+      "type": "boolean"
+    },
+    "class_ref": {
+      "$ref": "#/$defs/VersionedRecordRef",
+      "default": {
+        "id": "srd51.class.fighter",
+        "version": 1
+      }
+    },
+    "fighting_style": {
+      "const": "defense",
+      "default": "defense",
+      "title": "Fighting Style",
+      "type": "string"
+    },
+    "starting_loadout": {
+      "const": "chain-longsword-shield-handaxes-explorer",
+      "default": "chain-longsword-shield-handaxes-explorer",
+      "title": "Starting Loadout",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "abilities",
+    "skills",
+    "speed_ft",
+    "origin_confirmed"
+  ],
+  "title": "CreateCharacter",
+  "type": "object"
+}

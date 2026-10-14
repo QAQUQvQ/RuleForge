@@ -210,3 +210,37 @@ class CatalogService:
                 WHERE (? IS NULL OR record_type=?) AND (?=0 OR published_at IS NOT NULL) ORDER BY id,record_version''',
                 (record_type,record_type,int(published_only))).fetchall()
         return [self.get_record(r['id'],r['record_version'],published_only=published_only) for r in rows]
+
+    def search(self, query='', record_type=None, *, published_only=True, limit=50, offset=0):
+        """Explainable literal casefold search; registered aliases only, no inferred translations."""
+        if record_type not in (None, 'equipment', 'spell', 'class', 'condition', 'general_rule'):
+            raise ValueError('unknown record type')
+        if len(query) > 200 or not 1 <= limit <= 100 or not 0 <= offset <= 100000:
+            raise ValueError('invalid search bounds')
+        from ruleforge.ingestion.evidence import evidence_snapshot
+        results = []
+        with evidence_snapshot():
+            for record in self.list_records(record_type, published_only=published_only):
+                fields = {'id': record.id, 'name': record.canonical_name,
+                          'aliases': ' '.join(record.aliases), 'description': record.normalized_payload.description}
+                matched = [key for key, value in fields.items() if query.casefold() in value.casefold()]
+                if not query or matched:
+                    results.append({'record': record.model_dump(), 'matched_fields': matched,
+                                    'execution_permission': 'requires_independent_runtime_verification'})
+        results.sort(key=lambda row: (row['record']['id'] != query, row['record']['id'], -row['record']['record_version']))
+        return {'items': results[offset:offset+limit], 'total': len(results), 'offset': offset,
+                'view': 'published' if published_only else 'admin_candidates', 'search_method': 'literal_casefold'}
+
+    def sources(self, record_id, version=1, *, published_only=True):
+        from ruleforge.ingestion.evidence import evidence_snapshot
+        with connect(self.database) as conn, evidence_snapshot():
+            record, row = self._load(conn, record_id, version)
+            if published_only:
+                if not row['published_at']:
+                    raise EvidenceError('record is not published')
+                self._publication_gate(conn, record, row)
+            else:
+                self._evidence(conn, record)
+            return [json.loads(r[0]) for r in conn.execute('''SELECT s.reference_json FROM source_references s
+                JOIN record_sources rs ON s.id=rs.source_id WHERE rs.record_id=? AND rs.record_version=? ORDER BY s.id''',
+                (record_id, version))]

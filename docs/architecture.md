@@ -1,4 +1,6 @@
-# RuleForge M1 / M1+ 架构
+# RuleForge M1 / M1+ / M2 架构
+
+以下 M1/M1+ 小节保留历史边界；当前新增能力与数据库版本以文末 M2 小节为准。
 本次用户请求是实施边界；原计划是产品参考，不将其中投稿或后续阶段当作本次授权。先给出设计后实现。
 ## 模块和目录
 ```text
@@ -63,5 +65,25 @@ M2/M3 必须实现同一事务提交状态+命令+事件、幂等和乐观版本
 v2 保留 schema.sql 的 v1 基线，由 db.initialize 按 user_version 在一个 BEGIN IMMEDIATE 事务内执行显式 migration_v2.sql。新增 source_references（FK parse_runs）、normalized_records（PK id+record_version）、record_sources（记录与来源多对多）、review_decisions（版本化审核历史）。装备 payload 直接存储在 normalized_records 的强类型 JSON，避免重复设备表；ruleset 目前只有 srd-5.1，暂不建立无实际元数据的 rulesets 表。迁移无 DROP/重建，失败全部回滚。
 
 验证报告和审核决定绑定记录内容 + 所有来源 + manifest 哈希；发布和 published_only 读取都重新验源。对已发布记录复验失败会撤销发布并回到待审核。普通 get_record/list_records 可查看候选，因此消费端必须显式使用 published_only=True；这仍仅代表可检索目录。源文件哈希不是外部数字签名，防护范围沿用 M1 的本地意外篡改边界。
+
+## M2 当前架构（2026-10-13）
+
+`ingestion/m2.py` 仅接受现有 SRD 5.1 PDF/JSON 指纹，从实际元素和表格创建新增候选。`combat/templates.json` 保存固定模板的完整记录、来源和内容摘要；它不是审核决定。已有 M1+ 条目重复导入时验证身份和证据，保留原验证报告与审核历史。
+
+执行层分为五个独立阶段：extracted → validated → 显式审核决定 → published reference catalog → `runtime_grants`。参考目录的 `execution_status` 保持 reference_only；M2 能力由独立授权表决定，不能修改状态字符串获得。`Runtime.register` 仅接受白名单中的固定 ID/版本/载荷/来源，先检查当前发布门禁，再运行固定数值向量；许可绑定完整来源指纹、适配器 ID、代码与模板 SHA-256 和测试报告。正式库没有模拟审核，演示准备函数拒绝正式数据库路径。
+
+`ResolutionScope` 仅在单次 SQLite 事务中缓存已通过的规则读取，每次新计算重新验证；修改审核、发布、验证、载荷、来源或适配器代码后不会静默继续执行。`evidence_snapshot` 只缓存 JSON 解码，每次读取仍重新校验文件哈希，不跨请求缓存信任。M1 的 normalize、DSL、专用计算及其门禁保持原实现。
+
+SQLite v3 追加 `runtime_grants` 与 `character_equipment`。原 `characters(id,version,state_json)` 保存完整角色快照，装备索引使用真实 FK 绑定目录 ID + record_version。创建/编辑在 BEGIN IMMEDIATE 中完成校验、CAS 版本更新及装备同步；失败全部回滚。计算使用 BEGIN 读取快照；只有预览，没有伪造 commands/events。`rollback_v3` 仅在没有 M2 数据时删除新增空表并降为 v2；存在角色或许可即拒绝，防止数据丢失。
+
+`Character`/`Creature` 保留旧字段，追加 class_ref、proficiencies、skills、inventory、rule_refs 等；`domain.Equipment` 未被 catalog 定义替代。新服务只接纳 1 级 Fighter/Defense 职业配置，旧角色仍可按原模型读取，但不自动取得新运行能力。属性、速度为调用方确认的最终值；未实现种族/背景生成。熟练从职业表读取，HP 从固定且有来源绑定的职业模板初始化。
+
+`combat/modifiers.py`、`dice.py`、`attacks.py`、`damage.py` 为纯计算层；不自行证明来源或战斗场景合法性。HTTP 只能通过授权服务进入这些内核。AC 区分数值、熟练后果和速度/隐匿后果；攻击要求明确距离、可见、无遮挡和近敌信息。未支持特殊机制直接拒绝。伤害按独立分量处理免疫/抗性/易伤；HP 输出临时吸收、溢出、零 HP 待处理信息，不实现死亡状态机。
+
+`m2_api.py` 提供公共已发布检索、令牌保护的本地候选视图、角色 CRUD、通用装备 AC 和 ResolutionPreview。无自动审核/发布 HTTP 入口。关键词检索是可解释的字面大小写折叠匹配（ID、名称、已登记别名、描述）；样本较小，本期不引入 FTS/向量库。页码、章节和 JSON Pointer 从 source_references 返回；HTML 表格原文只作为文本显示。
+
+`frontend/src/M2.tsx` 为四个操作区域；旧 M1 页面继续保留。固定骰子与隔离目标数据明确标注。错误模型为 `{error:{code,message}}`，M1 路径保持旧 HTTP detail/状态码行为。无账号体系或公网部署。
+
+M3 可复用：`Characters.transaction/load/validate/save`、`ResolutionScope.require/evidence`、`attack`、`damage`、`apply_hp`、`AttackResult` 和 `ResolutionPreview`。未来的 Command → Event → CombatState 必须在同一事务完成版本保护、事件持久化和状态更新；不能把当前预览当作已提交战斗事件。
 
 抽取失败保留类别、错误类型和原因；历史报告不可被后续成功结果覆盖。表格 HTML 仅用标准库解析为数据，不渲染、不执行。Barbarian 特殊跨表续接保留两个来源位置；其他不明确续接按失败处理。

@@ -1,0 +1,84 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "resolution_preview",
+      "default": "resolution_preview",
+      "title": "Kind",
+      "type": "string"
+    },
+    "dice_mode": {
+      "title": "Dice Mode",
+      "type": "string"
+    },
+    "attacker_version": {
+      "title": "Attacker Version",
+      "type": "integer"
+    },
+    "ac": {
+      "additionalProperties": true,
+      "title": "Ac",
+      "type": "object"
+    },
+    "attack": {
+      "additionalProperties": true,
+      "title": "Attack",
+      "type": "object"
+    },
+    "damage": {
+      "additionalProperties": true,
+      "title": "Damage",
+      "type": "object"
+    },
+    "hp": {
+      "additionalProperties": true,
+      "title": "Hp",
+      "type": "object"
+    },
+    "dice": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Dice",
+      "type": "array"
+    },
+    "rule_refs": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Rule Refs",
+      "type": "array"
+    },
+    "source_refs": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Source Refs",
+      "type": "array"
+    },
+    "trace": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Trace",
+      "type": "array"
+    }
+  },
+  "required": [
+    "dice_mode",
+    "attacker_version",
+    "ac",
+    "attack",
+    "damage",
+    "hp",
+    "dice",
+    "rule_refs",
+    "source_refs",
+    "trace"
+  ],
+  "title": "ResolutionPreview",
+  "type": "object"
+}

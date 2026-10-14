@@ -1,0 +1,57 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "character_id": {
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Character Id",
+      "type": "string"
+    },
+    "equipment_record_id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Equipment Record Id",
+      "type": "string"
+    },
+    "record_version": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Record Version",
+      "type": "integer"
+    },
+    "quantity": {
+      "default": 1,
+      "maximum": 100,
+      "minimum": 1,
+      "title": "Quantity",
+      "type": "integer"
+    },
+    "equipped": {
+      "default": false,
+      "title": "Equipped",
+      "type": "boolean"
+    },
+    "equipment_slot": {
+      "default": "inventory",
+      "enum": [
+        "body",
+        "main_hand",
+        "off_hand",
+        "inventory"
+      ],
+      "title": "Equipment Slot",
+      "type": "string"
+    },
+    "relevant_override": {
+      "default": null,
+      "title": "Relevant Override",
+      "type": "null"
+    }
+  },
+  "required": [
+    "character_id",
+    "equipment_record_id"
+  ],
+  "title": "EquipmentInstance",
+  "type": "object"
+}

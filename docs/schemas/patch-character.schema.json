@@ -1,0 +1,195 @@
+{
+  "$defs": {
+    "Abilities": {
+      "additionalProperties": false,
+      "properties": {
+        "strength": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Strength",
+          "type": "integer"
+        },
+        "dexterity": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Dexterity",
+          "type": "integer"
+        },
+        "constitution": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Constitution",
+          "type": "integer"
+        },
+        "intelligence": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Intelligence",
+          "type": "integer"
+        },
+        "wisdom": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Wisdom",
+          "type": "integer"
+        },
+        "charisma": {
+          "default": 10,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Charisma",
+          "type": "integer"
+        }
+      },
+      "title": "Abilities",
+      "type": "object"
+    },
+    "EquipmentInstance": {
+      "additionalProperties": false,
+      "properties": {
+        "character_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Character Id",
+          "type": "string"
+        },
+        "equipment_record_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Equipment Record Id",
+          "type": "string"
+        },
+        "record_version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Record Version",
+          "type": "integer"
+        },
+        "quantity": {
+          "default": 1,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Quantity",
+          "type": "integer"
+        },
+        "equipped": {
+          "default": false,
+          "title": "Equipped",
+          "type": "boolean"
+        },
+        "equipment_slot": {
+          "default": "inventory",
+          "enum": [
+            "body",
+            "main_hand",
+            "off_hand",
+            "inventory"
+          ],
+          "title": "Equipment Slot",
+          "type": "string"
+        },
+        "relevant_override": {
+          "default": null,
+          "title": "Relevant Override",
+          "type": "null"
+        }
+      },
+      "required": [
+        "character_id",
+        "equipment_record_id"
+      ],
+      "title": "EquipmentInstance",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "expected_version": {
+      "minimum": 0,
+      "title": "Expected Version",
+      "type": "integer"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "maxLength": 100,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Name"
+    },
+    "abilities": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Abilities"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "skills": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Skills"
+    },
+    "speed_ft": {
+      "anyOf": [
+        {
+          "maximum": 1000,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Speed Ft"
+    },
+    "inventory": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/EquipmentInstance"
+          },
+          "maxItems": 100,
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Inventory"
+    }
+  },
+  "required": [
+    "expected_version"
+  ],
+  "title": "PatchCharacter",
+  "type": "object"
+}

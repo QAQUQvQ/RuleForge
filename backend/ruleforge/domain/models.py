@@ -31,6 +31,28 @@ class HitPoints(StrictModel):
             raise ValueError("HP exceeds maximum")
         return self
 
+class VersionedRecordRef(StrictModel):
+    id: str = Field(min_length=1, max_length=200)
+    version: Annotated[int, Field(ge=1)] = 1
+
+
+class EquipmentInstance(StrictModel):
+    character_id: str = Field(min_length=1, max_length=100)
+    equipment_record_id: str = Field(min_length=1, max_length=200)
+    record_version: Annotated[int, Field(ge=1)] = 1
+    quantity: Annotated[int, Field(ge=1, le=100)] = 1
+    equipped: bool = False
+    equipment_slot: Literal['body', 'main_hand', 'off_hand', 'inventory'] = 'inventory'
+    # No override adapter is authorized in M2.
+    relevant_override: None = None
+
+    @model_validator(mode='after')
+    def slot_matches(self):
+        if self.equipped != (self.equipment_slot != 'inventory'):
+            raise ValueError('equipped item needs a physical slot; unequipped item needs inventory')
+        return self
+
+
 class Character(StrictModel):
     id: str = Field(min_length=1, max_length=100)
     name: str = Field(min_length=1, max_length=100)
@@ -43,6 +65,14 @@ class Character(StrictModel):
     speed_ft: Nonnegative = 30
     conditions: list[str] = Field(default_factory=list, max_length=50)
     resources: dict[str, Nonnegative] = Field(default_factory=dict, max_length=100)
+    class_ref: VersionedRecordRef | None = None
+    proficiency_bonus: Annotated[int, Field(ge=2, le=6)] = 2
+    proficiencies: list[str] = Field(default_factory=list, max_length=100)
+    skills: list[str] = Field(default_factory=list, max_length=20)
+    fighting_style: Literal['defense'] | None = None
+    inventory: list[EquipmentInstance] = Field(default_factory=list, max_length=100)
+    rule_refs: list[VersionedRecordRef] = Field(default_factory=list, max_length=100)
+    creation_scope: str | None = None
 
 class Creature(Character):
     kind: Literal["pc", "npc", "monster"] = "pc"

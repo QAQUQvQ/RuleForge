@@ -78,6 +78,63 @@
       "title": "Equipment",
       "type": "object"
     },
+    "EquipmentInstance": {
+      "additionalProperties": false,
+      "properties": {
+        "character_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Character Id",
+          "type": "string"
+        },
+        "equipment_record_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Equipment Record Id",
+          "type": "string"
+        },
+        "record_version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Record Version",
+          "type": "integer"
+        },
+        "quantity": {
+          "default": 1,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Quantity",
+          "type": "integer"
+        },
+        "equipped": {
+          "default": false,
+          "title": "Equipped",
+          "type": "boolean"
+        },
+        "equipment_slot": {
+          "default": "inventory",
+          "enum": [
+            "body",
+            "main_hand",
+            "off_hand",
+            "inventory"
+          ],
+          "title": "Equipment Slot",
+          "type": "string"
+        },
+        "relevant_override": {
+          "default": null,
+          "title": "Relevant Override",
+          "type": "null"
+        }
+      },
+      "required": [
+        "character_id",
+        "equipment_record_id"
+      ],
+      "title": "EquipmentInstance",
+      "type": "object"
+    },
     "HitPoints": {
       "additionalProperties": false,
       "properties": {
@@ -104,6 +161,28 @@
         }
       },
       "title": "HitPoints",
+      "type": "object"
+    },
+    "VersionedRecordRef": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "VersionedRecordRef",
       "type": "object"
     }
   },
@@ -173,6 +252,81 @@
       "maxProperties": 100,
       "title": "Resources",
       "type": "object"
+    },
+    "class_ref": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/VersionedRecordRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "proficiency_bonus": {
+      "default": 2,
+      "maximum": 6,
+      "minimum": 2,
+      "title": "Proficiency Bonus",
+      "type": "integer"
+    },
+    "proficiencies": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Proficiencies",
+      "type": "array"
+    },
+    "skills": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 20,
+      "title": "Skills",
+      "type": "array"
+    },
+    "fighting_style": {
+      "anyOf": [
+        {
+          "const": "defense",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fighting Style"
+    },
+    "inventory": {
+      "items": {
+        "$ref": "#/$defs/EquipmentInstance"
+      },
+      "maxItems": 100,
+      "title": "Inventory",
+      "type": "array"
+    },
+    "rule_refs": {
+      "items": {
+        "$ref": "#/$defs/VersionedRecordRef"
+      },
+      "maxItems": 100,
+      "title": "Rule Refs",
+      "type": "array"
+    },
+    "creation_scope": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Creation Scope"
     }
   },
   "required": [

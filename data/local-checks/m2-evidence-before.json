@@ -1,0 +1,6 @@
+{
+  "data/sources/SRD_CC_v5.1.pdf": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+  "data/runs/srd51-full-001/raw/SRD_CC_v5.1.json": "9473d981252593c3a554255b02b41e9435d2ec884399dcff4def580ca3ad841e",
+  "data/runs/srd51-full-001/manifest.json": "c9c2a3ecee32d034b2ac0148cc42593a23a39a01df2f27018e9f85832df026e6",
+  "data/normalized/srd51.ac.leather.json": "020bee0748ee379b9ce698cabc7eaac94f3cbad39cc50e0a57c11eefede5a8d2"
+}

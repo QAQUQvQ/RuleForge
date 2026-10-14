@@ -1,0 +1,58 @@
+{
+  "$defs": {
+    "DiceExpression": {
+      "additionalProperties": false,
+      "properties": {
+        "expression": {
+          "maxLength": 30,
+          "minLength": 3,
+          "title": "Expression",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expression"
+      ],
+      "title": "DiceExpression",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "damage_type": {
+      "enum": [
+        "acid",
+        "bludgeoning",
+        "cold",
+        "fire",
+        "force",
+        "lightning",
+        "necrotic",
+        "piercing",
+        "poison",
+        "psychic",
+        "radiant",
+        "slashing",
+        "thunder"
+      ],
+      "title": "Damage Type",
+      "type": "string"
+    },
+    "dice": {
+      "$ref": "#/$defs/DiceExpression"
+    },
+    "modifier": {
+      "default": 0,
+      "maximum": 999,
+      "minimum": -999,
+      "title": "Modifier",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "damage_type",
+    "dice"
+  ],
+  "title": "DamageComponent",
+  "type": "object"
+}

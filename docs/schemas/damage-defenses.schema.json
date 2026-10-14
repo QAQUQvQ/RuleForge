@@ -1,0 +1,76 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "resistance": {
+      "items": {
+        "enum": [
+          "acid",
+          "bludgeoning",
+          "cold",
+          "fire",
+          "force",
+          "lightning",
+          "necrotic",
+          "piercing",
+          "poison",
+          "psychic",
+          "radiant",
+          "slashing",
+          "thunder"
+        ],
+        "type": "string"
+      },
+      "maxItems": 13,
+      "title": "Resistance",
+      "type": "array"
+    },
+    "vulnerability": {
+      "items": {
+        "enum": [
+          "acid",
+          "bludgeoning",
+          "cold",
+          "fire",
+          "force",
+          "lightning",
+          "necrotic",
+          "piercing",
+          "poison",
+          "psychic",
+          "radiant",
+          "slashing",
+          "thunder"
+        ],
+        "type": "string"
+      },
+      "maxItems": 13,
+      "title": "Vulnerability",
+      "type": "array"
+    },
+    "immunity": {
+      "items": {
+        "enum": [
+          "acid",
+          "bludgeoning",
+          "cold",
+          "fire",
+          "force",
+          "lightning",
+          "necrotic",
+          "piercing",
+          "poison",
+          "psychic",
+          "radiant",
+          "slashing",
+          "thunder"
+        ],
+        "type": "string"
+      },
+      "maxItems": 13,
+      "title": "Immunity",
+      "type": "array"
+    }
+  },
+  "title": "Defenses",
+  "type": "object"
+}
