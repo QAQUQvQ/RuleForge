@@ -1,0 +1,206 @@
+{
+  "$defs": {
+    "Defenses": {
+      "additionalProperties": false,
+      "properties": {
+        "resistance": {
+          "items": {
+            "enum": [
+              "acid",
+              "bludgeoning",
+              "cold",
+              "fire",
+              "force",
+              "lightning",
+              "necrotic",
+              "piercing",
+              "poison",
+              "psychic",
+              "radiant",
+              "slashing",
+              "thunder"
+            ],
+            "type": "string"
+          },
+          "maxItems": 13,
+          "title": "Resistance",
+          "type": "array"
+        },
+        "vulnerability": {
+          "items": {
+            "enum": [
+              "acid",
+              "bludgeoning",
+              "cold",
+              "fire",
+              "force",
+              "lightning",
+              "necrotic",
+              "piercing",
+              "poison",
+              "psychic",
+              "radiant",
+              "slashing",
+              "thunder"
+            ],
+            "type": "string"
+          },
+          "maxItems": 13,
+          "title": "Vulnerability",
+          "type": "array"
+        },
+        "immunity": {
+          "items": {
+            "enum": [
+              "acid",
+              "bludgeoning",
+              "cold",
+              "fire",
+              "force",
+              "lightning",
+              "necrotic",
+              "piercing",
+              "poison",
+              "psychic",
+              "radiant",
+              "slashing",
+              "thunder"
+            ],
+            "type": "string"
+          },
+          "maxItems": 13,
+          "title": "Immunity",
+          "type": "array"
+        }
+      },
+      "title": "Defenses",
+      "type": "object"
+    },
+    "Participant": {
+      "additionalProperties": false,
+      "properties": {
+        "character_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Character Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "minimum": 1,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "kind": {
+          "default": "pc",
+          "enum": [
+            "pc",
+            "npc",
+            "monster"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "team": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Team",
+          "type": "string"
+        },
+        "initiative": {
+          "maximum": 100,
+          "minimum": -100,
+          "title": "Initiative",
+          "type": "integer"
+        },
+        "position": {
+          "$ref": "#/$defs/Position"
+        },
+        "defenses": {
+          "$ref": "#/$defs/Defenses"
+        }
+      },
+      "required": [
+        "character_id",
+        "expected_version",
+        "team",
+        "initiative",
+        "position"
+      ],
+      "title": "Participant",
+      "type": "object"
+    },
+    "Position": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "default": 0,
+          "maximum": 10000,
+          "minimum": -10000,
+          "title": "X",
+          "type": "integer"
+        },
+        "y": {
+          "default": 0,
+          "maximum": 10000,
+          "minimum": -10000,
+          "title": "Y",
+          "type": "integer"
+        }
+      },
+      "title": "Position",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "participants": {
+      "items": {
+        "$ref": "#/$defs/Participant"
+      },
+      "maxItems": 30,
+      "minItems": 2,
+      "title": "Participants",
+      "type": "array"
+    },
+    "clear_cells": {
+      "items": {
+        "$ref": "#/$defs/Position"
+      },
+      "maxItems": 400,
+      "minItems": 2,
+      "title": "Clear Cells",
+      "type": "array"
+    },
+    "scene_confirmed": {
+      "const": true,
+      "title": "Scene Confirmed",
+      "type": "boolean"
+    },
+    "initiative_confirmed": {
+      "const": true,
+      "title": "Initiative Confirmed",
+      "type": "boolean"
+    },
+    "distance_convention": {
+      "const": "five_ft_chebyshev",
+      "title": "Distance Convention",
+      "type": "string"
+    },
+    "notes": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Notes",
+      "type": "string"
+    }
+  },
+  "required": [
+    "participants",
+    "clear_cells",
+    "scene_confirmed",
+    "initiative_confirmed",
+    "distance_convention",
+    "notes"
+  ],
+  "title": "CreateEncounter",
+  "type": "object"
+}

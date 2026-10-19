@@ -1,5 +1,28 @@
-# RuleForge · M2
-React + TypeScript / FastAPI / Pydantic / SQLite / pytest。现有 M1 皮甲规则保持兼容；M2 增加目录检索、1 级 Fighter 职业创建、装备、AC 与确定性攻击/伤害预览。正式目录尚未人工审核或授予 M2 运行许可，完整链路在隔离演示库验证。完整战斗状态机及 Homebrew 执行尚未实现。
+# RuleForge · M3
+React + TypeScript / FastAPI / Pydantic / SQLite / pytest。保留 M1 皮甲、M1+ 目录和 M2 人物/预览。M3 增加多轮遭遇、原子命令、受限 Ready 反应、持续效果、SQLite v4 与确定性重放。正式目录仍未人工审核或授予 M2/M3 运行许可；自动战斗链路在独立模拟审核库验证。不是完整 D&D 引擎，法术、特殊怪物能力和 Homebrew 尚未支持。
+
+## M3 运行与验收
+
+实施边界、状态转换、来源与实际结果见 [M3 实施报告](docs/m3-implementation-report.md)，三个完整场景输入输出见 [m3-scenarios.json](docs/m3-scenarios.json)。
+
+```powershell
+# 全部回归与前端构建
+.venv\Scripts\python.exe -m pytest -q
+.\scripts\build-frontend.ps1
+# 显式创建全新的独立演示库，运行 A/B/C；文件已存在时拒绝覆盖
+.venv\Scripts\python.exe scripts/run_m3_demo.py --database data/local-checks/m3-demo-local.sqlite3 --output data/local-checks/m3-demo-local.json
+# 设置仅供当前本地会话使用的 DM token；浏览器 M3 区域需要输入相同值
+$env:RULEFORGE_ADMIN_TOKEN='choose-a-local-dm-token'
+.venv\Scripts\python.exe scripts/serve_m3_demo.py --database data/local-checks/m3-demo-local.sqlite3
+# 另一个终端
+.\scripts\start-frontend.ps1
+```
+
+默认服务不会根据环境变量启用模拟审核。指向 demo 数据库的默认应用会拒绝 M3 操作；必须显式使用 demo 工厂。页面显著显示“隔离演示 · 模拟审核”。上述演示不访问付费解析 API，也不批准正式数据库规则。
+
+M3 接口：`POST/GET /api/encounters`、`GET /api/encounters/participants`、`GET /api/encounters/{id}`、`POST /api/encounters/{id}/commands`、`GET /api/encounters/{id}/events`、`GET /api/encounters/{id}/replay`、`GET /api/encounters/{id}/state`、`POST /api/encounters/{id}/end`。写入均需 `X-RuleForge-Admin`；命令须带 ID 和 expected_version。遭遇 HP 不回写人物卡。
+
+需要准备正式 M3 **待审核候选**时可显式运行 `scripts/normalize_m3.py`；它只离线导入及验证，不审核、不发布、不授予 Runtime 权限。
 
 ## 已有真实证据
 - 官方 SRD 5.1 CC PDF：403 页，3,158,713 bytes。
@@ -17,7 +40,7 @@ React + TypeScript / FastAPI / Pydantic / SQLite / pytest。现有 M1 皮甲规�
 先阅读 [M2 实施报告](docs/m2-implementation-report.md)。以下操作均离线使用已有 JSON，不调用 TextIn。
 
 ```powershell
-# 实库无损升级 v3，新增候选；不会审核、发布或授予执行权限
+# 实库无损升级到当前 schema（v4），新增 M2 候选；不会审核、发布或授予执行权限
 .venv\Scripts\python.exe scripts/normalize_m2.py
 # 独立数据库，明确模拟审核，只用于本机演示/测试
 .venv\Scripts\python.exe scripts/demo_m2.py
@@ -76,6 +99,8 @@ DEX=14 得到 AC=13；DEX=9 得到 AC=10。
 打开 http://127.0.0.1:5173。开发代理将 /api 发往 8000，后端需另行启动。
 
 如果普通 PowerShell 提示“无法识别 pnpm”，使用上面的启动脚本即可。Codex 的工具环境会提供自带 Node/pnpm 路径，但这些路径未必存在于你的终端 PATH。脚本优先查找已安装的 Node，找不到时使用本机已有的 Codex Node，再直接运行项目内的 Vite；不修改全局 PATH，也不安装任何工具。它要求 `frontend/node_modules` 已存在，新机器仍需先安装依赖。
+
+生产构建使用 `.\scripts\build-frontend.ps1`，同样自动查找 Node，依次执行 TypeScript 检查与 Vite 构建，输出至 `frontend/dist`。也可传 `-NodePath 'C:\path\to\node.exe'`。已配置 pnpm 的终端可继续运行 `pnpm --dir frontend run build`；两种方式执行相同的构建步骤。
 
 只检查启动环境可运行 `.\scripts\start-frontend.ps1 -Check`；自定义端口用 `-Port 5174`，指定 Node 用 `-NodePath 'C:\path\to\node.exe'`。端口占用时明确报错，不自动切换。已配置 pnpm 的终端仍可使用原命令 `pnpm --dir frontend run dev`。
 

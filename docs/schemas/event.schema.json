@@ -75,7 +75,16 @@
         "attack_resolved",
         "moved",
         "turn_ended",
-        "dm_adjusted"
+        "dm_adjusted",
+        "encounter_started",
+        "turn_started",
+        "turn_opened",
+        "encounter_ended",
+        "action_readied",
+        "reaction_opened",
+        "reaction_attack_resolved",
+        "reaction_responded",
+        "reaction_closed"
       ],
       "title": "Type",
       "type": "string"
@@ -118,6 +127,41 @@
       "maxItems": 100,
       "title": "Trace",
       "type": "array"
+    },
+    "actor_id": {
+      "default": "",
+      "title": "Actor Id",
+      "type": "string"
+    },
+    "target_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Target Ids",
+      "type": "array"
+    },
+    "payload": {
+      "additionalProperties": true,
+      "title": "Payload",
+      "type": "object"
+    },
+    "runtime_adapter_refs": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Runtime Adapter Refs",
+      "type": "array"
+    },
+    "previous_event_hash": {
+      "default": "",
+      "title": "Previous Event Hash",
+      "type": "string"
+    },
+    "event_hash": {
+      "default": "",
+      "title": "Event Hash",
+      "type": "string"
     }
   },
   "required": [

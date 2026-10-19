@@ -275,14 +275,14 @@ def test_v2_v3_lossless_and_rollback(tmp_path):
         conn.execute("INSERT INTO characters VALUES ('sentinel',7,'{}')")
         tables=[r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")]
         before={t:[tuple(r) for r in conn.execute('SELECT * FROM '+t)] for t in tables}
-    initialize(db);initialize(db)
+    initialize(db,target_version=3);initialize(db,target_version=3)
     with connect(db) as conn:
         assert conn.execute('PRAGMA user_version').fetchone()[0]==3
         assert before=={t:[tuple(r) for r in conn.execute('SELECT * FROM '+t)] for t in tables}
         assert conn.execute('PRAGMA foreign_key_check').fetchall()==[]
     rollback_v3(db)
     with connect(db) as conn:assert conn.execute('PRAGMA user_version').fetchone()[0]==2
-    initialize(db)
+    initialize(db,target_version=3)
 
 
 def test_v3_migration_failure_atomic(tmp_path,monkeypatch):
@@ -307,7 +307,11 @@ def test_demo_cannot_approve_real_database():
 
 @pytest.mark.evidence
 def test_rollback_refuses_data_loss(catalog):
+    with pytest.raises(ValueError,match='rollback requires v3'):rollback_v3(catalog.database)
+    # Retain the historical v3 data-loss guard as well as the new v4 refusal.
+    with connect(catalog.database) as conn:conn.execute('PRAGMA user_version=3')
     with pytest.raises(ValueError,match='M2 data'):rollback_v3(catalog.database)
+    with connect(catalog.database) as conn:conn.execute('PRAGMA user_version=4')
 
 
 @pytest.mark.evidence

@@ -92,6 +92,13 @@ class Combatant(StrictModel):
     initiative: Annotated[int, Field(ge=-100, le=100)] = 0
     position: Position = Field(default_factory=Position)
     budget: ActionBudget = Field(default_factory=ActionBudget)
+    ac: Annotated[int, Field(ge=0, le=100)] = 10
+    ac_sources: dict = Field(default_factory=dict)
+    defenses: dict = Field(default_factory=dict)
+    speed_ft: Nonnegative = 30
+    team: str = 'unassigned'
+    character_version: Nonnegative = 0
+    status: Literal['alive', 'dead', 'dm_required'] = 'alive'
 
 class Effect(StrictModel):
     id: str
@@ -99,11 +106,46 @@ class Effect(StrictModel):
     target_id: str
     expires: Literal["turn_start", "turn_end", "encounter_end", "dm"]
     remaining_rounds: Nonnegative | None = None
+    rule_version: Annotated[int, Field(ge=1)] = 1
+    kind: Literal['ready_attack', 'dm_marker'] = 'dm_marker'
+    label: str = ''
+    applied_at: dict = Field(default_factory=dict)
+    duration_type: Literal['owner_turn_boundary', 'encounter_end', 'dm'] = 'dm'
+    duration_owner_id: str | None = None
+    expires_at_phase: Literal['turn_start', 'turn_end', 'encounter_end', 'dm'] = 'dm'
+    concentration: bool = False
+    active: bool = True
+    source_refs: list[dict] = Field(default_factory=list)
+    parameters: dict = Field(default_factory=dict)
+
+    @model_validator(mode='after')
+    def duration(self):
+        if self.duration_type == 'owner_turn_boundary':
+            if self.duration_owner_id is None or self.remaining_rounds is None or self.expires_at_phase not in ('turn_start', 'turn_end'):
+                raise ValueError('Timed effects require an owner, boundary and remaining count')
+            if self.active and self.remaining_rounds == 0:
+                raise ValueError('Expired effect cannot be active')
+        return self
 
 class ReactionWindow(StrictModel):
     trigger_event_id: str
     eligible_ids: list[str]
     resume_phase: Literal["turn_start", "action", "turn_end"]
+    triggering_actor: str = ''
+    response_status: dict[str, Literal['pending', 'submitted', 'declined']] = Field(default_factory=dict)
+    pending_reactions: list[str] = Field(default_factory=list)
+    resolved_reactions: list[str] = Field(default_factory=list)
+    mechanism: Literal['ready_attack'] = 'ready_attack'
+
+    @model_validator(mode='after')
+    def responses(self):
+        eligible, pending, resolved = map(set, (self.eligible_ids, self.pending_reactions, self.resolved_reactions))
+        if (len(eligible) != len(self.eligible_ids) or len(pending) != len(self.pending_reactions)
+            or len(resolved) != len(self.resolved_reactions) or pending & resolved
+            or pending | resolved != eligible or set(self.response_status) != eligible
+            or any((status == 'pending') != (actor in pending) for actor, status in self.response_status.items())):
+            raise ValueError('Inconsistent reaction responses')
+        return self
 
 class CombatState(StrictModel):
     id: str
@@ -116,6 +158,13 @@ class CombatState(StrictModel):
     active_id: str | None = None
     reaction_window: ReactionWindow | None = None
     effects: list[Effect] = Field(default_factory=list, max_length=200)
+    encounter_status: Literal['setup', 'active', 'ended'] = 'setup'
+    event_sequence: Annotated[int, Field(ge=0)] = 0
+    rule_version_bindings: list[dict] = Field(default_factory=list)
+    environment: Literal['production', 'isolated_demo'] = 'production'
+    map_cells: list[Position] = Field(default_factory=list, max_length=400)
+    scene_notes: str = ''
+    distance_convention: Literal['five_ft_chebyshev'] = 'five_ft_chebyshev'
 
     @model_validator(mode="after")
     def references(self):
@@ -135,6 +184,16 @@ class CombatState(StrictModel):
             raise ValueError("unknown reaction actor")
         if any(e.target_id not in ids for e in self.effects):
             raise ValueError("unknown effect target")
+        if any(e.duration_owner_id is not None and e.duration_owner_id not in ids for e in self.effects):
+            raise ValueError('unknown effect duration owner')
+        if len({e.id for e in self.effects}) != len(self.effects):
+            raise ValueError('duplicate effect ID')
+        if self.reaction_window and self.reaction_window.triggering_actor not in ids:
+            raise ValueError('unknown triggering actor')
+        if self.phase == 'ended' and (self.encounter_status != 'ended' or self.active_id is not None or any(e.active for e in self.effects)):
+            raise ValueError('ended encounter must release actor and effects')
+        if self.phase not in ('setup', 'ended') and self.encounter_status != 'active':
+            raise ValueError('active phase/status mismatch')
         return self
 
 class Item(StrictModel):
@@ -150,6 +209,7 @@ class CommandBase(StrictModel):
     encounter_id: str
     actor_id: str
     expected_version: Nonnegative
+    payload: dict = Field(default_factory=dict)
 
 class AttackCommand(CommandBase):
     type: Literal["attack"] = "attack"
@@ -169,7 +229,24 @@ class DMAdjustmentCommand(CommandBase):
     hp_delta: Annotated[int, Field(ge=-10000, le=10000)]
     reason: str = Field(min_length=1, max_length=1000)
 
-Command = Annotated[AttackCommand | MoveCommand | EndTurnCommand | DMAdjustmentCommand, Field(discriminator="type")]
+class StartEncounterCommand(CommandBase):
+    type: Literal['start_encounter'] = 'start_encounter'
+
+class ReadyCommand(CommandBase):
+    type: Literal['ready'] = 'ready'
+
+class SubmitReactionCommand(CommandBase):
+    type: Literal['submit_reaction'] = 'submit_reaction'
+
+class DeclineReactionCommand(CommandBase):
+    type: Literal['decline_reaction'] = 'decline_reaction'
+
+class EndEncounterCommand(CommandBase):
+    type: Literal['end_encounter'] = 'end_encounter'
+
+Command = Annotated[AttackCommand | MoveCommand | EndTurnCommand | DMAdjustmentCommand | StartEncounterCommand
+                    | ReadyCommand | SubmitReactionCommand | DeclineReactionCommand | EndEncounterCommand,
+                    Field(discriminator="type")]
 
 class DieRoll(StrictModel):
     sides: Literal[4, 6, 8, 10, 12, 20, 100]
@@ -190,10 +267,18 @@ class DomainEvent(StrictModel):
     command_id: str
     encounter_id: str
     sequence: Annotated[int, Field(ge=1)]
-    type: Literal["attack_resolved", "moved", "turn_ended", "dm_adjusted"]
+    type: Literal['attack_resolved', 'moved', 'turn_ended', 'dm_adjusted', 'encounter_started',
+                  'turn_started', 'turn_opened', 'encounter_ended', 'action_readied', 'reaction_opened',
+                  'reaction_attack_resolved', 'reaction_responded', 'reaction_closed']
     before_hash: str = Field(pattern="^[a-f0-9]{64}$")
     after_hash: str = Field(pattern="^[a-f0-9]{64}$")
     rule_refs: list[RuleReference]
     source_ids: list[str]
     dice: list[DieRoll] = Field(default_factory=list)
     trace: list[str] = Field(default_factory=list, max_length=100)
+    actor_id: str = ''
+    target_ids: list[str] = Field(default_factory=list)
+    payload: dict = Field(default_factory=dict)
+    runtime_adapter_refs: list[dict] = Field(default_factory=list)
+    previous_event_hash: str = ''
+    event_hash: str = ''

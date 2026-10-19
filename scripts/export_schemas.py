@@ -35,3 +35,19 @@ models = {"equipment-instance":EquipmentInstance,"create-character":CreateCharac
           "damage-component":DamageComponent,"damage-defenses":Defenses}
 for name, model in models.items():
     (target / (name+".schema.json")).write_text(json.dumps(TypeAdapter(model).json_schema(),ensure_ascii=False,indent=2),encoding="utf-8")
+
+# M3 payloads are separately validated by the service. Publish their precise shapes
+# alongside the backwards-compatible domain command envelope.
+from ruleforge.encounters.contracts import CreateEncounter, PAYLOAD_TYPES
+(target/'create-encounter.schema.json').write_text(json.dumps(CreateEncounter.model_json_schema(),ensure_ascii=False,indent=2),encoding='utf-8')
+schema=TypeAdapter(Command).json_schema()
+for definition in list(schema['$defs'].values()):
+    properties=definition.get('properties',{})
+    kind=properties.get('type',{}).get('const')
+    if kind in PAYLOAD_TYPES:
+        payload=PAYLOAD_TYPES[kind].model_json_schema()
+        schema['$defs'].update(payload.pop('$defs',{}))
+        properties['payload']=payload
+        if payload.get('required') and 'payload' not in definition.get('required',[]):
+            definition.setdefault('required',[]).append('payload')
+(target/'command.schema.json').write_text(json.dumps(schema,ensure_ascii=False,indent=2),encoding='utf-8')

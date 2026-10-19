@@ -17,12 +17,12 @@ def connect(path: Path):
     finally:
         conn.close()
 
-def initialize(path: Path):
+def initialize(path: Path, *, target_version=4):
     with connect(path) as conn:
         # A single write lock covers version inspection, DDL and version update.
         conn.execute("BEGIN IMMEDIATE")
         version = conn.execute("PRAGMA user_version").fetchone()[0]
-        if version > 3:
+        if target_version not in (3, 4) or version > target_version:
             raise ValueError("database newer than application")
         scripts = []
         if version == 0:
@@ -31,6 +31,8 @@ def initialize(path: Path):
             scripts.append("migration_v2.sql")
         if version < 3:
             scripts.append("migration_v3.sql")
+        if version < 4 and target_version == 4:
+            scripts.append("migration_v4.sql")
         for name in scripts:
             # These packaged migrations contain plain SQL statements, no triggers.
             sql = Path(__file__).with_name(name).read_text(encoding="utf-8-sig")

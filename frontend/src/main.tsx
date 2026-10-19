@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 import { M2 } from './M2';
+import { M3 } from './M3';
 
 type Health = {ac_ready: boolean; verified_rules: number; reason: string | null};
 type Source = {id: string; physical_page: number | null; section: string; quote: string; source_url: string; document_sha256: string};
@@ -33,7 +34,7 @@ function App() {
     } catch(e) { setError(String(e)); } finally { setBusy(false); }
   }
   return <main>
-    <p className="eyebrow">RULEFORGE / M2</p>
+    <p className="eyebrow">RULEFORGE / M3</p>
     <h1>每一次计算，都有出处。</h1>
     <p>SRD 5.1 · 真实文档解析与受限规则引擎</p>
     <section><h2>证据状态</h2>
@@ -54,7 +55,8 @@ function App() {
       </article>}
     </section>
     <M2 />
-    <footer>M2 提供基础计算预览；完整战斗状态机和 Homebrew 执行尚未实现。<br/>包含 Wizards of the Coast LLC 的 SRD 5.1 内容，采用 CC BY 4.0。完整署名见项目 ATTRIBUTION.md。</footer>
+    <M3 />
+    <footer>M3 提供受限遭遇状态机、持久化与重放；正式执行仍需规则许可。Homebrew 未支持。<br/>包含 Wizards of the Coast LLC 的 SRD 5.1 内容，采用 CC BY 4.0。完整署名见项目 ATTRIBUTION.md。</footer>
   </main>;
 }
 createRoot(document.getElementById("root")!).render(<App />);

@@ -1,4 +1,25 @@
 # 分阶段验证计划
+
+## M3 实施验证（最终回归反馈：2026-10-19）
+
+修改前本地基线：222 passed，0 failed，439.20 秒。M3 测试在 `backend/tests/test_m3.py`：完整转换矩阵、先攻、预算、移动、原子攻击、Ready 触发/响应/到期、DM 备注、重放篡改与来源最终复核、幂等、并发、三故障点、当前许可撤销、环境隔离和 SQLite v4 无损迁移。
+
+```powershell
+.venv\Scripts\python.exe -m pytest -q --junitxml=data/local-checks/m3-full-suite.xml
+.\scripts\build-frontend.ps1
+.venv\Scripts\python.exe scripts/export_schemas.py
+```
+
+旧 222 项保留；历史迁移用例显式指定 target_version=3，未来版本拒绝改为 v5，新增 v4 专项用例。旧 M2 降级数据保护和新的 v4 拒绝降级都验证。曾发现的测试问题是旧版本断言和将“禁止重放掷骰”的 monkeypatch 错误延伸至新命令的固定适配器自检；均保留原测试意图后修正。
+
+最终全量结果：**313 passed，1 warning，970.20 秒**，来自用户于 2026-10-19 提供的本地 `.venv\Scripts\python.exe -m pytest -q` 完整终端结果；包括原有 222 项与 M3 新增 91 项。本次未生成对应 JUnit。保留的 `m3-full-suite.xml` 是较早的 309 项通过记录，不冒充最终 313 项报告。警告为既有 Starlette/httpx 弃用提示。
+
+2026-10-19 实际执行 `scripts/build-frontend.ps1`，TypeScript 与 Vite 7.3.7 构建通过；另在当前进程临时移除 PATH 中 Node/pnpm 后重复构建通过，验证既有 Codex Node 回退。脚本仅依赖已有 `frontend/node_modules`，不安装工具、不修改全局 PATH。
+
+三个可重跑完整场景由 `scripts/run_m3_demo.py` 创建新隔离库执行，实际输入输出保存在 [m3-scenarios.json](m3-scenarios.json)。正式库从未写入模拟审核。当前代码若变动导致适配器 SHA 变化，应重建隔离演示，不能复用旧许可或关闭门禁。
+
+浏览器验收使用 `scripts/serve_m3_demo.py` 显式启用独立数据库，覆盖环境提示、创建与先攻、攻击 HP/预算、轮转、恢复、事件来源及重放。最终执行数字及界面结果见 [M3 实施报告](m3-implementation-report.md)。以下保留历史阶段记录。
+
 ## M1
 - DSL 白名单、未知字段、深度/节点/数值上限；拒绝代码字符串、任意路径。
 - AC 敏捷 1/9/10/15/20/30；护甲/盾/替代公式拒绝；仅已验证规则可执行。

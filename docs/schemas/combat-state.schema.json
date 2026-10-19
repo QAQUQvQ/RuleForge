@@ -96,6 +96,52 @@
         },
         "budget": {
           "$ref": "#/$defs/ActionBudget"
+        },
+        "ac": {
+          "default": 10,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Ac",
+          "type": "integer"
+        },
+        "ac_sources": {
+          "additionalProperties": true,
+          "title": "Ac Sources",
+          "type": "object"
+        },
+        "defenses": {
+          "additionalProperties": true,
+          "title": "Defenses",
+          "type": "object"
+        },
+        "speed_ft": {
+          "default": 30,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Speed Ft",
+          "type": "integer"
+        },
+        "team": {
+          "default": "unassigned",
+          "title": "Team",
+          "type": "string"
+        },
+        "character_version": {
+          "default": 0,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Character Version",
+          "type": "integer"
+        },
+        "status": {
+          "default": "alive",
+          "enum": [
+            "alive",
+            "dead",
+            "dm_required"
+          ],
+          "title": "Status",
+          "type": "string"
         }
       },
       "required": [
@@ -303,6 +349,87 @@
           ],
           "default": null,
           "title": "Remaining Rounds"
+        },
+        "rule_version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Rule Version",
+          "type": "integer"
+        },
+        "kind": {
+          "default": "dm_marker",
+          "enum": [
+            "ready_attack",
+            "dm_marker"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "label": {
+          "default": "",
+          "title": "Label",
+          "type": "string"
+        },
+        "applied_at": {
+          "additionalProperties": true,
+          "title": "Applied At",
+          "type": "object"
+        },
+        "duration_type": {
+          "default": "dm",
+          "enum": [
+            "owner_turn_boundary",
+            "encounter_end",
+            "dm"
+          ],
+          "title": "Duration Type",
+          "type": "string"
+        },
+        "duration_owner_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration Owner Id"
+        },
+        "expires_at_phase": {
+          "default": "dm",
+          "enum": [
+            "turn_start",
+            "turn_end",
+            "encounter_end",
+            "dm"
+          ],
+          "title": "Expires At Phase",
+          "type": "string"
+        },
+        "concentration": {
+          "default": false,
+          "title": "Concentration",
+          "type": "boolean"
+        },
+        "active": {
+          "default": true,
+          "title": "Active",
+          "type": "boolean"
+        },
+        "source_refs": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "parameters": {
+          "additionalProperties": true,
+          "title": "Parameters",
+          "type": "object"
         }
       },
       "required": [
@@ -471,6 +598,43 @@
           ],
           "title": "Resume Phase",
           "type": "string"
+        },
+        "triggering_actor": {
+          "default": "",
+          "title": "Triggering Actor",
+          "type": "string"
+        },
+        "response_status": {
+          "additionalProperties": {
+            "enum": [
+              "pending",
+              "submitted",
+              "declined"
+            ],
+            "type": "string"
+          },
+          "title": "Response Status",
+          "type": "object"
+        },
+        "pending_reactions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Pending Reactions",
+          "type": "array"
+        },
+        "resolved_reactions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Resolved Reactions",
+          "type": "array"
+        },
+        "mechanism": {
+          "const": "ready_attack",
+          "default": "ready_attack",
+          "title": "Mechanism",
+          "type": "string"
         }
       },
       "required": [
@@ -588,6 +752,58 @@
       "maxItems": 200,
       "title": "Effects",
       "type": "array"
+    },
+    "encounter_status": {
+      "default": "setup",
+      "enum": [
+        "setup",
+        "active",
+        "ended"
+      ],
+      "title": "Encounter Status",
+      "type": "string"
+    },
+    "event_sequence": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Event Sequence",
+      "type": "integer"
+    },
+    "rule_version_bindings": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Rule Version Bindings",
+      "type": "array"
+    },
+    "environment": {
+      "default": "production",
+      "enum": [
+        "production",
+        "isolated_demo"
+      ],
+      "title": "Environment",
+      "type": "string"
+    },
+    "map_cells": {
+      "items": {
+        "$ref": "#/$defs/Position"
+      },
+      "maxItems": 400,
+      "title": "Map Cells",
+      "type": "array"
+    },
+    "scene_notes": {
+      "default": "",
+      "title": "Scene Notes",
+      "type": "string"
+    },
+    "distance_convention": {
+      "const": "five_ft_chebyshev",
+      "default": "five_ft_chebyshev",
+      "title": "Distance Convention",
+      "type": "string"
     }
   },
   "required": [

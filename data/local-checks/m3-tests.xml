@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="36" time="493.548" timestamp="2026-10-14T23:01:37.659019+08:00" hostname="LAPTOP-QAQUQvQ"><testcase classname="backend.tests.test_m3" name="test_scenario_a_multi_round_attack_persistence" time="73.584" /><testcase classname="backend.tests.test_m3" name="test_scenario_b_ready_reaction_duration" time="44.512" /><testcase classname="backend.tests.test_m3" name="test_scenario_c_failure_recovery_and_idempotence[after_command]" time="15.494" /><testcase classname="backend.tests.test_m3" name="test_scenario_c_failure_recovery_and_idempotence[after_event]" time="14.976" /><testcase classname="backend.tests.test_m3" name="test_scenario_c_failure_recovery_and_idempotence[after_snapshot]" time="14.898" /><testcase classname="backend.tests.test_m3" name="test_concurrent_duplicate_and_version_race[True]" time="10.107" /><testcase classname="backend.tests.test_m3" name="test_concurrent_duplicate_and_version_race[False]" time="10.025" /><testcase classname="backend.tests.test_m3" name="test_rejected_attack_no_writes[wrong_actor]" time="7.987" /><testcase classname="backend.tests.test_m3" name="test_rejected_attack_no_writes[unknown_target]" time="7.885" /><testcase classname="backend.tests.test_m3" name="test_rejected_attack_no_writes[wrong_weapon]" time="7.876" /><testcase classname="backend.tests.test_m3" name="test_rejected_attack_no_writes[range]" time="9.989" /><testcase classname="backend.tests.test_m3" name="test_rejected_attack_no_writes[budget]" time="14.429" /><testcase classname="backend.tests.test_m3" name="test_rejected_attack_no_writes[extra_hp]" time="5.238" /><testcase classname="backend.tests.test_m3" name="test_rejected_attack_no_writes[bad_dice]" time="10.179" /><testcase classname="backend.tests.test_m3" name="test_rejected_attack_no_writes[unknown_action]" time="5.228" /><testcase classname="backend.tests.test_m3" name="test_rejected_attack_no_writes[not_visible]" time="5.272" /><testcase classname="backend.tests.test_m3" name="test_move_rejects_unsafe_or_unfunded[distance]" time="7.963" /><testcase classname="backend.tests.test_m3" name="test_move_rejects_unsafe_or_unfunded[unknown]" time="7.732" /><testcase classname="backend.tests.test_m3" name="test_move_rejects_unsafe_or_unfunded[occupied]" time="8.467" /><testcase classname="backend.tests.test_m3" name="test_move_rejects_unsafe_or_unfunded[opportunity]" time="7.900" /><testcase classname="backend.tests.test_m3" name="test_move_rejects_unsafe_or_unfunded[unconfirmed]" time="5.273" /><testcase classname="backend.tests.test_m3" name="test_move_and_turn_reset" time="14.118" /><testcase classname="backend.tests.test_m3" name="test_invalid_reactions_are_atomic[actor]" time="18.217" /><testcase classname="backend.tests.test_m3" name="test_invalid_reactions_are_atomic[trigger]" time="18.088" /><testcase classname="backend.tests.test_m3" name="test_invalid_reactions_are_atomic[ordinary]" time="17.878" /><testcase classname="backend.tests.test_m3" name="test_decline_retains_ready_and_reaction_then_expires" time="25.155" /><testcase classname="backend.tests.test_m3" name="test_dm_marker_not_automatic_condition_and_end_cleanup" time="8.455" /><testcase classname="backend.tests.test_m3" name="test_replay_detects_tampering[dice]" time="10.471" /><testcase classname="backend.tests.test_m3" name="test_replay_detects_tampering[metadata]" time="10.360" /><testcase classname="backend.tests.test_m3" name="test_replay_detects_tampering[delete]" time="10.503" /><testcase classname="backend.tests.test_m3" name="test_replay_detects_tampering[sequence]" time="10.636" /><testcase classname="backend.tests.test_m3" name="test_replay_detects_tampering[duplicate]" time="10.502" /><testcase classname="backend.tests.test_m3" name="test_replay_detects_tampering[snapshot]" time="10.488" /><testcase classname="backend.tests.test_m3" name="test_replay_detects_tampering[initial]" time="10.659" /><testcase classname="backend.tests.test_m3" name="test_replay_detects_tampering[receipt]" time="10.455" /><testcase classname="backend.tests.test_m3" name="test_random_replay_without_rng_or_current_grants" time="11.649"><failure message="AssertionError: Replay must not roll">service = &lt;ruleforge.encounters.service.Encounters object at 0x00000240B40BF000&gt;
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000240B66EA060&gt;
+
+    def test_random_replay_without_rng_or_current_grants(service,monkeypatch):
+        state=start(service)
+        state,_=execute(service,state,'attack',target_id=state.combatants[1].creature.id,weapon_id=WEAPON,payload=SCENE)
+        with connect(service.catalog.database) as conn:conn.execute('DELETE FROM runtime_grants')
+        from ruleforge.combat.dice import Dice
+        def forbidden(*a,**k):raise AssertionError('Replay must not roll')
+        monkeypatch.setattr(Dice,'roll',forbidden)
+        assert service.replay(state.id)['state']==state.model_dump()
+&gt;       with pytest.raises(RuleError):service.execute(cmd(state,'end_turn'))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend\tests\test_m3.py:294: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\ruleforge\encounters\service.py:205: in execute
+    self._authorize_bindings(state, scope)
+backend\ruleforge\encounters\service.py:132: in _authorize_bindings
+    scope.require(ref['id'], ref['version'])
+backend\ruleforge\encounters\runtime.py:46: in require
+    record, ref, sources = runtime.require(self.conn, record_id, version)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\ruleforge\combat\runtime.py:81: in require
+    expected = self.verification_report()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\ruleforge\combat\runtime.py:34: in verification_report
+    return fixed_tests()
+           ^^^^^^^^^^^^^
+backend\ruleforge\combat\verification.py:35: in fixed_tests
+    result = attack('a','b',equip('dagger'),Abilities(dexterity=14),True,2,14,AttackContext(**ctx,**flags),Dice(fixed=rolls))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend\ruleforge\combat\attacks.py:77: in attack
+    rolls = dice.roll('2d20' if adv != disadvantage else '1d20')['rolls']
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = (&lt;ruleforge.combat.dice.Dice object at 0x00000240B66FC360&gt;, '1d20'), k = {}
+
+&gt;   def forbidden(*a,**k):raise AssertionError('Replay must not roll')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Replay must not roll
+
+backend\tests\test_m3.py:291: AssertionError</failure></testcase></testsuite></testsuites>

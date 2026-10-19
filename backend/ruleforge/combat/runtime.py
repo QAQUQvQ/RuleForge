@@ -21,11 +21,23 @@ def adapter_hash():
 
 
 class Runtime:
+    adapter_id = ADAPTER_ID
+
+    def template_entries(self):
+        return templates()
+
+    def adapter_digest(self):
+        return adapter_hash()
+
+    def verification_report(self):
+        from ruleforge.combat.verification import fixed_tests
+        return fixed_tests()
+
     def __init__(self, catalog: CatalogService):
         self.catalog = catalog
 
     def _binding(self, conn, record_id, version):
-        allowed = templates().get(record_id)
+        allowed = self.template_entries().get(record_id)
         if not allowed or version != allowed['record']['record_version']:
             raise RuleError('missing_adapter', 'No whitelisted template for this record/version', 409)
         try:
@@ -52,13 +64,13 @@ class Runtime:
         with connect(self.catalog.database) as conn, evidence_snapshot():
             conn.execute('BEGIN IMMEDIATE')
             record, fingerprint, _ = self._binding(conn, record_id, version)
-            report = fixed_tests()
+            report = self.verification_report()
             report.update(method='fixed trusted adapter tests; catalog review is separate', human_review=False)
             conn.execute('''INSERT INTO runtime_grants VALUES (?,?,?,?,?,?,?)
                 ON CONFLICT(record_id,record_version) DO UPDATE SET adapter_id=excluded.adapter_id,
                 adapter_sha256=excluded.adapter_sha256,evidence_sha256=excluded.evidence_sha256,
                 verification_json=excluded.verification_json,granted_at=excluded.granted_at''',
-                (record.id, version, ADAPTER_ID, adapter_hash(), fingerprint, canonical(report), now()))
+                (record.id, version, self.adapter_id, self.adapter_digest(), fingerprint, canonical(report), now()))
         return report
 
     def require(self, conn, record_id, version=1):
@@ -66,12 +78,12 @@ class Runtime:
         grant = conn.execute('SELECT * FROM runtime_grants WHERE record_id=? AND record_version=?',
                              (record_id, version)).fetchone()
         from ruleforge.combat.verification import fixed_tests
-        expected = fixed_tests()
+        expected = self.verification_report()
         report = json.loads(grant['verification_json']) if grant else {}
-        if (not grant or grant['adapter_id'] != ADAPTER_ID or grant['adapter_sha256'] != adapter_hash()
+        if (not grant or grant['adapter_id'] != self.adapter_id or grant['adapter_sha256'] != self.adapter_digest()
             or grant['evidence_sha256'] != fingerprint or any(report.get(k) != v for k,v in expected.items())):
             raise RuleError('missing_adapter', 'No current independently verified execution grant: '+record_id, 409)
-        return record, {'id': record_id, 'version': version, 'adapter_id': ADAPTER_ID,
+        return record, {'id': record_id, 'version': version, 'adapter_id': self.adapter_id,
                         'adapter_sha256': grant['adapter_sha256'], 'evidence_sha256': fingerprint}, sources
 
 

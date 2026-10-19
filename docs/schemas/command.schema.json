@@ -23,6 +23,51 @@
           "title": "Expected Version",
           "type": "integer"
         },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "scene_confirmed": {
+              "const": true,
+              "title": "Scene Confirmed",
+              "type": "boolean"
+            },
+            "target_visible": {
+              "const": true,
+              "title": "Target Visible",
+              "type": "boolean"
+            },
+            "cover": {
+              "const": "none",
+              "title": "Cover",
+              "type": "string"
+            },
+            "fixed_dice": {
+              "anyOf": [
+                {
+                  "items": {
+                    "maximum": 100,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "maxItems": 100,
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Fixed Dice"
+            }
+          },
+          "required": [
+            "scene_confirmed",
+            "target_visible",
+            "cover"
+          ],
+          "title": "AttackPayload",
+          "type": "object"
+        },
         "type": {
           "const": "attack",
           "default": "attack",
@@ -44,7 +89,8 @@
         "actor_id",
         "expected_version",
         "target_id",
-        "weapon_id"
+        "weapon_id",
+        "payload"
       ],
       "title": "AttackCommand",
       "type": "object"
@@ -71,6 +117,56 @@
           "minimum": 0,
           "title": "Expected Version",
           "type": "integer"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "alive",
+                    "dead",
+                    "dm_required"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Status"
+            },
+            "marker": {
+              "anyOf": [
+                {
+                  "maxLength": 100,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Marker"
+            },
+            "remove_effect_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Remove Effect Id"
+            }
+          },
+          "title": "AdjustmentPayload",
+          "type": "object"
         },
         "type": {
           "const": "dm_adjustment",
@@ -107,6 +203,116 @@
       "title": "DMAdjustmentCommand",
       "type": "object"
     },
+    "DeclineReactionCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Command Id",
+          "type": "string"
+        },
+        "encounter_id": {
+          "title": "Encounter Id",
+          "type": "string"
+        },
+        "actor_id": {
+          "title": "Actor Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "trigger_event_id": {
+              "title": "Trigger Event Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "trigger_event_id"
+          ],
+          "title": "DeclinePayload",
+          "type": "object"
+        },
+        "type": {
+          "const": "decline_reaction",
+          "default": "decline_reaction",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "command_id",
+        "encounter_id",
+        "actor_id",
+        "expected_version",
+        "payload"
+      ],
+      "title": "DeclineReactionCommand",
+      "type": "object"
+    },
+    "EndEncounterCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Command Id",
+          "type": "string"
+        },
+        "encounter_id": {
+          "title": "Encounter Id",
+          "type": "string"
+        },
+        "actor_id": {
+          "title": "Actor Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "reason": {
+              "maxLength": 1000,
+              "minLength": 1,
+              "title": "Reason",
+              "type": "string"
+            }
+          },
+          "required": [
+            "reason"
+          ],
+          "title": "EndPayload",
+          "type": "object"
+        },
+        "type": {
+          "const": "end_encounter",
+          "default": "end_encounter",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "command_id",
+        "encounter_id",
+        "actor_id",
+        "expected_version",
+        "payload"
+      ],
+      "title": "EndEncounterCommand",
+      "type": "object"
+    },
     "EndTurnCommand": {
       "additionalProperties": false,
       "properties": {
@@ -129,6 +335,12 @@
           "minimum": 0,
           "title": "Expected Version",
           "type": "integer"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {},
+          "title": "EmptyPayload",
+          "type": "object"
         },
         "type": {
           "const": "end_turn",
@@ -169,6 +381,37 @@
           "title": "Expected Version",
           "type": "integer"
         },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "items": {
+                "$ref": "#/$defs/Position"
+              },
+              "maxItems": 200,
+              "minItems": 1,
+              "title": "Path",
+              "type": "array"
+            },
+            "scene_confirmed": {
+              "const": true,
+              "title": "Scene Confirmed",
+              "type": "boolean"
+            },
+            "no_unmodeled_triggers": {
+              "const": true,
+              "title": "No Unmodeled Triggers",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "path",
+            "scene_confirmed",
+            "no_unmodeled_triggers"
+          ],
+          "title": "MovePayload",
+          "type": "object"
+        },
         "type": {
           "const": "move",
           "default": "move",
@@ -184,7 +427,8 @@
         "encounter_id",
         "actor_id",
         "expected_version",
-        "destination"
+        "destination",
+        "payload"
       ],
       "title": "MoveCommand",
       "type": "object"
@@ -209,14 +453,243 @@
       },
       "title": "Position",
       "type": "object"
+    },
+    "ReadyCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Command Id",
+          "type": "string"
+        },
+        "encounter_id": {
+          "title": "Encounter Id",
+          "type": "string"
+        },
+        "actor_id": {
+          "title": "Actor Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "trigger_actor": {
+              "title": "Trigger Actor",
+              "type": "string"
+            },
+            "weapon_id": {
+              "title": "Weapon Id",
+              "type": "string"
+            },
+            "trigger": {
+              "const": "actor_finishes_move_adjacent",
+              "title": "Trigger",
+              "type": "string"
+            },
+            "perceivable_confirmed": {
+              "const": true,
+              "title": "Perceivable Confirmed",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "trigger_actor",
+            "weapon_id",
+            "trigger",
+            "perceivable_confirmed"
+          ],
+          "title": "ReadyPayload",
+          "type": "object"
+        },
+        "type": {
+          "const": "ready",
+          "default": "ready",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "command_id",
+        "encounter_id",
+        "actor_id",
+        "expected_version",
+        "payload"
+      ],
+      "title": "ReadyCommand",
+      "type": "object"
+    },
+    "StartEncounterCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Command Id",
+          "type": "string"
+        },
+        "encounter_id": {
+          "title": "Encounter Id",
+          "type": "string"
+        },
+        "actor_id": {
+          "title": "Actor Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "initiative_order": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 30,
+              "title": "Initiative Order",
+              "type": "array"
+            },
+            "ties_confirmed": {
+              "const": true,
+              "title": "Ties Confirmed",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "ties_confirmed"
+          ],
+          "title": "StartPayload",
+          "type": "object"
+        },
+        "type": {
+          "const": "start_encounter",
+          "default": "start_encounter",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "command_id",
+        "encounter_id",
+        "actor_id",
+        "expected_version",
+        "payload"
+      ],
+      "title": "StartEncounterCommand",
+      "type": "object"
+    },
+    "SubmitReactionCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Command Id",
+          "type": "string"
+        },
+        "encounter_id": {
+          "title": "Encounter Id",
+          "type": "string"
+        },
+        "actor_id": {
+          "title": "Actor Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "scene_confirmed": {
+              "const": true,
+              "title": "Scene Confirmed",
+              "type": "boolean"
+            },
+            "target_visible": {
+              "const": true,
+              "title": "Target Visible",
+              "type": "boolean"
+            },
+            "cover": {
+              "const": "none",
+              "title": "Cover",
+              "type": "string"
+            },
+            "fixed_dice": {
+              "anyOf": [
+                {
+                  "items": {
+                    "maximum": 100,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "maxItems": 100,
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Fixed Dice"
+            },
+            "trigger_event_id": {
+              "title": "Trigger Event Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "scene_confirmed",
+            "target_visible",
+            "cover",
+            "trigger_event_id"
+          ],
+          "title": "ReactionPayload",
+          "type": "object"
+        },
+        "type": {
+          "const": "submit_reaction",
+          "default": "submit_reaction",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "command_id",
+        "encounter_id",
+        "actor_id",
+        "expected_version",
+        "payload"
+      ],
+      "title": "SubmitReactionCommand",
+      "type": "object"
     }
   },
   "discriminator": {
     "mapping": {
       "attack": "#/$defs/AttackCommand",
+      "decline_reaction": "#/$defs/DeclineReactionCommand",
       "dm_adjustment": "#/$defs/DMAdjustmentCommand",
+      "end_encounter": "#/$defs/EndEncounterCommand",
       "end_turn": "#/$defs/EndTurnCommand",
-      "move": "#/$defs/MoveCommand"
+      "move": "#/$defs/MoveCommand",
+      "ready": "#/$defs/ReadyCommand",
+      "start_encounter": "#/$defs/StartEncounterCommand",
+      "submit_reaction": "#/$defs/SubmitReactionCommand"
     },
     "propertyName": "type"
   },
@@ -232,6 +705,21 @@
     },
     {
       "$ref": "#/$defs/DMAdjustmentCommand"
+    },
+    {
+      "$ref": "#/$defs/StartEncounterCommand"
+    },
+    {
+      "$ref": "#/$defs/ReadyCommand"
+    },
+    {
+      "$ref": "#/$defs/SubmitReactionCommand"
+    },
+    {
+      "$ref": "#/$defs/DeclineReactionCommand"
+    },
+    {
+      "$ref": "#/$defs/EndEncounterCommand"
     }
   ]
 }

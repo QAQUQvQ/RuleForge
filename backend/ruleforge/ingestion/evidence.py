@@ -10,18 +10,26 @@ from pathlib import Path
 SOURCE_URL = "https://media.dndbeyond.com/compendium-images/srd/5.1/SRD_CC_v5.1.pdf"
 PDF_PATH = "data/sources/SRD_CC_v5.1.pdf"
 _json_cache = ContextVar('evidence_json_cache', default=None)
+_file_cache = ContextVar('evidence_file_cache', default=None)
 
 
 @contextmanager
-def evidence_snapshot():
-    """Cache decoding only within one operation. File hashes are still checked on every read."""
+def evidence_snapshot(*, cache_files=False):
+    """Cache decoding per operation; optional file caching rechecks every SHA on exit."""
     if _json_cache.get() is not None:
         yield
         return
     token = _json_cache.set({})
+    file_token = _file_cache.set({} if cache_files else None)
     try:
         yield
+        # M3 can freeze file verification within one operation, but must recheck
+        # every SHA before its enclosing SQLite transaction is allowed to commit.
+        for file, expected in (_file_cache.get() or {}).items():
+            if not file.is_file() or digest_bytes(file.read_bytes()) != expected:
+                raise EvidenceError('artifact changed during evidence snapshot: ' + str(file))
     finally:
+        _file_cache.reset(file_token)
         _json_cache.reset(token)
 
 
@@ -61,8 +69,15 @@ def artifact(root: Path, path: Path) -> dict:
 
 def checked_file(root: Path, ref: dict) -> Path:
     file = contained(root, ref["path"])
+    cache = _file_cache.get()
+    if cache is not None and file in cache:
+        if cache[file] != ref['sha256']:
+            raise EvidenceError('conflicting artifact SHA-256: ' + ref['path'])
+        return file
     if not file.is_file() or digest_bytes(file.read_bytes()) != ref["sha256"]:
         raise EvidenceError("artifact missing or SHA-256 mismatch: " + ref["path"])
+    if cache is not None:
+        cache[file] = ref['sha256']
     return file
 
 def json_pointer(value, pointer: str):

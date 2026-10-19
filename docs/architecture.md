@@ -1,6 +1,20 @@
-# RuleForge M1 / M1+ / M2 架构
+# RuleForge M1 / M1+ / M2 / M3 架构
 
-以下 M1/M1+ 小节保留历史边界；当前新增能力与数据库版本以文末 M2 小节为准。
+以下 M1/M1+/M2 小节保留历史边界；当前能力与数据库版本以本节 M3 和实施报告为准。
+
+## M3 当前架构（2026-10-15）
+
+`encounters/contracts.py` 严格验证创建及命令 payload；`machine.py` 提供纯转移、预算、按拥有者回合边界到期和事件 reducer；`service.py` 用 M2 内核在一个 BEGIN IMMEDIATE 中完成 Command → Event → CombatState。写 API 是单 DM 本地 token 权限，actor_id 仅为游戏角色选择。
+
+数据库 v4 扩展已有 encounters/commands/events，固定初始快照、命令请求/结果、事件补丁、骰子和来源、状态哈希及事件链。旧行保留，缺乏原始历史的 legacy encounter 不凭空升级成可重放遭遇。CAS、命令全局唯一 ID、每遭遇 sequence 唯一约束并用；原请求幂等重试先于旧版本拒绝。
+
+EncounterScope 同时核验 M2/M3 当前授权和遭遇绑定；新规则命令不得用历史重建路径绕过授权。重放只依赖固定事件数据，逐条校验前后状态及全事件摘要；授权撤销后仍可重建历史。事件 version 按每个事件递增，多事件命令在同一事务提交。
+
+M3 的 `evidence_snapshot(cache_files=True)` 只在本次操作缓存已核验文件；离开证据上下文、SQLite 提交前重新检查全部 SHA，失败会回滚。M1/M2 默认仍逐次检查，不跨请求缓存信任。适配器摘要涵盖该校验实现。
+
+源模板由既有 SHA 固定的 xParse 产物离线提取。受支持反应是 Ready 普通近战攻击，触发为指定角色完成相邻移动；反应在本人下回合开始恢复。Ready 效果按准备者的 turn_start 到期。地图及场景输入需 DM 明确确认；未知能力和地形拒绝。人物快照所有权独立，无隐式回写。
+
+正式/演示隔离包含显式应用构造、数据库持久化模式、demo 文件路径限制及 SIMULATED 审核拒绝。生产服务不自动创建许可。完整状态表、事务和限制见 [M3 实施报告](m3-implementation-report.md)。
 本次用户请求是实施边界；原计划是产品参考，不将其中投稿或后续阶段当作本次授权。先给出设计后实现。
 ## 模块和目录
 ```text

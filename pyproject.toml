@@ -19,7 +19,8 @@ ruleforge = "ruleforge.cli:main"
 where = ["backend"]
 
 [tool.setuptools.package-data]
-"ruleforge.persistence" = ["schema.sql", "migration_v2.sql", "migration_v3.sql"]
+"ruleforge.persistence" = ["schema.sql", "migration_v2.sql", "migration_v3.sql", "migration_v4.sql"]
+"ruleforge.encounters" = ["templates.json"]
 "ruleforge.combat" = ["templates.json"]
 
 [tool.pytest.ini_options]

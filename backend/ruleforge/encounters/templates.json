@@ -1,0 +1,1079 @@
+{
+  "srd51.general_rule.m3-turns": {
+    "record": {
+      "id": "srd51.general_rule.m3-turns",
+      "ruleset": "srd-5.1",
+      "record_version": 1,
+      "record_type": "general_rule",
+      "canonical_name": "m3-turns",
+      "aliases": [],
+      "source_ids": [
+        "srd51-full-001:element:2230",
+        "srd51-full-001:element:2231",
+        "srd51-full-001:element:2232",
+        "srd51-full-001:element:2234",
+        "srd51-full-001:element:2237",
+        "srd51-full-001:element:2239",
+        "srd51-full-001:element:2240",
+        "srd51-full-001:element:2252",
+        "srd51-full-001:element:2253",
+        "srd51-full-001:element:2256",
+        "srd51-full-001:element:2257",
+        "srd51-full-001:element:2259",
+        "srd51-full-001:element:2267",
+        "srd51-full-001:element:2268",
+        "srd51-full-001:element:2301",
+        "srd51-full-001:element:2302",
+        "srd51-full-001:element:2324"
+      ],
+      "extraction_run_id": "srd51-full-001",
+      "field_sources": {
+        "category": [
+          "srd51-full-001:element:2230",
+          "srd51-full-001:element:2231",
+          "srd51-full-001:element:2232",
+          "srd51-full-001:element:2234",
+          "srd51-full-001:element:2237",
+          "srd51-full-001:element:2239",
+          "srd51-full-001:element:2240",
+          "srd51-full-001:element:2252",
+          "srd51-full-001:element:2253",
+          "srd51-full-001:element:2256",
+          "srd51-full-001:element:2257",
+          "srd51-full-001:element:2259",
+          "srd51-full-001:element:2267",
+          "srd51-full-001:element:2268",
+          "srd51-full-001:element:2301",
+          "srd51-full-001:element:2302",
+          "srd51-full-001:element:2324"
+        ],
+        "description": [
+          "srd51-full-001:element:2230",
+          "srd51-full-001:element:2231",
+          "srd51-full-001:element:2232",
+          "srd51-full-001:element:2234",
+          "srd51-full-001:element:2237",
+          "srd51-full-001:element:2239",
+          "srd51-full-001:element:2240",
+          "srd51-full-001:element:2252",
+          "srd51-full-001:element:2253",
+          "srd51-full-001:element:2256",
+          "srd51-full-001:element:2257",
+          "srd51-full-001:element:2259",
+          "srd51-full-001:element:2267",
+          "srd51-full-001:element:2268",
+          "srd51-full-001:element:2301",
+          "srd51-full-001:element:2302",
+          "srd51-full-001:element:2324"
+        ],
+        "effect_specification": [
+          "srd51-full-001:element:2230",
+          "srd51-full-001:element:2231",
+          "srd51-full-001:element:2232",
+          "srd51-full-001:element:2234",
+          "srd51-full-001:element:2237",
+          "srd51-full-001:element:2239",
+          "srd51-full-001:element:2240",
+          "srd51-full-001:element:2252",
+          "srd51-full-001:element:2253",
+          "srd51-full-001:element:2256",
+          "srd51-full-001:element:2257",
+          "srd51-full-001:element:2259",
+          "srd51-full-001:element:2267",
+          "srd51-full-001:element:2268",
+          "srd51-full-001:element:2301",
+          "srd51-full-001:element:2302",
+          "srd51-full-001:element:2324"
+        ]
+      },
+      "validation_status": "extracted",
+      "review_status": "review_required",
+      "execution_status": "reference_only",
+      "schema_version": "1",
+      "normalized_payload": {
+        "category": "action_economy",
+        "description": "Initiative determines the order of turns during combat. When combat starts, every participant makes a Dexterity check to determine their place in the initiative order. The GM makes one roll for an entire group of identical creatures, so each member of the group acts at the same time.\nThe GM ranks the combatants in order from the one with the highest Dexterity check total to the one with the lowest. This is the order (called the initiative order) in which they act during each round. The initiative order remains the same from round to round.\nIf a tie occurs, the GM decides the order among tied GM-controlled creatures, and the players decide the order among their tied characters. The GM can decide the order if the tie is between a monster and a player character. Optionally, the GM can have the tied characters and monsters each roll a d20 to determine the order, highest roll going first.\nOn your turn, you can **move** a distance up to your speed and **take** **one action.** You decide whether to move first or take your action first.Your speed-sometimes called your walking speed-is noted on your character sheet.\nYou can forgo moving, taking an action,or doing anything at all on your turn. If you can't decide what to do on your turn, consider taking the Dodge or Ready action, as described in \"Actions in Combat.\"\nVarious class features, spells, and other abilities let you take an additional action on your turn called a bonus action. The Cunning Action feature,for example, allows a rogue to take a bonus action.You can take a bonus action only when a special ability, spell, or other feature of the game states that you can do something as a bonus action. You otherwise don't have a bonus action to take.\nYou can take only one bonus action on your turn, so you must choose which bonus action to use when you have more than one available.\nCertain special abilities, spells, and situations allow you to take a special action called a reaction.A reaction is an instant response to a trigger of some kind, which can occuir on your turn or on someone else's. The opportunity attack is the most common type of reaction.\nWhen you take a reaction, you can't take another one until the start of your next turn. If the reaction interrupts another creature's turn, that creature can continue its turn right after the reaction.\nOn your turn, you can move a distance up to your speed. You can use as much or as little of youir speed as you like on your turn, following the rules here.\nYour movement can include jumping, climbing, and swimming. These different modes of movement can be combined with walking, or they can constitute your entire move. However you're moving, you deduct the distance of each part of your move from your speed until it is used up or until you are done moving.\nYou can break up your movement on your turn, using some of your speed before and after your action. For example, if you have a speed of 30 feet, you can move 10 feet, take your action, and then move 20 feet.\nEvery foot of movement in difficult terrain costs 1extra foot. This rule is true even if multiple things in a space count as difficult terrain.\nLow furniture, rubble, undergrowth, steep stairs, snow,and shallow bogs are examples of difficult terrain. The space of another creature, whether hostile or not, also counts as difficult terrain.\nWhether a creature is a friend or an enemy, you can't willingly end your move in its space.\nIf you leave a hostile creature's reach during your move, you provoke an opportunity attack.\nWith this action, you make one melee or ranged attack. See the \"Making an Attack\" section for the rules that govern attacks.",
+        "trigger": null,
+        "prerequisites": [],
+        "conditions": [],
+        "resolution_steps": [],
+        "effect_specification": [
+          {
+            "kind": "reference_text",
+            "text": "Initiative determines the order of turns during combat. When combat starts, every participant makes a Dexterity check to determine their place in the initiative order. The GM makes one roll for an entire group of identical creatures, so each member of the group acts at the same time.",
+            "source_ids": [
+              "srd51-full-001:element:2230"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "The GM ranks the combatants in order from the one with the highest Dexterity check total to the one with the lowest. This is the order (called the initiative order) in which they act during each round. The initiative order remains the same from round to round.",
+            "source_ids": [
+              "srd51-full-001:element:2231"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "If a tie occurs, the GM decides the order among tied GM-controlled creatures, and the players decide the order among their tied characters. The GM can decide the order if the tie is between a monster and a player character. Optionally, the GM can have the tied characters and monsters each roll a d20 to determine the order, highest roll going first.",
+            "source_ids": [
+              "srd51-full-001:element:2232"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "On your turn, you can **move** a distance up to your speed and **take** **one action.** You decide whether to move first or take your action first.Your speed-sometimes called your walking speed-is noted on your character sheet.",
+            "source_ids": [
+              "srd51-full-001:element:2234"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "You can forgo moving, taking an action,or doing anything at all on your turn. If you can't decide what to do on your turn, consider taking the Dodge or Ready action, as described in \"Actions in Combat.\"",
+            "source_ids": [
+              "srd51-full-001:element:2237"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "Various class features, spells, and other abilities let you take an additional action on your turn called a bonus action. The Cunning Action feature,for example, allows a rogue to take a bonus action.You can take a bonus action only when a special ability, spell, or other feature of the game states that you can do something as a bonus action. You otherwise don't have a bonus action to take.",
+            "source_ids": [
+              "srd51-full-001:element:2239"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "You can take only one bonus action on your turn, so you must choose which bonus action to use when you have more than one available.",
+            "source_ids": [
+              "srd51-full-001:element:2240"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "Certain special abilities, spells, and situations allow you to take a special action called a reaction.A reaction is an instant response to a trigger of some kind, which can occuir on your turn or on someone else's. The opportunity attack is the most common type of reaction.",
+            "source_ids": [
+              "srd51-full-001:element:2252"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "When you take a reaction, you can't take another one until the start of your next turn. If the reaction interrupts another creature's turn, that creature can continue its turn right after the reaction.",
+            "source_ids": [
+              "srd51-full-001:element:2253"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "On your turn, you can move a distance up to your speed. You can use as much or as little of youir speed as you like on your turn, following the rules here.",
+            "source_ids": [
+              "srd51-full-001:element:2256"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "Your movement can include jumping, climbing, and swimming. These different modes of movement can be combined with walking, or they can constitute your entire move. However you're moving, you deduct the distance of each part of your move from your speed until it is used up or until you are done moving.",
+            "source_ids": [
+              "srd51-full-001:element:2257"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "You can break up your movement on your turn, using some of your speed before and after your action. For example, if you have a speed of 30 feet, you can move 10 feet, take your action, and then move 20 feet.",
+            "source_ids": [
+              "srd51-full-001:element:2259"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "Every foot of movement in difficult terrain costs 1extra foot. This rule is true even if multiple things in a space count as difficult terrain.",
+            "source_ids": [
+              "srd51-full-001:element:2267"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "Low furniture, rubble, undergrowth, steep stairs, snow,and shallow bogs are examples of difficult terrain. The space of another creature, whether hostile or not, also counts as difficult terrain.",
+            "source_ids": [
+              "srd51-full-001:element:2268"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "Whether a creature is a friend or an enemy, you can't willingly end your move in its space.",
+            "source_ids": [
+              "srd51-full-001:element:2301"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "If you leave a hostile creature's reach during your move, you provoke an opportunity attack.",
+            "source_ids": [
+              "srd51-full-001:element:2302"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "With this action, you make one melee or ranged attack. See the \"Making an Attack\" section for the rules that govern attacks.",
+            "source_ids": [
+              "srd51-full-001:element:2324"
+            ]
+          }
+        ],
+        "related_rule_ids": []
+      }
+    },
+    "content_sha256": "b7c91d8cd2103b210fc86359fdd154586b15bf38b31fbed87db6163394431d19",
+    "sources": [
+      {
+        "id": "srd51-full-001:element:2230",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2230/text",
+        "element_pointer": "/data/elements/2230",
+        "element_id": "4d815a027e1a3f9d78273edad5f3b503ff600a077e2d46fef244d6409c51d7ce",
+        "section_hierarchy": [
+          "The Environment",
+          "The Order of Combat",
+          "Initiative"
+        ],
+        "page_pointer": "/data/elements/2230/page_number",
+        "physical_page": 90,
+        "printed_page": "90",
+        "printed_page_pointer": "/data/elements/2243/text",
+        "table_location": null,
+        "quote": "Initiative determines the order of turns during combat. When combat starts, every participant makes a Dexterity check to determine their place in the initiative order. The GM makes one roll for an entire group of identical creatures, so each member of the group acts at the same time.",
+        "quote_sha256": "9b4d5344bce4bd09278d0399b3ca7cdfb4d130685fcd7e037cec458f1e4fe740",
+        "coordinates": [
+          0.533497,
+          0.121212,
+          0.90768,
+          0.121212,
+          0.90768,
+          0.205177,
+          0.533497,
+          0.205177
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2231",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2231/text",
+        "element_pointer": "/data/elements/2231",
+        "element_id": "9ab32233591adcf6e83970628c8c3c38f15cacb371dbed593765c7b25f5f9d99",
+        "section_hierarchy": [
+          "The Environment",
+          "The Order of Combat",
+          "Initiative"
+        ],
+        "page_pointer": "/data/elements/2231/page_number",
+        "physical_page": 90,
+        "printed_page": "90",
+        "printed_page_pointer": "/data/elements/2243/text",
+        "table_location": null,
+        "quote": "The GM ranks the combatants in order from the one with the highest Dexterity check total to the one with the lowest. This is the order (called the initiative order) in which they act during each round. The initiative order remains the same from round to round.",
+        "quote_sha256": "15f1f318a8afe1db96a2c69c832bcdaf3e3b739b856dc4a888d7858c672ea679",
+        "coordinates": [
+          0.53268,
+          0.210227,
+          0.90768,
+          0.210227,
+          0.90768,
+          0.293561,
+          0.53268,
+          0.293561
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2232",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2232/text",
+        "element_pointer": "/data/elements/2232",
+        "element_id": "c507cb7112ec4f75656803f436d1eb55735017af7d9d3065b55f956a3f0f717b",
+        "section_hierarchy": [
+          "The Environment",
+          "The Order of Combat",
+          "Initiative"
+        ],
+        "page_pointer": "/data/elements/2232/page_number",
+        "physical_page": 90,
+        "printed_page": "90",
+        "printed_page_pointer": "/data/elements/2243/text",
+        "table_location": null,
+        "quote": "If a tie occurs, the GM decides the order among tied GM-controlled creatures, and the players decide the order among their tied characters. The GM can decide the order if the tie is between a monster and a player character. Optionally, the GM can have the tied characters and monsters each roll a d20 to determine the order, highest roll going first.",
+        "quote_sha256": "fa7a8a8cf89cc85dc2008457cec103a3f3f617eb3dd2262bf349cf60ca5cf0a4",
+        "coordinates": [
+          0.534314,
+          0.299242,
+          0.903595,
+          0.299242,
+          0.903595,
+          0.399621,
+          0.534314,
+          0.399621
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2234",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2234/text",
+        "element_pointer": "/data/elements/2234",
+        "element_id": "aadad910d0f1d20975af72d5936b9e3605e7354befdb597c514cefd1149876ec",
+        "section_hierarchy": [
+          "The Environment",
+          "The Order of Combat",
+          "Your Turn"
+        ],
+        "page_pointer": "/data/elements/2234/page_number",
+        "physical_page": 90,
+        "printed_page": "90",
+        "printed_page_pointer": "/data/elements/2243/text",
+        "table_location": null,
+        "quote": "On your turn, you can **move** a distance up to your speed and **take** **one action.** You decide whether to move first or take your action first.Your speed-sometimes called your walking speed-is noted on your character sheet.",
+        "quote_sha256": "744ead22230e251d8c489e376c60a8101b527986dd895380d82f42549dd95acd",
+        "coordinates": [
+          0.533497,
+          0.438131,
+          0.892157,
+          0.438131,
+          0.892157,
+          0.508838,
+          0.533497,
+          0.508838
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2237",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2237/text",
+        "element_pointer": "/data/elements/2237",
+        "element_id": "870210904f3a958a2f76a08253c07e933239e3b1a296f4063b2443078655e79b",
+        "section_hierarchy": [
+          "The Environment",
+          "The Order of Combat",
+          "Your Turn"
+        ],
+        "page_pointer": "/data/elements/2237/page_number",
+        "physical_page": 90,
+        "printed_page": "90",
+        "printed_page_pointer": "/data/elements/2243/text",
+        "table_location": null,
+        "quote": "You can forgo moving, taking an action,or doing anything at all on your turn. If you can't decide what to do on your turn, consider taking the Dodge or Ready action, as described in \"Actions in Combat.\"",
+        "quote_sha256": "09916946d1aa4ba96954e3ad7e9ed95d1f6b367b272e53969d0e68d9854b8fc0",
+        "coordinates": [
+          0.533497,
+          0.600379,
+          0.901961,
+          0.600379,
+          0.901961,
+          0.656566,
+          0.533497,
+          0.656566
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2239",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2239/text",
+        "element_pointer": "/data/elements/2239",
+        "element_id": "5c2feca838b9f93f4873e552455a22a1ccb165a6398bd927e6189546f6740584",
+        "section_hierarchy": [
+          "The Environment",
+          "Bonus Actions"
+        ],
+        "page_pointer": "/data/elements/2239/page_number",
+        "physical_page": 90,
+        "printed_page": "90",
+        "printed_page_pointer": "/data/elements/2243/text",
+        "table_location": null,
+        "quote": "Various class features, spells, and other abilities let you take an additional action on your turn called a bonus action. The Cunning Action feature,for example, allows a rogue to take a bonus action.You can take a bonus action only when a special ability, spell, or other feature of the game states that you can do something as a bonus action. You otherwise don't have a bonus action to take.",
+        "quote_sha256": "1fecb9c0eedbb480c47912b843d325a3ae017c9a029a92eff8172ccc6a628f8e",
+        "coordinates": [
+          0.533497,
+          0.688763,
+          0.90768,
+          0.688763,
+          0.90768,
+          0.80303,
+          0.533497,
+          0.80303
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2240",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2240/text",
+        "element_pointer": "/data/elements/2240",
+        "element_id": "4b091df208604966dd45b9a42eef0fa8a3ee953d2fb9ffde91f36804d6dbc995",
+        "section_hierarchy": [
+          "The Environment",
+          "Bonus Actions"
+        ],
+        "page_pointer": "/data/elements/2240/page_number",
+        "physical_page": 90,
+        "printed_page": "90",
+        "printed_page_pointer": "/data/elements/2243/text",
+        "table_location": null,
+        "quote": "You can take only one bonus action on your turn, so you must choose which bonus action to use when you have more than one available.",
+        "quote_sha256": "b8ae25f68be9e04590b3588454331bec580dd79cda9140808bd1fd0cd6a979ac",
+        "coordinates": [
+          0.533497,
+          0.808081,
+          0.901144,
+          0.808081,
+          0.901144,
+          0.848485,
+          0.533497,
+          0.848485
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2252",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2252/text",
+        "element_pointer": "/data/elements/2252",
+        "element_id": "3e5a86e17c532183af61c4dcb59951c5aeceaad4950cf3ab8e2731adb2582123",
+        "section_hierarchy": [
+          "The Environment",
+          "Reactions"
+        ],
+        "page_pointer": "/data/elements/2252/page_number",
+        "physical_page": 91,
+        "printed_page": "91",
+        "printed_page_pointer": "/data/elements/2273/text",
+        "table_location": null,
+        "quote": "Certain special abilities, spells, and situations allow you to take a special action called a reaction.A reaction is an instant response to a trigger of some kind, which can occuir on your turn or on someone else's. The opportunity attack is the most common type of reaction.",
+        "quote_sha256": "12d817b8aa49a6f9a50b828adbc9da32fcc72e97493a4ed266b0f9fa1476acc7",
+        "coordinates": [
+          0.089869,
+          0.497475,
+          0.453431,
+          0.497475,
+          0.453431,
+          0.583965,
+          0.089869,
+          0.583965
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2253",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2253/text",
+        "element_pointer": "/data/elements/2253",
+        "element_id": "b9ee191ea9dee304bc24d622fb49a560f07cbf242a9e4e274bb85e09973fbe38",
+        "section_hierarchy": [
+          "The Environment",
+          "Reactions"
+        ],
+        "page_pointer": "/data/elements/2253/page_number",
+        "physical_page": 91,
+        "printed_page": "91",
+        "printed_page_pointer": "/data/elements/2273/text",
+        "table_location": null,
+        "quote": "When you take a reaction, you can't take another one until the start of your next turn. If the reaction interrupts another creature's turn, that creature can continue its turn right after the reaction.",
+        "quote_sha256": "859b596d9fc232854dcf64c7cea5f19b4a05db5473c59b16e584c2b2c1e2d075",
+        "coordinates": [
+          0.090686,
+          0.587753,
+          0.45915,
+          0.587753,
+          0.45915,
+          0.642045,
+          0.090686,
+          0.642045
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2256",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2256/text",
+        "element_pointer": "/data/elements/2256",
+        "element_id": "960d33edc01ea4032e63517073f6d9743399710e420705cdceb16a7922d55ad6",
+        "section_hierarchy": [
+          "The Environment",
+          "Movement and Position"
+        ],
+        "page_pointer": "/data/elements/2256/page_number",
+        "physical_page": 91,
+        "printed_page": "91",
+        "printed_page_pointer": "/data/elements/2273/text",
+        "table_location": null,
+        "quote": "On your turn, you can move a distance up to your speed. You can use as much or as little of youir speed as you like on your turn, following the rules here.",
+        "quote_sha256": "25981c2a1b467d8cda702be6bc8469407946c7757c1561fa5b74ed9f48e61587",
+        "coordinates": [
+          0.090686,
+          0.732955,
+          0.45915,
+          0.732955,
+          0.45915,
+          0.774621,
+          0.090686,
+          0.774621
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2257",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2257/text",
+        "element_pointer": "/data/elements/2257",
+        "element_id": "e1dc95b0daefcf47a8479266984eb0184cc17d8fb4a96f0229158cf604c71801",
+        "section_hierarchy": [
+          "The Environment",
+          "Movement and Position"
+        ],
+        "page_pointer": "/data/elements/2257/page_number",
+        "physical_page": 91,
+        "printed_page": "91",
+        "printed_page_pointer": "/data/elements/2273/text",
+        "table_location": null,
+        "quote": "Your movement can include jumping, climbing, and swimming. These different modes of movement can be combined with walking, or they can constitute your entire move. However you're moving, you deduct the distance of each part of your move from your speed until it is used up or until you are done moving.",
+        "quote_sha256": "affa7fbd671c08ebb38a9a14d52014092de06ce408b64fae274421e2f15436df",
+        "coordinates": [
+          0.089869,
+          0.777778,
+          0.468954,
+          0.777778,
+          0.468954,
+          0.878157,
+          0.089869,
+          0.878157
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2259",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2259/text",
+        "element_pointer": "/data/elements/2259",
+        "element_id": "3217910931038a6fa5623ed73b3f5bf28da4b012471d0e757639229465894ffa",
+        "section_hierarchy": [
+          "The Environment",
+          "Breaking Up Your Move"
+        ],
+        "page_pointer": "/data/elements/2259/page_number",
+        "physical_page": 91,
+        "printed_page": "91",
+        "printed_page_pointer": "/data/elements/2273/text",
+        "table_location": null,
+        "quote": "You can break up your movement on your turn, using some of your speed before and after your action. For example, if you have a speed of 30 feet, you can move 10 feet, take your action, and then move 20 feet.",
+        "quote_sha256": "29fd957c5d1236874c0b585746f0198996a8901abf8b0068c034eaa737e047de",
+        "coordinates": [
+          0.533497,
+          0.121843,
+          0.887255,
+          0.121843,
+          0.887255,
+          0.190025,
+          0.533497,
+          0.190025
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2267",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2267/text",
+        "element_pointer": "/data/elements/2267",
+        "element_id": "de399a4d90a86510b094e5c27e0fa569006218e1c2d184c37f12bd59c4054b4b",
+        "section_hierarchy": [
+          "The Environment",
+          "Using Different Speeds",
+          "Difficult Terrain"
+        ],
+        "page_pointer": "/data/elements/2267/page_number",
+        "physical_page": 91,
+        "printed_page": "91",
+        "printed_page_pointer": "/data/elements/2273/text",
+        "table_location": null,
+        "quote": "Every foot of movement in difficult terrain costs 1extra foot. This rule is true even if multiple things in a space count as difficult terrain.",
+        "quote_sha256": "99707c5531897531cf20cf3df46bad421f15baac8b00aadebf3ad56b89a16e1a",
+        "coordinates": [
+          0.533497,
+          0.630051,
+          0.89951,
+          0.630051,
+          0.89951,
+          0.669823,
+          0.533497,
+          0.669823
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2268",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2268/text",
+        "element_pointer": "/data/elements/2268",
+        "element_id": "d5d9860a325226bc61c5be32ee6568317d738c9a71251ccfa13b6acab17e04b2",
+        "section_hierarchy": [
+          "The Environment",
+          "Using Different Speeds",
+          "Difficult Terrain"
+        ],
+        "page_pointer": "/data/elements/2268/page_number",
+        "physical_page": 91,
+        "printed_page": "91",
+        "printed_page_pointer": "/data/elements/2273/text",
+        "table_location": null,
+        "quote": "Low furniture, rubble, undergrowth, steep stairs, snow,and shallow bogs are examples of difficult terrain. The space of another creature, whether hostile or not, also counts as difficult terrain.",
+        "quote_sha256": "5f6c43802cea4d425611ff929aca4fbf38835655f79acf1353b84102f3a6329a",
+        "coordinates": [
+          0.533497,
+          0.674242,
+          0.894608,
+          0.674242,
+          0.894608,
+          0.729798,
+          0.533497,
+          0.729798
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2301",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2301/text",
+        "element_pointer": "/data/elements/2301",
+        "element_id": "b60cd894018158ee800d3e53393e7c3d8272c2bfd0c99c9d6a949c3adb6f138b",
+        "section_hierarchy": [
+          "The Environment",
+          "Using Different Speeds",
+          "Moving Around Other Creatures"
+        ],
+        "page_pointer": "/data/elements/2301/page_number",
+        "physical_page": 92,
+        "printed_page": "92",
+        "printed_page_pointer": "/data/elements/2318/text",
+        "table_location": null,
+        "quote": "Whether a creature is a friend or an enemy, you can't willingly end your move in its space.",
+        "quote_sha256": "3bb93bc4f4eb2570ab45d56e6b0564ec12c0d3d8f2d612d7c8b3612da467277f",
+        "coordinates": [
+          0.09232,
+          0.708965,
+          0.443627,
+          0.708965,
+          0.443627,
+          0.736111,
+          0.09232,
+          0.736111
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2302",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2302/text",
+        "element_pointer": "/data/elements/2302",
+        "element_id": "a46e3cf813e6444ca93291bc2356e8cdbb1019bb6c3486baa64f3ab0f4483374",
+        "section_hierarchy": [
+          "The Environment",
+          "Using Different Speeds",
+          "Moving Around Other Creatures"
+        ],
+        "page_pointer": "/data/elements/2302/page_number",
+        "physical_page": 92,
+        "printed_page": "92",
+        "printed_page_pointer": "/data/elements/2318/text",
+        "table_location": null,
+        "quote": "If you leave a hostile creature's reach during your move, you provoke an opportunity attack.",
+        "quote_sha256": "775d64d5284168b0efa580ae1275f8d038f0dad0cebed40eeb19a420c9bb6f9f",
+        "coordinates": [
+          0.09232,
+          0.738636,
+          0.455882,
+          0.738636,
+          0.455882,
+          0.766414,
+          0.09232,
+          0.766414
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2324",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2324/text",
+        "element_pointer": "/data/elements/2324",
+        "element_id": "247f359323196051de2c35fa0772119f71bab1c55688d133e59f75046fe14131",
+        "section_hierarchy": [
+          "Actions in Combat",
+          "Attack"
+        ],
+        "page_pointer": "/data/elements/2324/page_number",
+        "physical_page": 93,
+        "printed_page": "93",
+        "printed_page_pointer": "/data/elements/2346/text",
+        "table_location": null,
+        "quote": "With this action, you make one melee or ranged attack. See the \"Making an Attack\" section for the rules that govern attacks.",
+        "quote_sha256": "1d6d5d515caecb0985a6be14eb42984b2ba46796d2c1f5b51e8203f12a80de91",
+        "coordinates": [
+          0.089869,
+          0.348485,
+          0.443627,
+          0.348485,
+          0.443627,
+          0.388258,
+          0.089869,
+          0.388258
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      }
+    ]
+  },
+  "srd51.general_rule.m3-ready": {
+    "record": {
+      "id": "srd51.general_rule.m3-ready",
+      "ruleset": "srd-5.1",
+      "record_version": 1,
+      "record_type": "general_rule",
+      "canonical_name": "m3-ready",
+      "aliases": [],
+      "source_ids": [
+        "srd51-full-001:element:2252",
+        "srd51-full-001:element:2253",
+        "srd51-full-001:element:2341",
+        "srd51-full-001:element:2342",
+        "srd51-full-001:element:2343"
+      ],
+      "extraction_run_id": "srd51-full-001",
+      "field_sources": {
+        "category": [
+          "srd51-full-001:element:2252",
+          "srd51-full-001:element:2253",
+          "srd51-full-001:element:2341",
+          "srd51-full-001:element:2342",
+          "srd51-full-001:element:2343"
+        ],
+        "description": [
+          "srd51-full-001:element:2252",
+          "srd51-full-001:element:2253",
+          "srd51-full-001:element:2341",
+          "srd51-full-001:element:2342",
+          "srd51-full-001:element:2343"
+        ],
+        "effect_specification": [
+          "srd51-full-001:element:2252",
+          "srd51-full-001:element:2253",
+          "srd51-full-001:element:2341",
+          "srd51-full-001:element:2342",
+          "srd51-full-001:element:2343"
+        ]
+      },
+      "validation_status": "extracted",
+      "review_status": "review_required",
+      "execution_status": "reference_only",
+      "schema_version": "1",
+      "normalized_payload": {
+        "category": "action_economy",
+        "description": "Certain special abilities, spells, and situations allow you to take a special action called a reaction.A reaction is an instant response to a trigger of some kind, which can occuir on your turn or on someone else's. The opportunity attack is the most common type of reaction.\nWhen you take a reaction, you can't take another one until the start of your next turn. If the reaction interrupts another creature's turn, that creature can continue its turn right after the reaction.\nSometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn.\nFirst, you decide what perceivable circumstance will trigger your reaction.Then,you choose the action you will take in response to that trigger,or you choose to move up to your speed in response to it. Examples include \"If the cultist steps on the trapdoor, I'll pull the lever that opens it,\" and \"If the goblin steps next to me, I move away.\"\nWhen the trigger occurs,you can either take your reaction right after the trigger finishes or ignorethe trigger.Remember that you can take only one reaction per round.",
+        "trigger": null,
+        "prerequisites": [],
+        "conditions": [],
+        "resolution_steps": [],
+        "effect_specification": [
+          {
+            "kind": "reference_text",
+            "text": "Certain special abilities, spells, and situations allow you to take a special action called a reaction.A reaction is an instant response to a trigger of some kind, which can occuir on your turn or on someone else's. The opportunity attack is the most common type of reaction.",
+            "source_ids": [
+              "srd51-full-001:element:2252"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "When you take a reaction, you can't take another one until the start of your next turn. If the reaction interrupts another creature's turn, that creature can continue its turn right after the reaction.",
+            "source_ids": [
+              "srd51-full-001:element:2253"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn.",
+            "source_ids": [
+              "srd51-full-001:element:2341"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "First, you decide what perceivable circumstance will trigger your reaction.Then,you choose the action you will take in response to that trigger,or you choose to move up to your speed in response to it. Examples include \"If the cultist steps on the trapdoor, I'll pull the lever that opens it,\" and \"If the goblin steps next to me, I move away.\"",
+            "source_ids": [
+              "srd51-full-001:element:2342"
+            ]
+          },
+          {
+            "kind": "reference_text",
+            "text": "When the trigger occurs,you can either take your reaction right after the trigger finishes or ignorethe trigger.Remember that you can take only one reaction per round.",
+            "source_ids": [
+              "srd51-full-001:element:2343"
+            ]
+          }
+        ],
+        "related_rule_ids": []
+      }
+    },
+    "content_sha256": "722d532418cd454f97f5bd4bae68f7eb658ab450bcfef57dfd68d66915dc3cd3",
+    "sources": [
+      {
+        "id": "srd51-full-001:element:2252",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2252/text",
+        "element_pointer": "/data/elements/2252",
+        "element_id": "3e5a86e17c532183af61c4dcb59951c5aeceaad4950cf3ab8e2731adb2582123",
+        "section_hierarchy": [
+          "The Environment",
+          "Reactions"
+        ],
+        "page_pointer": "/data/elements/2252/page_number",
+        "physical_page": 91,
+        "printed_page": "91",
+        "printed_page_pointer": "/data/elements/2273/text",
+        "table_location": null,
+        "quote": "Certain special abilities, spells, and situations allow you to take a special action called a reaction.A reaction is an instant response to a trigger of some kind, which can occuir on your turn or on someone else's. The opportunity attack is the most common type of reaction.",
+        "quote_sha256": "12d817b8aa49a6f9a50b828adbc9da32fcc72e97493a4ed266b0f9fa1476acc7",
+        "coordinates": [
+          0.089869,
+          0.497475,
+          0.453431,
+          0.497475,
+          0.453431,
+          0.583965,
+          0.089869,
+          0.583965
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2253",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2253/text",
+        "element_pointer": "/data/elements/2253",
+        "element_id": "b9ee191ea9dee304bc24d622fb49a560f07cbf242a9e4e274bb85e09973fbe38",
+        "section_hierarchy": [
+          "The Environment",
+          "Reactions"
+        ],
+        "page_pointer": "/data/elements/2253/page_number",
+        "physical_page": 91,
+        "printed_page": "91",
+        "printed_page_pointer": "/data/elements/2273/text",
+        "table_location": null,
+        "quote": "When you take a reaction, you can't take another one until the start of your next turn. If the reaction interrupts another creature's turn, that creature can continue its turn right after the reaction.",
+        "quote_sha256": "859b596d9fc232854dcf64c7cea5f19b4a05db5473c59b16e584c2b2c1e2d075",
+        "coordinates": [
+          0.090686,
+          0.587753,
+          0.45915,
+          0.587753,
+          0.45915,
+          0.642045,
+          0.090686,
+          0.642045
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2341",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2341/text",
+        "element_pointer": "/data/elements/2341",
+        "element_id": "c3c59c25a1c1be9f413c0251099b423366d0a46bc2bca57d3493f6c7a1e5c048",
+        "section_hierarchy": [
+          "Actions in Combat",
+          "Ready"
+        ],
+        "page_pointer": "/data/elements/2341/page_number",
+        "physical_page": 93,
+        "printed_page": "93",
+        "printed_page_pointer": "/data/elements/2346/text",
+        "table_location": null,
+        "quote": "Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn.",
+        "quote_sha256": "68453511dc8b3f5a7d8210e99a3da9049817442e514c7fc95539a7fe76bcce20",
+        "coordinates": [
+          0.533497,
+          0.583333,
+          0.905229,
+          0.583333,
+          0.905229,
+          0.657197,
+          0.533497,
+          0.657197
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2342",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2342/text",
+        "element_pointer": "/data/elements/2342",
+        "element_id": "ac331b3e44f05831d551e26cdfcd783d9e0331156accdf7221a137a0b79d538f",
+        "section_hierarchy": [
+          "Actions in Combat",
+          "Ready"
+        ],
+        "page_pointer": "/data/elements/2342/page_number",
+        "physical_page": 93,
+        "printed_page": "93",
+        "printed_page_pointer": "/data/elements/2346/text",
+        "table_location": null,
+        "quote": "First, you decide what perceivable circumstance will trigger your reaction.Then,you choose the action you will take in response to that trigger,or you choose to move up to your speed in response to it. Examples include \"If the cultist steps on the trapdoor, I'll pull the lever that opens it,\" and \"If the goblin steps next to me, I move away.\"",
+        "quote_sha256": "e48a2125d22239c0b51a8ca85ad99a850fb1bd8982d9b664cc7a44beb058cc8d",
+        "coordinates": [
+          0.533497,
+          0.656566,
+          0.89951,
+          0.656566,
+          0.89951,
+          0.756944,
+          0.533497,
+          0.756944
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      },
+      {
+        "id": "srd51-full-001:element:2343",
+        "ruleset": "srd-5.1",
+        "document_id": "2504d2a0abb0a4d491a939be4f17910a2dde0312570ab8d208080225ccf0a1f0",
+        "run_id": "srd51-full-001",
+        "role": "rule_text",
+        "fragment_type": "NarrativeText",
+        "json_pointer": "/data/elements/2343/text",
+        "element_pointer": "/data/elements/2343",
+        "element_id": "0c08d40c19169adaa103413580ea70bda4c2136fdc8d7744a9791135fca34932",
+        "section_hierarchy": [
+          "Actions in Combat",
+          "Ready"
+        ],
+        "page_pointer": "/data/elements/2343/page_number",
+        "physical_page": 93,
+        "printed_page": "93",
+        "printed_page_pointer": "/data/elements/2346/text",
+        "table_location": null,
+        "quote": "When the trigger occurs,you can either take your reaction right after the trigger finishes or ignorethe trigger.Remember that you can take only one reaction per round.",
+        "quote_sha256": "6a2879837d362eb3063a03ab06dcbf3d77862837f66d108ccba98f8807ab87a0",
+        "coordinates": [
+          0.533497,
+          0.760732,
+          0.898693,
+          0.760732,
+          0.898693,
+          0.816288,
+          0.533497,
+          0.816288
+        ],
+        "review_status": "review_required",
+        "schema_version": "1"
+      }
+    ]
+  }
+}

@@ -10,7 +10,7 @@ class ACRequest(StrictModel):
     abilities: Abilities
     equipment: Equipment
 
-def create_app(root: Path | None = None, database: Path | None = None):
+def create_app(root: Path | None = None, database: Path | None = None, *, isolated_demo=False):
     root = (root or Path(os.environ.get("RULEFORGE_ROOT", "."))).resolve()
     database = database or Path(os.environ.get('RULEFORGE_DATABASE', str(root / "data/ruleforge.sqlite3")))
     initialize(database)
@@ -63,4 +63,6 @@ def create_app(root: Path | None = None, database: Path | None = None):
 
     from ruleforge.m2_api import install
     install(app, root, database)
+    from ruleforge.m3_api import install as install_encounters
+    install_encounters(app, root, database, isolated_demo=isolated_demo)
     return app
